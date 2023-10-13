@@ -44,7 +44,7 @@
 :root {
   --font-body: "Outfit", sans-serif;
   --font-heading: "Plus Jakarta Sans", sans-serif;
-  --color-primary: #ccd700;
+  --color-primary: #fcd21d;
   --gradient-color-from: #45acab;
   --gradient-color-to: #4788ac;
   --color-white: #fff;
@@ -3157,12 +3157,12 @@ h6 {
     --gardient,
     linear-gradient(
       270deg,
-      #ccd700 0%,
+      #fcd21d 0%,
       #7c7c48 17.47%,
       #e4daff 39.54%,
       #e3e396 60.49%,
       #7c7c48 84.44%,
-      #ccd700 100%
+      #fcd21d 100%
     )
   );
   background-clip: text;
@@ -3950,12 +3950,12 @@ h6 {
 blockquote .icon {
   background: linear-gradient(
     270deg,
-    #ccd700 0%,
+    #fcd21d 0%,
     #7c7c48 17.47%,
     #e4daff 39.54%,
     #e3e396 60.49%,
     #7c7c48 84.44%,
-    #ccd700 100%
+    #fcd21d 100%
   );
 }
 
@@ -4447,12 +4447,12 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
 .hero__content .title span {
   background: linear-gradient(
     270deg,
-    #ccd700 0%,
+    #fcd21d 0%,
     #7c7c48 17.47%,
     #e4daff 39.54%,
     #e3e396 60.49%,
     #7c7c48 84.44%,
-    #ccd700 100%
+    #fcd21d 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -4736,12 +4736,12 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
     --gardient,
     linear-gradient(
       270deg,
-      #ccd700 0%,
+      #fcd21d 0%,
       #7c7c48 17.47%,
       #e4daff 39.54%,
       #e3e396 60.49%,
       #7c7c48 84.44%,
-      #ccd700 100%
+      #fcd21d 100%
     )
   );
   height: 8px;
