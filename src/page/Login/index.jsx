@@ -245,14 +245,13 @@ function Login() {
           }}
         >
           <div className="p-4">
-            <a href="/">
-              <img
-                src={"https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/coin_512.png?alt=media&token=933e7073-6385-4c3f-9c4b-04e58af2d73b&_gl=1*1757l1s*_ga*MTAxMTM0NjExNy4xNjc3OTI0MjQy*_ga_CW55HF8NVT*MTY5NzA1NTM4MS41MC4xLjE2OTcwNTU0MzEuMTAuMC4w"}
-                alt=""
-                width={100}
-                style={{ cursor: "pointer" }}
-              />
-            </a>
+             <a href="/">
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+                        alt=""
+                        width="75"
+                      />
+                    </a>
           </div>
           <div
             className=""
@@ -647,14 +646,13 @@ function Login() {
           }}
         >
           <div className="p-4">
-          <a href="/">
-              <img
-                src={"https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/coin_512.png?alt=media&token=933e7073-6385-4c3f-9c4b-04e58af2d73b&_gl=1*1757l1s*_ga*MTAxMTM0NjExNy4xNjc3OTI0MjQy*_ga_CW55HF8NVT*MTY5NzA1NTM4MS41MC4xLjE2OTcwNTU0MzEuMTAuMC4w"}
-                alt=""
-                width={100}
-                style={{ cursor: "pointer" }}
-              />
-            </a>
+   <a href="/">
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+                        alt=""
+                        width="75"
+                      />
+                    </a>
           </div>
           <div
             className=""
