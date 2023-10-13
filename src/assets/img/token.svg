@@ -1,0 +1,95 @@
+<svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="702" height="568" viewBox="0 0 702 568" role="img" aria-label="">
+   <desc>Created with Highcharts 10.3.3</desc>
+   <defs>
+      <clipPath id="highcharts-6jsixfi-3582-">
+         <rect x="0" y="0" width="682" height="440" fill="none"></rect>
+      </clipPath>
+   </defs>
+   <rect fill="transparent" class="highcharts-background" x="0" y="0" width="702" height="568" rx="0" ry="0"></rect>
+   <rect fill="none" class="highcharts-plot-background" x="10" y="10" width="682" height="440"></rect>
+   <rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="10" y="10" width="682" height="440"></rect>
+   <g class="highcharts-series-group" data-z-index="3">
+      <g class="highcharts-series highcharts-series-0 highcharts-pie-series" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none">
+         <path fill="#3223d9" d="M 385.9663939213903 55.00000342232889 A 165 165 0 0 1 405.55532211106924 56.162918186595135 L 393.626575623317 156.1035380927721 A 64.35 64.35 0 0 0 385.9868936293422 155.65000133470826 Z" transform="translate(0,0)" stroke="#FFF" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-0"></path>
+         <path fill="#a8edec" d="M 405.7191493879162 56.18255542398103 A 165 165 0 0 1 550.8403057664972 227.25765766674937 L 450.28771924893385 222.83048649003226 A 64.35 64.35 0 0 0 393.6904682612873 156.1111966153526 Z" transform="translate(0,0)" stroke="#FFF" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-1"></path>
+         <path fill="#51cbf3" d="M 550.832965689894 227.42249431621394 A 165 165 0 0 1 260.2905486344697 326.87438344794026 L 336.9733139674432 261.6810095446967 A 64.35 64.35 0 0 0 450.28485661905864 222.89477278332345 Z" transform="translate(0,0)" stroke="#FFF" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-2"></path>
+         <path fill="#6987f5" d="M 260.1837371235546 326.74862058033904 A 165 165 0 0 1 224.07642035510793 188.28636957104573 L 322.8498039384921 207.63168413270785 A 64.35 64.35 0 0 0 336.9316574781863 261.63196202633225 Z" transform="translate(0,0)" stroke="#FFF" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-3"></path>
+         <path fill="#5a4dbf" d="M 224.10821494203435 188.12446187520203 A 165 165 0 0 1 270.03059053837814 102.62838473837597 L 340.7719303099675 174.22507004796662 A 64.35 64.35 0 0 0 322.8622038273934 207.5685401313288 Z" transform="translate(0,0)" stroke="#FFF" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-4"></path>
+         <path fill="#4644b5" d="M 270.1480201187777 102.51247403404534 A 165 165 0 0 1 356.39697779792226 57.6772934044553 L 374.4548213411897 156.69414442773757 A 64.35 64.35 0 0 0 340.8177278463233 174.1798648732777 Z" transform="translate(0,0)" stroke="#FFF" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-5"></path>
+         <path fill="#7b11c5" d="M 356.55931527897394 57.64777154853357 A 165 165 0 0 1 385.7708183102182 55.000159164461394 L 385.9106191409851 155.65006207413995 A 64.35 64.35 0 0 0 374.51813295879987 156.6826309039281 Z" transform="translate(0,0)" stroke="#FFF" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-6"></path>
+      </g>
+      <g class="highcharts-markers highcharts-series-0 highcharts-pie-series" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none"></g>
+   </g>
+   <text x="351" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text>
+   <text x="351" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text>
+   <text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="565"></text>
+   <g class="highcharts-data-labels highcharts-series-0 highcharts-pie-series" data-z-index="6" opacity="1" transform="translate(10,10) scale(1 1)">
+      <path fill="none" class="highcharts-data-label-connector highcharts-color-0" stroke-width="1" stroke="#3223d9" d="M 402.66181001928203 25.349024695291657 L 395.86768540093067 55.29532858832371"></path>
+      <path fill="none" class="highcharts-data-label-connector highcharts-color-1" stroke-width="1" stroke="#a8edec" d="M 539.751766513142 93.91307776291906 L 511.866879357274 113.31106579939305"></path>
+      <path fill="none" class="highcharts-data-label-connector highcharts-color-2" stroke-width="1" stroke="#51cbf3" d="M 454.0258832036196 404.53383984083706 L 439.32959347998593 376.1440183268621"></path>
+      <path fill="none" class="highcharts-data-label-connector highcharts-color-3" stroke-width="1" stroke="#6987f5" d="M 192.27222405212004 269.0594189301792 L 226.30726650564003 261.51181601784396"></path>
+      <path fill="none" class="highcharts-data-label-connector highcharts-color-4" stroke-width="1" stroke="#5a4dbf" d="M 209.28387128793602 127.59561081776539 L 240.7017372436382 141.81167069195533"></path>
+      <path fill="none" class="highcharts-data-label-connector highcharts-color-5" stroke-width="1" stroke="#4644b5" d="M 274.8916318751052 56.39677810668945 L 309.99399567564546 73.54834481424868"></path>
+      <path fill="none" class="highcharts-data-label-connector highcharts-color-6" stroke-width="1" stroke="#7b11c5" d="M 363.5203347638303 25 L 371.2095140309333 55.66424149078557"></path>
+      <g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" style="cursor: pointer;" transform="translate(408,15)">
+         <text x="5" data-z-index="1" y="22" style="color: rgb(255, 255, 255); font-family: Roboto; font-size: 18px; font-style: normal; font-weight: bold; text-decoration: none; fill: rgb(255, 255, 255);">AIRDROP: 2</text>
+      </g>
+      <g class="highcharts-label highcharts-data-label highcharts-data-label-color-1" data-z-index="1" style="cursor: pointer;" transform="translate(545,84)">
+         <text x="5" data-z-index="1" y="22" style="color: rgb(255, 255, 255); font-family: Roboto; font-size: 18px; font-style: normal; font-weight: bold; text-decoration: none; fill: rgb(255, 255, 255);">STAKING: 25</text>
+      </g>
+      <g class="highcharts-label highcharts-data-label highcharts-data-label-color-2" data-z-index="1" style="cursor: pointer;" transform="translate(459,395)">
+         <text x="5" data-z-index="1" y="22" style="color: rgb(255, 255, 255); font-family: Roboto; font-size: 18px; font-style: normal; font-weight: bold; text-decoration: none; fill: rgb(255, 255, 255);">PUBLIC SALE: 40</text>
+      </g>
+      <g class="highcharts-label highcharts-data-label highcharts-data-label-color-3" data-z-index="1" style="cursor: pointer;" transform="translate(0,259)">
+         <text x="5" data-z-index="1" y="22" style="color: rgb(255, 255, 255); font-family: Roboto; font-size: 18px; font-style: normal; font-weight: bold; text-decoration: none; fill: rgb(255, 255, 255);">TREM&amp;ADVISORY: 15</text>
+      </g>
+      <g class="highcharts-label highcharts-data-label highcharts-data-label-color-4" data-z-index="1" style="cursor: pointer;" transform="translate(38,118)">
+         <text x="5" data-z-index="1" y="22" style="color: rgb(255, 255, 255); font-family: Roboto; font-size: 18px; font-style: normal; font-weight: bold; text-decoration: none; fill: rgb(255, 255, 255);">
+            ECOSYSTOM
+            <tspan dy="21" x="5">&ZeroWidthSpace;</tspan>
+            DEVELOPMENT: 10
+         </text>
+      </g>
+      <g class="highcharts-label highcharts-data-label highcharts-data-label-color-5" data-z-index="1" style="cursor: pointer;" transform="translate(127,46)">
+         <text x="5" data-z-index="1" y="22" style="color: rgb(255, 255, 255); font-family: Roboto; font-size: 18px; font-style: normal; font-weight: bold; text-decoration: none; fill: rgb(255, 255, 255);">MARKETING: 10</text>
+      </g>
+      <g class="highcharts-label highcharts-data-label highcharts-data-label-color-6" data-z-index="1" style="cursor: pointer;" transform="translate(202,15)">
+         <text x="5" data-z-index="1" y="22" style="color: rgb(255, 255, 255); font-family: Roboto; font-size: 18px; font-style: normal; font-weight: bold; text-decoration: none; fill: rgb(255, 255, 255);">RESERVE FUND: 3</text>
+      </g>
+   </g>
+   <g class="highcharts-legend highcharts-no-tooltip" data-z-index="7" transform="translate(86,462)">
+      <rect fill="none" class="highcharts-legend-box" rx="0" ry="0" stroke="#999999" stroke-width="0" x="0" y="0" width="529" height="91"></rect>
+      <g data-z-index="1">
+         <g>
+            <g class="highcharts-legend-item highcharts-pie-series highcharts-color-0" data-z-index="1" transform="translate(8,3)">
+               <text x="22" text-anchor="start" data-z-index="2" y="20" style="color: rgb(255, 255, 255); cursor: pointer; font-size: 17px; font-weight: bold; font-family: Roboto; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255);">AIRDROP</text>
+               <rect x="0" y="4" width="17" height="17" fill="#3223d9" rx="8.5" ry="8.5" class="highcharts-point" data-z-index="3"></rect>
+            </g>
+            <g class="highcharts-legend-item highcharts-pie-series highcharts-color-1" data-z-index="1" transform="translate(274.90863037109375,3)">
+               <text x="22" y="20" text-anchor="start" data-z-index="2" style="color: rgb(255, 255, 255); cursor: pointer; font-size: 17px; font-weight: bold; font-family: Roboto; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255);">STAKING</text>
+               <rect x="0" y="4" width="17" height="17" fill="#a8edec" rx="8.5" ry="8.5" class="highcharts-point" data-z-index="3"></rect>
+            </g>
+            <g class="highcharts-legend-item highcharts-pie-series highcharts-color-2" data-z-index="1" transform="translate(8,23)">
+               <text x="22" y="20" text-anchor="start" data-z-index="2" style="color: rgb(255, 255, 255); cursor: pointer; font-size: 17px; font-weight: bold; font-family: Roboto; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255);">PUBLIC SALE</text>
+               <rect x="0" y="4" width="17" height="17" fill="#51cbf3" rx="8.5" ry="8.5" class="highcharts-point" data-z-index="3"></rect>
+            </g>
+            <g class="highcharts-legend-item highcharts-pie-series highcharts-color-3" data-z-index="1" transform="translate(274.90863037109375,23)">
+               <text x="22" y="20" text-anchor="start" data-z-index="2" style="color: rgb(255, 255, 255); cursor: pointer; font-size: 17px; font-weight: bold; font-family: Roboto; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255);">TREM&amp;ADVISORY</text>
+               <rect x="0" y="4" width="17" height="17" fill="#6987f5" rx="8.5" ry="8.5" class="highcharts-point" data-z-index="3"></rect>
+            </g>
+            <g class="highcharts-legend-item highcharts-pie-series highcharts-color-4" data-z-index="1" transform="translate(8,43)">
+               <text x="22" y="20" text-anchor="start" data-z-index="2" style="color: rgb(255, 255, 255); cursor: pointer; font-size: 17px; font-weight: bold; font-family: Roboto; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255);">ECOSYSTOM DEVELOPMENT</text>
+               <rect x="0" y="4" width="17" height="17" fill="#5a4dbf" rx="8.5" ry="8.5" class="highcharts-point" data-z-index="3"></rect>
+            </g>
+            <g class="highcharts-legend-item highcharts-pie-series highcharts-color-5" data-z-index="1" transform="translate(274.90863037109375,43)">
+               <text x="22" y="20" text-anchor="start" data-z-index="2" style="color: rgb(255, 255, 255); cursor: pointer; font-size: 17px; font-weight: bold; font-family: Roboto; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255);">MARKETING</text>
+               <rect x="0" y="4" width="17" height="17" fill="#4644b5" rx="8.5" ry="8.5" class="highcharts-point" data-z-index="3"></rect>
+            </g>
+            <g class="highcharts-legend-item highcharts-pie-series highcharts-color-6" data-z-index="1" transform="translate(8,63)">
+               <text x="22" y="20" text-anchor="start" data-z-index="2" style="color: rgb(255, 255, 255); cursor: pointer; font-size: 17px; font-weight: bold; font-family: Roboto; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255);">RESERVE FUND</text>
+               <rect x="0" y="4" width="17" height="17" fill="#7b11c5" rx="8.5" ry="8.5" class="highcharts-point" data-z-index="3"></rect>
+            </g>
+         </g>
+      </g>
+   </g>
+</svg>

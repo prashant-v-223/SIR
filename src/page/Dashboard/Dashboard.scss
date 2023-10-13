@@ -1,0 +1,73 @@
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+}
+#components-layout-demo-top .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+.ant-row-rtl #components-layout-demo-top .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+.ant-modal-root .ant-modal-wrap {
+  top: 0px !important;
+}
+.menu {
+  background: linear-gradient(
+    rgb(129, 110, 255) 0%,
+    rgb(41, 82, 187) 100%
+  ) !important;
+}
+.ant-menu-item-icon {
+  color: #848b02 !important;
+}
+.ant-menu-title-content {
+  color: #1e1e1e !important;
+}
+.ant-dropdown-menu {
+  background: red !important;
+}
+.Username {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #848b02;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.bg-dark {
+  background: #1e1e1e !important;
+}
+@media screen and (max-width: 992px) {
+  .menu {
+    display: none;
+  }
+  .ant-dropdown-menu,
+  .bg-dark {
+    background: #1e1e1e !important;
+  }
+}
+.navbar-collapse {
+  width: 100%;
+}
+.navbar-nav {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-around !important;
+}
+.dropdown-menu {
+  background: #0a0a0a !important;
+  > a {
+    color: #fff;
+  }
+}
+.Boxcard {
+  background: #1e1e1e;
+  border-radius: 11px;
+  border: 2px solid #848b02;
+  justify-content: space-around !important;
+  z-index: -1;
+}

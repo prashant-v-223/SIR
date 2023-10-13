@@ -1,0 +1,45 @@
+/* ##### 2.0 Header Area CSS ##### */
+
+.main212 {
+  .header-area {
+    position: fixed;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .header-area.sticky {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    background-color: #291674;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: none;
+  }
+
+  .dark.classy-nav-container {
+    background-color: transparent;
+  }
+
+  .classy-navbar {
+    height: 90px;
+    padding: 0;
+  }
+
+  .classynav ul li a {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    padding: 0px 6px;
+    display: block;
+    height: 35px;
+    font-size: 12px;
+    line-height: 34px;
+  }
+
+  .classynav ul li .megamenu li a {
+    font-size: 80%;
+  }
+}
