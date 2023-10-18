@@ -104,7 +104,7 @@ const Dashboard = () => {
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h4 className="pt-2 pt-lg-0  mb-2 text-center text-lg-left">
-                      Locked UUDT Token
+                      Locked  SIR Token
                     </h4>
                     <p className="text-center text-lg-left">
                       <b>
@@ -133,7 +133,7 @@ const Dashboard = () => {
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-3 text-center">
-                      Current UUDT Token Live price
+                      Current  SIRToken Live price
                     </h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.V4Xtokenprice}$
@@ -237,45 +237,45 @@ const Dashboard = () => {
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
                       <p className=" m-0">Referral & Earn :</p>
                       <p className=" m-0">
-                        {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
+                        {/* {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
                           2
-                        )}
+                        )} */}
                         $
                       </p>
                     </p>{" "}
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
                       <p className=" m-0"> Staking Bonus :</p>
                       <p className=" m-0">
-                        {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
+                        {/* {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
                           2
-                        )}
+                        )} */}
                         $
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
                       <p className=" m-0">Community reward :</p>
                       <p className=" m-0">
-                        {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
+                        {/* {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
                           2
-                        )}
+                        )} */}
                         $
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
                       <p className=" m-0">Passive club reward :</p>
                       <p className=" m-0">
-                        {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
+                        {/* {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
                           2
-                        )}
+                        )} */}
                         $
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
                       <p className=" m-0"> Achievement reward :</p>
                       <p className=" m-0">
-                        {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
+                        {/* {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
                           2
-                        )}
+                        )} */}
                         $
                       </p>
                     </p>

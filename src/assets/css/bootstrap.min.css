@@ -1965,8 +1965,7 @@ pre code {
     opacity: 1
 }
 
-.form-control::placeholder {
-    color: #6c757d;
+.form-control::placeholder {      color: #171515 !important;
     opacity: 1
 }
 

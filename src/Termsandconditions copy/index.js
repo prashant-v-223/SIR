@@ -7,7 +7,7 @@ function DISCLAIMER() {
       <p>
         The investment in Digital assets are subject to market risk investors
         can lead to unexpected profit or loss of money over short or even long
-        periods. The investors in UUDT Token should expect prices to have large
+        periods. The investors in  SIRToken should expect prices to have large
         range fluctuations. While all efforts have been taken to make this web
         site as authentic as possible The information published on the Website
         cannot guarantee that the investors in Digital Assets would not lose

@@ -74,21 +74,21 @@ export const HowItWorksInfo = [
     title: "Limitless Staking and Great Returns",
     img: secure,
     subtita:
-      "UUDT Offers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals.",
+      " SIROffers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals.",
   },
   {
     classIco: "icon ti-widget",
     title: "Refer Friends and Family to Earn more",
     img: superfastmatchengine,
     subtita:
-      "You can refer your friends and family on UUDT to get more benifits. Everytime your referral stakes UUDT Token, referrer gets rewards.",
+      "You can refer your friends and family on  SIRto get more benifits. Everytime your referral stakes  SIRToken, referrer gets rewards.",
   },
   {
     classIco: "icon ti-settings",
     title: "Interesting Rewards of Passive Club & Achievement",
     img: userfriendly,
     subtita:
-      "UUDT has passive club reward benifit. Where users can make their team business and achieve ranks from manager to ambassador. Every rank will be rewarded with amazing bonuses.",
+      " SIRhas passive club reward benifit. Where users can make their team business and achieve ranks from manager to ambassador. Every rank will be rewarded with amazing bonuses.",
   },
 ];
 
@@ -122,27 +122,27 @@ export const SingleCoolFact = [
 export const service_single_content = [
   {
     img: exchange,
-    title: "UUDT Centralised Exchange",
+    title: " SIRCentralised Exchange",
   },
   {
     img: decentralised,
-    title: "UUDT Decentralised Wallet",
+    title: " SIRDecentralised Wallet",
   },
   {
     img: marketplace,
-    title: "UUDT NFT Marketplace ",
+    title: " SIRNFT Marketplace ",
   },
   {
     img: development,
-    title: "UUDT Mobile App",
+    title: " SIRMobile App",
   },
   {
     img: blockchain,
-    title: "UUDT Blockchain",
+    title: " SIRBlockchain",
   },
   {
     img: multiutility,
-    title: "UUDT Multi-utility App",
+    title: " SIRMulti-utility App",
   },
 ];
 
@@ -178,16 +178,16 @@ export const timelineInfo = [
     IsTowLi: false,
     IsThreeLi: false,
     IsFourLi: true,
-    TextFourLi1: "UUDT Token Development Over BEP-20 Network",
-    TextFourLi2: "WORLD WIDE UUDT Token WEB LAUNCH FOR OUR USER",
-    TextFourLi3: "UUDT Token MOBILE APPLICATION",
+    TextFourLi1: " SIRToken Development Over BEP-20 Network",
+    TextFourLi2: "WORLD WIDE  SIRToken WEB LAUNCH FOR OUR USER",
+    TextFourLi3: " SIRToken MOBILE APPLICATION",
     TextFourLi4:
-      "LISTING OF UUDT Token ON DECENTRALISED EXCHANGE i.e. PANCAKESWAP, DEXTOOLS, NOMICS",
+      "LISTING OF  SIRToken ON DECENTRALISED EXCHANGE i.e. PANCAKESWAP, DEXTOOLS, NOMICS",
     TextFourLi5:
-      "UUDT Token CEX (CRYPTO EXCHANGE WITH SPOT TRADING, MARKET TRADING LIMIT TRADING, AND P2P)",
+      " SIRToken CEX (CRYPTO EXCHANGE WITH SPOT TRADING, MARKET TRADING LIMIT TRADING, AND P2P)",
     TextFourLi6:
-      "UUDT Token LOGO AND SOCIAL MEDIA VERIFICATION ON BSC SCAN & METAMASK  ",
-    TextFourLi7: "UUDT Token BLOCKCHAIN DEVELOPMENT",
+      " SIRToken LOGO AND SOCIAL MEDIA VERIFICATION ON BSC SCAN & METAMASK  ",
+    TextFourLi7: " SIRToken BLOCKCHAIN DEVELOPMENT",
     img: HomeDemo3RoadmapIcons2,
   },
   {
@@ -196,8 +196,8 @@ export const timelineInfo = [
     date: "Juky-Sep 2023",
     IsSpan: false,
     IsTowLi: true,
-    TextTowLi1: "UUDT Token LISTING ON COINGECKO",
-    TextTowLi2: "UUDT Token META GAMING PLATFORM",
+    TextTowLi1: " SIRToken LISTING ON COINGECKO",
+    TextTowLi2: " SIRToken META GAMING PLATFORM",
     IsThreeLi: false,
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons3,
@@ -209,8 +209,8 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "TV & DIGITAL AD TO INCREASE GLOBAL UUDT COMUNITY",
-    TextThreeLi2: "UUDT Token LISTING ON COIN MARKET CAP",
+    TextThreeLi1: "TV & DIGITAL AD TO INCREASE GLOBAL  SIRCOMUNITY",
+    TextThreeLi2: " SIRToken LISTING ON COIN MARKET CAP",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons4,
   },
@@ -242,7 +242,7 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "GLOBAL LAUNCH OF UUDT Token DECENTRALISED WALLET",
+    TextThreeLi1: "GLOBAL LAUNCH OF  SIRToken DECENTRALISED WALLET",
     TextThreeLi2: "NFT MARKETPLACE",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons6,
@@ -254,8 +254,8 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "UUDT Token MULTI UTILITY APPLICATION FOR INSTANT USE UUDT Token",
-    TextThreeLi2: "LAUNCHING UUDT Token BLOCKCHAIN",
+    TextThreeLi1: " SIRToken MULTI UTILITY APPLICATION FOR INSTANT USE  SIRToken",
+    TextThreeLi2: "LAUNCHING  SIRToken BLOCKCHAIN",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons7,
   },
@@ -266,7 +266,7 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "LISTING OF UUDT Token ON BINANCE",
+    TextThreeLi1: "LISTING OF  SIRToken ON BINANCE",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons8,
   },
@@ -299,21 +299,21 @@ export const ServiceBlock = [
     title: " Superfast Matching Engine",
     img: secure,
     subtitle:
-      "UUDT Exchange uses sophisticated and superfast matching engine, which helps in executing user trades within seconds and match all the trades precisely.",
+      " SIRExchange uses sophisticated and superfast matching engine, which helps in executing user trades within seconds and match all the trades precisely.",
   },
   {
     classIco: "icon ti-widget",
     title: "Optimum security of wallet and assets",
     img: superfastmatchengine,
     subtitle:
-      "You assets stored in UUDT wallets are created securely on blockchain. All the assets in your wallets are completely secure. Transactions takes place with multiple security layers.",
+      "You assets stored in  SIRwallets are created securely on blockchain. All the assets in your wallets are completely secure. Transactions takes place with multiple security layers.",
   },
   {
     classIco: "icon ti-settings",
     title: "Easy to use and User friendly",
     img: userfriendly,
     subtitle:
-      "UUDT Exchange web app and mobile app is user friendly, where you won't have to face any difficulty to use and trade as a new user. It's easy to use and completely secure.",
+      " SIRExchange web app and mobile app is user friendly, where you won't have to face any difficulty to use and trade as a new user. It's easy to use and completely secure.",
   },
 ];
 
@@ -327,23 +327,23 @@ export const SocialListIco = [
 
 export const FQAInfo = [
   {
-    text: "What is UUDT Token?",
+    text: "What is  SIRToken?",
     ID: "Q1",
   },
   {
-    text: "Which Technology UUDT Is Using?",
+    text: "Which Technology  SIRIs Using?",
     ID: "Q2",
   },
   {
-    text: "Which Network UUDT Token Operates on?",
+    text: "Which Network  SIRToken Operates on?",
     ID: "Q3",
   },
   {
-    text: "How Can I Buy UUDT Token?",
+    text: "How Can I Buy  SIRToken?",
     ID: "Q4",
   },
   {
-    text: "How Can I Trade UUDT Token?",
+    text: "How Can I Trade  SIRToken?",
     ID: "Q5",
   },
   {
@@ -373,15 +373,15 @@ export const DocElementTitle = [
 
 export const TokenText = [
   {
-    text: "UUDT Total Supply : 21 CR",
+    text: " SIRTotal Supply : 21 CR",
     // img:HomeDemo3TokenIcon1
   },
   {
-    text: "Universal Utility Decentralized Token  Symbol : UUDT COIN",
+    text: "Universal Utility Decentralized Token  Symbol :  SIRCOIN",
     // img:HomeDemo3TokenIcon1
   },
   {
-    text: "UUDT Network : Binance Smart Chain",
+    text: " SIRNetwork : Binance Smart Chain",
     // img:HomeDemo3TokenIcon1
   },
   {

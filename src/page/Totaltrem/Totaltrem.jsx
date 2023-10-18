@@ -136,9 +136,9 @@ function Totaltrempage() {
       ),
     },
     {
-      title: "Direct SponserId",
-      dataIndex: "refferalBy",
-      key: "refferalBy",
+      title: "supporterId",
+      dataIndex: "supporterId",
+      key: "supporterId",
       sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
       ellipsis: {
         showTitle: false,
@@ -320,7 +320,7 @@ function Totaltrempage() {
                     current: page,
                     onChange: (page, pageSize) => onTabChange(page, pageSize),
                   }}
-                  title={() => "UUDT Direct Team"}
+                  title={() => " My SIR Direct Team"}
                   scroll={{ x: "calc(1450px)" }}
                 />
               </div>

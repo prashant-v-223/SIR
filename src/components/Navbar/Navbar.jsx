@@ -41,10 +41,10 @@ function Navbar1() {
             }}
           >
             <img
-              src={require("../../assets/img/Logo.png")}
+              src={"https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"}
               alt=""
-              width={190}
-              height={105}
+              className="img-fluid"
+              width={80}
             />
           </div>
         </div>
@@ -84,10 +84,10 @@ function Navbar1() {
       >
         <div className="">
           <img
-            src={require("../../assets/img/Logo.png")}
+            src={"https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"}
             alt=""
-            className="img-fluid d-lg-none d-block"
-            width={120}
+            className="img-fluid d-lg-none d-block mx-4"
+            width={70}
             height={"100%"}
           />
         </div>
@@ -160,7 +160,7 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#ccd700", fontSize: "26px" }}
               />
-              UUDT Staking
+               SIR Staking
             </Nav.Link>
             <Nav.Link
               className="d-flex justify-content-start align-items-center  py-3 text-light"
@@ -173,7 +173,7 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#ccd700", fontSize: "26px" }}
               />
-              My UUDT Team
+              My SIR Total Team
             </Nav.Link>
             <Nav.Link
               className="d-flex justify-content-start align-items-center  py-3 text-light"
@@ -186,7 +186,7 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#ccd700", fontSize: "26px" }}
               />
-              UUDT Direct Team
+               My SIR Direct Team
             </Nav.Link>
             {Profile?.Roll === "admin" && (
               <Dropdown>
@@ -254,7 +254,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#ccd700", fontSize: "26px" }}
                     />
-                    UUDT Token Price
+                     SIRToken Price
                   </Dropdown.Item>
                   <Dropdown.Item
                     className="py-2"
@@ -306,7 +306,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#ccd700", fontSize: "26px" }}
                     />
-                    UUDT Support Details
+                     SIRSupport Details
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -398,7 +398,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                  UUDT Community Reward
+                   SIRCommunity Reward
                 </Dropdown.Item>{" "}
                 <Dropdown.Item
                   className="py-2 "
@@ -410,7 +410,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                  UUDT passive club reward
+                   SIRpassive club reward
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -422,7 +422,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                  UUDT Achievement Reward
+                   SIRAchievement Reward
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

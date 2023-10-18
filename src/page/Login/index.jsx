@@ -291,7 +291,7 @@ function Login() {
             <div className="Box">
               <form onSubmit={handleSubmit}>
                 <div className="row px-2 px-sm-4">
-                  <h1 className="px-4  pb-2 text-light">Sign up</h1>
+                  <h1 className="px-4  pb-2 main-text">Sign up</h1>
                   {/* <div className="col-12 col-md-9 py-md-1">
                         <InputField
                           type="text"
@@ -427,7 +427,7 @@ function Login() {
                         setcheck(e.target.checked);
                       }}
                     />
-                    <p className="mt-1 mb-0 ">
+                    <p className="mt-1 mb-0 main-text ">
                       I have read and agree to the
                       <a
                         href="/Termsandconditions"
@@ -692,7 +692,7 @@ function Login() {
             <div className="Box">
               <form onSubmit={handleSubmit}>
                 <div className="row px-2 px-sm-4">
-                  <h1 className="px-4  pb-2 text-light">Login</h1>
+                  <h1 className="px-4  pb-2 main-text">Login</h1>
                   <div className="col-12  py-md-1">
                     <InputField
                       type="text"
@@ -744,7 +744,7 @@ function Login() {
                 </button>
               </div>
               <button
-                className="text-light px-4 pt-3"
+                className="main-text px-4 pt-3"
                 onClick={() => setModal2Open(true)}
               >
                 Forgot password?

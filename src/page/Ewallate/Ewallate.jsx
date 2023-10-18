@@ -189,7 +189,7 @@ function Ewallate() {
                 columns={columns}
                 bordered={true}
                 dataSource={Fillter}
-                title={() => "UUDT Wallet Report"}
+                title={() => " SIR Wallet Report"}
                 scroll={{ x: "calc(500px + 50%)" }}
               />
             </div>

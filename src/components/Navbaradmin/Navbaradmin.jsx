@@ -164,7 +164,7 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#44a08d", fontSize: "20px" }}
               />
-              UUDT Token price
+               SIRToken price
             </Nav.Link>
             <Nav.Link
               className="d-flex justify-content-start align-items-center  py-3 text-light"

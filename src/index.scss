@@ -1,17 +1,22 @@
 .form-group input::placeholder {
-  color: #f0f0f0 !important;
+  color: #171515 !important;
 }
 .ant-input-affix-wrapper input::placeholder {
-  color: #f0f0f0 !important;
+  color: #171515 !important;
 }
 .ant-input {
   background: transparent !important;
-  border: 1px solid #fff;
+  color: #171515 !important;
+  border: 1px solid #171515;
 }
 .ant-input-number,
 .ant-input-affix-wrapper {
   background: transparent !important;
-  border: 1px solid #606161;
+  border: 2px solid #171515 !important;
+  color: #171515 !important;
+}
+span[role="img"] {
+  color: #171515;
 }
 .backimg {
   background-image: url("./assets/img/bG.04bd89f07d746d39ffd4.png");
@@ -300,15 +305,15 @@ span.tlt {
     padding: 10px 12px;
     height: 60px;
     ::-webkit-input-placeholder {
-      color: #fff;
+      color: #171515 !important;
     }
 
     :-ms-input-placeholder {
-      color: #fff;
+      color: #171515 !important;
     }
 
     ::placeholder {
-      color: #fff !important;
+      color: #171515 !important;
     }
   }
 }
@@ -322,8 +327,7 @@ button {
   height: "100vh";
   overflow: "hidden";
 }
-input::placeholder {
-  color: #fff !important;
+input::placeholder {      color: #171515 !important;
 }
 
 li {
@@ -596,7 +600,7 @@ div.b {
   padding-right: 30px;
 }
 .css-13cymwt-control {
-  border: 1px solid #606161 !important;
+  border: 1px solid #171515 !important;
 }
 :where(.css-dev-only-do-not-override-mxhywb).ant-table-wrapper
   .ant-table-column-sorter {
@@ -719,7 +723,7 @@ button {
 }
 .ant-input-prefix {
   margin-inline-end: 2px;
-  color: #fff;
+  color: #171515;
   margin-inline-start: 12px;
 }
 .modal-content {
@@ -785,7 +789,7 @@ input,
   font-weight: 100 !important;
   height: 55px !important;
   color: #fff !important;
-  border: 1px solid #606161;
+  border: 1px solid #171515;
   border-radius: 9px !important;
 }
 .css-1dimb5e-singleValue {

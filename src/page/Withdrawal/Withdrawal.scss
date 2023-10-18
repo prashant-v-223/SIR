@@ -46,7 +46,7 @@
 
 input::placeholder {
   background: transparent;
-  color: #827b7b;
+  color: #171515 !important;
   font-weight: 100 !important;
 }
 .ant-input {
@@ -54,8 +54,8 @@ input::placeholder {
   text-align: left;
   font-weight: 100 !important;
   height: 55px !important;
-  color: #fff !important;
-  border: 1px solid #606161;
+  color: #171515 !important;
+  border: 1px solid #171515;
   border-radius: 9px !important;
 }
 .ant-select-selector {

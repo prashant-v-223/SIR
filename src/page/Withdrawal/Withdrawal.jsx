@@ -187,9 +187,9 @@ function Withdrawal() {
                       </div>
                       <div className="img-div2">
                         <p className="m-0 text-light">
-                          You can transfer your UUDT wallet coins to your
+                          You can transfer your  SIR wallet coins to your
                           downline team members. Transfers will be deposited in
-                          UUDT E-Wallet only.
+                           SIR E-Wallet only.
                         </p>
                       </div>
                     </div>
@@ -291,7 +291,7 @@ function Withdrawal() {
                         height: 60,
                         border: "none",
                       }}
-                      label={"UUDT Token Transfer Report "}
+                      label={" SIRToken Transfer Report "}
                       onClick={() => {
                         navigation("/transfer/income");
                       }}
@@ -329,7 +329,7 @@ function Withdrawal() {
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            UUDT Main Wallet Balance
+                             SIRMain Wallet Balance
                           </h6>
                         </div>
                         <div className="px-3 py-2 py-lg-0">
@@ -470,7 +470,7 @@ function Withdrawal() {
                       onClick={() => {
                         navigation("/Withdrdata");
                       }}
-                      label={"UUDT Main Wallet Withdrawal Report"}
+                      label={" SIRMain Wallet Withdrawal Report"}
                     />
                   </div>
                 </div>

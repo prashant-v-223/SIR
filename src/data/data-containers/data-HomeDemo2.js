@@ -89,7 +89,7 @@ export const SingleCoolFact = [
 export const service_single_content = [
     {
         img:HomeDemo2Services1,
-        title:'UUDT Centralised Exchange'
+        title:' SIRCentralised Exchange'
     },
     {
         img:HomeDemo2Services2,

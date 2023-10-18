@@ -54,7 +54,7 @@ const Footer = () => {
                 }}
               >
                 Leave your details below and we’ll contact you to discuss
-                purchasing UUDT .
+                purchasing  SIR.
               </p>
             </div>
 

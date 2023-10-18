@@ -94,7 +94,7 @@ function Staking() {
         let web3 = await getWeb3();
         let contract = await new web3.eth.Contract(
           v4x,
-          "0x55d398326f99059fF775485246999027B3197955"
+          "0x16e32b31675247c906981B811c024Ce86711817E"
         );
         const decimal = await contract.methods.decimals().call();
         await contract.methods
@@ -395,7 +395,7 @@ function Staking() {
       },
     },
     {
-      title: "UUDT Token Price",
+      title: " SIRToken Price",
       dataIndex: "V4xTokenPrice",
       key: "V4xTokenPrice",
       width: "200px",
@@ -512,7 +512,7 @@ function Staking() {
                         <img src={drop} alt="" className="img-fluid" />
                       </div>
                       <div className="w-75">
-                        Your tokens will be staked for a period of 24 months.
+                        Your tokens will be staked for a period of 12 months.
                       </div>
                     </div>
                     <div className="stakingbox p-4">
@@ -592,7 +592,7 @@ function Staking() {
                         <img src={drop} alt="" className="img-fluid" />
                       </div>
                       <div className="w-75">
-                        Your tokens will be staked for a period of 24 months.
+                        Your tokens will be staked for a period of 12 months.
                       </div>
                     </div>
                     <div className="stakingbox p-4">
@@ -669,7 +669,7 @@ function Staking() {
                         <img src={drop} alt="" className="img-fluid" />
                       </div>
                       <div className="w-75">
-                        Your tokens will be staked for a period of 24 months.
+                        Your tokens will be staked for a period of 12 months.
                       </div>
                     </div>
                     <div className="stakingbox p-4">
@@ -834,7 +834,7 @@ function Staking() {
           <Modal.Body>
             <p>
               Your % return will be calculated based on amount of tokens staked.
-              You can see the UUDT slab details below.
+              You can see the  SIRslab details below.
             </p>
             <div className="d-flex">
               <div className="w-50">

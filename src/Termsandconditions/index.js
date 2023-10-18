@@ -3,23 +3,23 @@ import React from "react";
 function Termsandconditions() {
   return (
     <div className="container">
-      <h4 className="text-light pt-5 pb-3">UUDT Token TERMS & CONDITIONS.</h4>
+      <h4 className="text-light pt-5 pb-3"> SIRToken TERMS & CONDITIONS.</h4>
       <p>
-        The website UUDT.ORG is operated by UUDT Token, Throughout the site, the
-        terms “we”, “us” and “our” refer to UUDT Token, and/or UUDT.ORG. UUDT Token,
+        The website UUDT.ORG is operated by  SIRToken, Throughout the site, the
+        terms “we”, “us” and “our” refer to  SIRToken, and/or UUDT.ORG.  SIRToken,
         offers this website, including all information, tools and services
         available from this site to you, the user, conditioned upon your
         acceptance of all terms, conditions, policies and notices stated here.
       </p>
       <p>
-        By visiting our site and/ or purchasing UUDT Token from UUDT.ORG, you
+        By visiting our site and/ or purchasing  SIRToken from UUDT.ORG, you
         engage in our “Service” and agree to be bound by the following terms and
         conditions (“Terms of Service”, “Terms”), including those additional
         terms and conditions and policies referenced herein and/or available by
         hyperlink. These Terms of Service apply to all users of the site,
       </p>
       <p>
-        By visiting our site and/ or purchasing UUDT Token from UUDT.ORG, you
+        By visiting our site and/ or purchasing  SIRToken from UUDT.ORG, you
         engage in our “Service” and agree to be bound by the following terms and
         conditions (“Terms of Service”, “Terms”), including those additional
         terms and conditions and policies referenced herein and/or available by
@@ -57,7 +57,7 @@ function Termsandconditions() {
       <p>
         Decisions based on information contained on this site are the sole
         responsibility of the user, and in exchange for using this site, you
-        agree to hold UUDT Token, and its/their affiliates harmless against any
+        agree to hold  SIRToken, and its/their affiliates harmless against any
         claims for damages arising from any decision you make based on such
         information.
       </p>{" "}
@@ -101,7 +101,7 @@ function Termsandconditions() {
       </p>
       <h4 className="text-light pt-5 pb-3">PERSONAL INFORMATION:</h4>
       <p>
-        Your submission of personal information through the UUDT Token is governed
+        Your submission of personal information through the  SIRToken is governed
         by our Privacy Policy. Our Privacy Policy is also contained on this
         page.
       </p>

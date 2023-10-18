@@ -132,7 +132,7 @@ function ResetPassword() {
                 className="text-light pe-5 me-5 py-2"
                 style={{ fontSize: "18px" }}
               >
-                Register on UUDT platform easily. World’s topmost
+                Register on  SIR platform easily. World’s topmost
                 platform to generate revenue
               </p>
             </div>

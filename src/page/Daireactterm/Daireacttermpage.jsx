@@ -127,9 +127,9 @@ function Daireacttermpage() {
       ),
     },
     {
-      title: "Direct SponserId",
-      dataIndex: "refferalBy",
-      key: "refferalBy",
+      title: "supporterId",
+      dataIndex: "supporterId",
+      key: "supporterId",
       sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
       ellipsis: {
         showTitle: false,
@@ -320,7 +320,7 @@ function Daireacttermpage() {
                     current: page,
                     onChange: (page, pageSize) => onTabChange(page, pageSize),
                   }}
-                  title={() => "My UUDT Team"}
+                  title={() => "My SIR Total Team"}
                   scroll={{ x: "calc(1700px)" }}
                 />
               </div>

@@ -1,5 +1,5 @@
 .error {
-  color: #e4e2e4;
+  color: #171515;
   font-size: 14px;
   font-weight: 400;
   position: relative;
@@ -20,4 +20,12 @@ input:-webkit-autofill {
 }
 input:-webkit-autofill {
   background-color: #eaff00 !important;
+}
+.form-control {
+  border: 2px solid #171515 !important;
+  color: #171515;
+}
+.form-control input,
+.main-text {
+  color: #171515 !important;
 }
