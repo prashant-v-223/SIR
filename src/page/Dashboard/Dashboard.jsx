@@ -18,6 +18,9 @@ import { Tree, TreeNode } from "react-organizational-chart";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Modal } from "react-bootstrap";
+import { AiOutlineMoneyCollect } from "react-icons/ai";
+import { HiUserGroup } from "react-icons/hi2";
+import { FaMoneyCheckDollar } from "react-icons/fi";
 const Dashboard = () => {
   const StackingSlice = useSelector((state) => state.WallatedatSlice);
   const [address, setaddress] = React.useState("");
@@ -63,9 +66,9 @@ const Dashboard = () => {
               <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/solar_user-bold.png")}
-                      alt=""
+                    <FaUsers
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -104,7 +107,7 @@ const Dashboard = () => {
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h4 className="pt-2 pt-lg-0  mb-2 text-center text-lg-left">
-                      Locked  SIR Token
+                      Locked SIR Token
                     </h4>
                     <p className="text-center text-lg-left">
                       <b>
@@ -133,7 +136,7 @@ const Dashboard = () => {
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-3 text-center">
-                      Current  SIRToken Live price
+                      Current SIR Token Live price
                     </h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.V4Xtokenprice}$
@@ -154,9 +157,9 @@ const Dashboard = () => {
               >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100 ">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (71).png")}
-                      alt=""
+                    <FaUsers
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div
@@ -190,9 +193,9 @@ const Dashboard = () => {
                 {" "}
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (71).png")}
-                      alt=""
+                    <FaUsers
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -218,7 +221,7 @@ const Dashboard = () => {
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-25 h-md-100">
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#848b02", fontSize: "61px" }}
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center ">
@@ -295,10 +298,9 @@ const Dashboard = () => {
                   }}
                 >
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (72).png")}
-                      alt=""
-                      className="img-fluid"
+                    <HiUserGroup
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -323,10 +325,9 @@ const Dashboard = () => {
                   }}
                 >
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (73).png")}
-                      alt=""
-                      className="img-fluid"
+                  <AiOutlineMoneyCollect
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">

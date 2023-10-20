@@ -469,8 +469,8 @@ function Staking() {
   ];
   let multiplesOf40 = [];
 
-  let limit = 20040;
-  for (let i = 40; i <= limit; i += 40) {
+  let limit = 10000;
+  for (let i = 50; i <= limit; i += 50) {
     multiplesOf40.push(i);
   }
 
@@ -482,11 +482,11 @@ function Staking() {
         {WallatedatSlice !== undefined && (
           <div className="container-fluid blackbg">
             <div className="mainsection">
-              <div className="row px-3 pt-4">
+              <div className="row px-3 pt-4 justify-content-center">
                 <div className="col-12 col-md-6 col-lg-4 text-light p-2 p-lg-3">
                   <div className="Boxcard p-4">
                     <div className="d-flex justify-content-between align-items-center">
-                      <div className="d-flex">
+                      <div className="d-flex ">
                         <div className="">
                           <img
                             src={require("../../assets/img/Vector (25).svg")}
@@ -534,6 +534,10 @@ function Staking() {
                       className="ant-input w-100"
                       name="Mainwalletstacking"
                       onChange={handleChange}
+                      style={{
+                        padding: "10px 0px",
+                        border: "1px solid #fff !important",
+                      }}
                     >
                       {multiplesOf40.map((option, index) => (
                         <option
@@ -563,7 +567,7 @@ function Staking() {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-6 col-lg-4 text-light p-2 p-lg-3">
+                {/* <div className="col-12 col-md-6 col-lg-4 text-light p-2 p-lg-3">
                   <div className="Boxcard p-4">
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="d-flex">
@@ -639,7 +643,7 @@ function Staking() {
                       />
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="col-12 col-md-6 col-lg-4 text-light p-2 p-lg-3">
                   <div className="Boxcard p-4">
                     <div className="d-flex justify-content-between align-items-center">
@@ -694,6 +698,10 @@ function Staking() {
                       name="dappwalletstacking"
                       className="ant-input w-100"
                       onChange={handleChange}
+                      style={{
+                        padding: "10px 0px",
+                        border: "1px solid #fff !important",
+                      }}
                     >
                       {multiplesOf40.map((option, index) => (
                         <option
@@ -769,7 +777,7 @@ function Staking() {
         )}
 
         <Modal show={open1} centered>
-          <Modal.Header >
+          <Modal.Header>
             <Modal.Title>
               <h6 className="text-light m-0"></h6>
             </Modal.Title>
@@ -827,14 +835,14 @@ function Staking() {
           </Modal.Body>
         </Modal>
         <Modal show={modal2Open} onHide={() => setModal2Open(false)} centered>
-          <Modal.Header >
+          <Modal.Header>
             <Modal.Title>Slab Details</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
             <p>
               Your % return will be calculated based on amount of tokens staked.
-              You can see the  SIRslab details below.
+              You can see the SIRslab details below.
             </p>
             <div className="d-flex">
               <div className="w-50">

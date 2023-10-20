@@ -342,31 +342,6 @@ function Navbar1() {
                 <Dropdown.Item
                   className="py-2"
                   onClick={() => {
-                    navigation("/UUDT/Withdrawal");
-                  }}
-                >
-                  <FaDollarSign
-                    className="ms-2 me-3"
-                    style={{ color: "#ccd700", fontSize: "26px" }}
-                  />
-                  E-Wallet Report
-                </Dropdown.Item>{" "}
-                {/* <Dropdown.Item
-                  className="py-2"
-                  onClick={() => {
-                    navigation("/Withdrdata");
-                  }}
-                  style={{ border: "none", fontSize: "15px" }}
-                >
-                  <RiCoinsFill
-                    className="ms-2 me-3"
-                    style={{ color: "#ccd700", fontSize: "26px" }}
-                  />
-                  Withdraw Details
-                </Dropdown.Item> */}
-                <Dropdown.Item
-                  className="py-2"
-                  onClick={() => {
                     navigation("/staking/income");
                   }}
                 >
@@ -398,7 +373,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                   SIRCommunity Reward
+                   SIR Community Reward
                 </Dropdown.Item>{" "}
                 <Dropdown.Item
                   className="py-2 "
@@ -410,7 +385,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                   SIRpassive club reward
+                   SIR passive club reward
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -422,7 +397,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                   SIRAchievement Reward
+                   SIR Achievement Reward
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
