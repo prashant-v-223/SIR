@@ -644,14 +644,6 @@ function Staking() {
                           <p className="m-0">DAPP-Wallet Staking</p>
                         </div>
                       </div>
-                      <div className="">
-                        <button
-                          className="Viewslab"
-                          onClick={() => setModal2Open(!modal2Open)}
-                        >
-                          View slab
-                        </button>
-                      </div>
                     </div>
                     <div className="stakingbox px-3 py-4 my-3 d-flex">
                       <div className="w-25 d-flex justify-content-center align-items-center">
