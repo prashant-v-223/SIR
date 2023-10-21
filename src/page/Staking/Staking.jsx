@@ -175,38 +175,38 @@ function Staking() {
       validations.Mainwalletstacking =
         "Main Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((Mainwalletstacking / 40).toString().includes(".")) {
+    } else if ((Mainwalletstacking / 50).toString().includes(".")) {
       validations.Mainwalletstacking =
-        "You must stake the amount in the multiple of 40..!!!";
+        "You must stake the amount in the multiple of 50..!!!";
       isValid = false;
-    } else if (Mainwalletstacking <= 39) {
+    } else if (Mainwalletstacking <= 49) {
       validations.Mainwalletstacking =
-        "You must stake the amount in the Greater than  of 40..!!!";
+        "You must stake the amount in the Greater than  of 50..!!!";
       isValid = false;
     }
     if (!ewalletstacking) {
       validations.ewalletstacking = "E-Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((ewalletstacking / 40).toString().includes(".")) {
+    } else if ((ewalletstacking / 50).toString().includes(".")) {
       validations.ewalletstacking =
-        "You must stake the amount in the multiple of 40..!!!";
+        "You must stake the amount in the multiple of 50..!!!";
       isValid = false;
-    } else if (ewalletstacking <= 39) {
+    } else if (ewalletstacking <= 49) {
       validations.ewalletstacking =
-        "You must stake the amount in the Greater than  of 40..!!!";
+        "You must stake the amount in the Greater than  of 50..!!!";
       isValid = false;
     }
     if (!dappwalletstacking) {
       validations.dappwalletstacking =
         "dapp Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((dappwalletstacking / 40).toString().includes(".")) {
+    } else if ((dappwalletstacking / 50).toString().includes(".")) {
       validations.dappwalletstacking =
-        "You must stake the amount in the multiple of 40..!!!";
+        "You must stake the amount in the multiple of 50..!!!";
       isValid = false;
-    } else if (dappwalletstacking <= 39) {
+    } else if (dappwalletstacking <= 49) {
       validations.dappwalletstacking =
-        "You must stake the amount in the Greater than of 40..!!!";
+        "You must stake the amount in the Greater than of 50..!!!";
       isValid = false;
     }
     if (!isValid) {
@@ -498,14 +498,7 @@ function Staking() {
                           <p className="m-0"> Main wallet Staking</p>
                         </div>
                       </div>
-                      <div className="">
-                        <button
-                          className="Viewslab"
-                          onClick={() => setModal2Open(!modal2Open)}
-                        >
-                          View slab
-                        </button>
-                      </div>
+                     
                     </div>
                     <div className="stakingbox px-3 py-4 my-3 d-flex">
                       <div className="w-25 d-flex justify-content-center align-items-center">
@@ -581,15 +574,7 @@ function Staking() {
                         <div className="px-3">
                           <p className="m-0"> E-Wallet Staking</p>
                         </div>
-                      </div>
-                      <div className="">
-                        <button
-                          className="Viewslab"
-                          onClick={() => setModal2Open(!modal2Open)}
-                        >
-                          View slab
-                        </button>
-                      </div>
+                      </div> 
                     </div>
                     <div className="stakingbox px-3 py-4 my-3 d-flex">
                       <div className="w-25 d-flex justify-content-center align-items-center">
