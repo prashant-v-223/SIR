@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:8080/";
+const baseURL = "https://sir-backend-production-e731.up.railway.app/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
