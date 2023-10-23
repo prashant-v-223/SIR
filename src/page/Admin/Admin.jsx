@@ -154,9 +154,24 @@ function Admin() {
       ),
     },
     {
-      title: "Direct SponserId",
-      dataIndex: "refferalBy",
-      key: "refferalBy",
+      title: "SponserId",
+      dataIndex: "supporterId",
+      key: "supporterId",
+      ellipsis: {
+        showTitle: false,
+      },
+      sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
+      width: "150px",
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "mainId",
+      dataIndex: "mainId",
+      key: "mainId",
       ellipsis: {
         showTitle: false,
       },
