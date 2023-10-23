@@ -35,9 +35,9 @@ function Staking() {
   const [page, setpage] = React.useState(1);
   const [pageSize, setpageSize] = React.useState(10);
   const [values, setValues] = React.useState({
-    Mainwalletstacking: 40,
-    ewalletstacking: 40,
-    dappwalletstacking: 40,
+    Mainwalletstacking: 50,
+    ewalletstacking: 50,
+    dappwalletstacking: 50,
   });
   const [validations, setValidations] = React.useState({
     Mainwalletstacking: "",
@@ -91,19 +91,20 @@ function Staking() {
     try {
       console.log(account);
       if (account) {
+        console.log(account);
         let web3 = await getWeb3();
         let contract = await new web3.eth.Contract(
           v4x,
           "0x16e32b31675247c906981B811c024Ce86711817E"
         );
         const decimal = await contract.methods.decimals().call();
-        await contract.methods
-          .balanceOf(account)
-          .call()
-          .then((balance) => {
-            balance = balance / 10 ** decimal;
-            setv4xBalance(balance);
-          });
+        console.log(account);
+        const [balance] = await contract.methods.balanceOf(account).call();
+        let balancea = balance / 10 ** decimal;
+        console.log(balancea);
+        setv4xBalance(balancea);
+        // .then((balance) => {
+        // });
       }
     } catch (error) {}
   };
@@ -171,42 +172,31 @@ function Staking() {
     };
     let isValid = true;
     console.log({ Mainwalletstacking, ewalletstacking, dappwalletstacking });
+    console.log(Mainwalletstacking);
     if (!Mainwalletstacking) {
       validations.Mainwalletstacking =
         "Main Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((Mainwalletstacking / 40).toString().includes(".")) {
+    } else if (Mainwalletstacking <= 49) {
       validations.Mainwalletstacking =
-        "You must stake the amount in the multiple of 40..!!!";
-      isValid = false;
-    } else if (Mainwalletstacking <= 39) {
-      validations.Mainwalletstacking =
-        "You must stake the amount in the Greater than  of 40..!!!";
+        "You must stake the amount in the Greater than  of 50..!!!";
       isValid = false;
     }
     if (!ewalletstacking) {
       validations.ewalletstacking = "E-Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((ewalletstacking / 40).toString().includes(".")) {
+    } else if (ewalletstacking <= 49) {
       validations.ewalletstacking =
-        "You must stake the amount in the multiple of 40..!!!";
-      isValid = false;
-    } else if (ewalletstacking <= 39) {
-      validations.ewalletstacking =
-        "You must stake the amount in the Greater than  of 40..!!!";
+        "You must stake the amount in the Greater than  of 50..!!!";
       isValid = false;
     }
     if (!dappwalletstacking) {
       validations.dappwalletstacking =
         "dapp Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((dappwalletstacking / 40).toString().includes(".")) {
+    } else if (dappwalletstacking <= 49) {
       validations.dappwalletstacking =
-        "You must stake the amount in the multiple of 40..!!!";
-      isValid = false;
-    } else if (dappwalletstacking <= 39) {
-      validations.dappwalletstacking =
-        "You must stake the amount in the Greater than of 40..!!!";
+        "You must stake the amount in the Greater than of 50..!!!";
       isValid = false;
     }
     if (!isValid) {
@@ -388,25 +378,11 @@ function Staking() {
       },
       render: (text, record, index) => {
         return (
-          <Tooltip placement="topLeft" title={730 * record.DailyReword}>
-            {730 * record.DailyReword}
+          <Tooltip placement="topLeft" title={1000 * record.DailyReword}>
+            {1000 * record.DailyReword}
           </Tooltip>
         );
       },
-    },
-    {
-      title: " SIRToken Price",
-      dataIndex: "V4xTokenPrice",
-      key: "V4xTokenPrice",
-      width: "200px",
-      ellipsis: {
-        showTitle: false,
-      },
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address.toFixed(3)}
-        </Tooltip>
-      ),
     },
     {
       title: "Created At",
@@ -423,54 +399,26 @@ function Staking() {
       ),
     },
     {
-      title: "Locked Token Amount",
-      dataIndex: "createdAt",
-      key: "createdAt",
+      title: "Active",
+      dataIndex: "Active",
+      key: "Active",
       width: "200px",
       ellipsis: {
         showTitle: false,
       },
-      render: (text, record, index) => (
-        <Tooltip
-          placement="topLeft"
-          title={record.Amount / record.V4xTokenPrice}
-        >
-          {record.Amount / record.V4xTokenPrice}
-        </Tooltip>
-      ),
-    },
-    {
-      title: "Locked Token Withdraw",
-      dataIndex: "createdAt",
-      key: "createdAt",
-      width: "200px",
-      ellipsis: {
-        showTitle: false,
+      render: (text, record, index) => {
+        return (
+          <Tooltip placement="topLeft" title={record.Active.toString()}>
+            {record.Active.toString()}
+          </Tooltip>
+        );
       },
-      render: (address) => (
-        <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
-          <button
-            className="text-light p-2"
-            style={{
-              background: "#1e1e1e",
-              border: "none",
-            }}
-            onClick={async () => {
-              toast.error(
-                "you will withdrawal your local amount after 42 month ."
-              );
-            }}
-          >
-            Withdraw
-          </button>{" "}
-        </Tooltip>
-      ),
     },
   ];
   let multiplesOf40 = [];
 
-  let limit = 20040;
-  for (let i = 40; i <= limit; i += 40) {
+  let limit = 10000;
+  for (let i = 50; i <= limit; i += 50) {
     multiplesOf40.push(i);
   }
 
@@ -482,10 +430,10 @@ function Staking() {
         {WallatedatSlice !== undefined && (
           <div className="container-fluid blackbg">
             <div className="mainsection">
-              <div className="row px-3 pt-4">
+              <div className="row px-3 pt-4 justify-content-center">
                 <div className="col-12 col-md-6 col-lg-4 text-light p-2 p-lg-3">
                   <div className="Boxcard p-4">
-                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex justify-content-center align-items-center">
                       <div className="d-flex">
                         <div className="">
                           <img
@@ -497,14 +445,6 @@ function Staking() {
                         <div className="px-3">
                           <p className="m-0"> Main wallet Staking</p>
                         </div>
-                      </div>
-                      <div className="">
-                        <button
-                          className="Viewslab"
-                          onClick={() => setModal2Open(!modal2Open)}
-                        >
-                          View slab
-                        </button>
                       </div>
                     </div>
                     <div className="stakingbox px-3 py-4 my-3 d-flex">
@@ -531,8 +471,9 @@ function Staking() {
                     <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <select
                       id="numberSelector"
-                      className="ant-input w-100"
+                      className="p-2 w-100"
                       name="Mainwalletstacking"
+                      style={{ border: "1px solid #fff", color: "#fff" }}
                       onChange={handleChange}
                     >
                       {multiplesOf40.map((option, index) => (
@@ -565,84 +506,7 @@ function Staking() {
                 </div>
                 <div className="col-12 col-md-6 col-lg-4 text-light p-2 p-lg-3">
                   <div className="Boxcard p-4">
-                    <div className="d-flex justify-content-between align-items-center">
-                      <div className="d-flex">
-                        <div className="">
-                          <img
-                            src={require("../../assets/img/Vector (25).svg")}
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="px-3">
-                          <p className="m-0"> E-Wallet Staking</p>
-                        </div>
-                      </div>
-                      <div className="">
-                        <button
-                          className="Viewslab"
-                          onClick={() => setModal2Open(!modal2Open)}
-                        >
-                          View slab
-                        </button>
-                      </div>
-                    </div>
-                    <div className="stakingbox px-3 py-4 my-3 d-flex">
-                      <div className="w-25 d-flex justify-content-center align-items-center">
-                        <img src={drop} alt="" className="img-fluid" />
-                      </div>
-                      <div className="w-75">
-                        Your tokens will be staked for a period of 12 months.
-                      </div>
-                    </div>
-                    <div className="stakingbox p-4">
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div className="">
-                          <h6 className="m-0">Balance Available</h6>
-                        </div>
-                        <h5 className="m-0">
-                          {WallatedatSlice &&
-                            WallatedatSlice?.data?.data[0].v4xWallet.toFixed(2)}
-                        </h5>
-                      </div>
-                    </div>
-                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
-                    <select
-                      id="numberSelector"
-                      className="ant-input w-100"
-                      name="ewalletstacking"
-                      onChange={handleChange}
-                    >
-                      {multiplesOf40.map((option, index) => (
-                        <option
-                          className="text-dark"
-                          key={index}
-                          value={option}
-                        >
-                          {isNaN(option)
-                            ? option + "  " + "USDT"
-                            : option + "  " + "USDT"}
-                        </option>
-                      ))}
-                    </select>
-                    <div className=" mt-3 d-flex align-items-center">
-                      <Button
-                        className={" w-100 text-light"}
-                        Stake={false}
-                        style={{
-                          background: "#848b02",
-                          height: 52,
-                          border: "none",
-                        }}
-                        onClick={() => Mainwalletstacking("ewalletstacking")}
-                        label={"Stake Using E-Wallet"}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-6 col-lg-4 text-light p-2 p-lg-3">
-                  <div className="Boxcard p-4">
-                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex justify-content-center align-items-center">
                       <div className="d-flex">
                         <div className="">
                           <img
@@ -654,14 +518,6 @@ function Staking() {
                         <div className="px-3">
                           <p className="m-0">DAPP-Wallet Staking</p>
                         </div>
-                      </div>
-                      <div className="">
-                        <button
-                          className="Viewslab"
-                          onClick={() => setModal2Open(!modal2Open)}
-                        >
-                          View slab
-                        </button>
                       </div>
                     </div>
                     <div className="stakingbox px-3 py-4 my-3 d-flex">
@@ -677,22 +533,15 @@ function Staking() {
                         <div className="">
                           <h5 className="m-0">Balance Available</h5>
                         </div>
-                        <h5 className="m-0">
-                          {v4xBalance === null ? (
-                            <h5 className="m-0" onClick={connect}>
-                              Check Your Balance
-                            </h5>
-                          ) : (
-                            v4xBalance.toFixed(2)
-                          )}
-                        </h5>
+                        <h5 className="m-0">...</h5>
                       </div>
                     </div>
                     <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <select
                       id="numberSelector"
                       name="dappwalletstacking"
-                      className="ant-input w-100"
+                      className="p-2 w-100"
+                      style={{ border: "1px solid #fff", color: "#fff" }}
                       onChange={handleChange}
                     >
                       {multiplesOf40.map((option, index) => (
@@ -769,7 +618,7 @@ function Staking() {
         )}
 
         <Modal show={open1} centered>
-          <Modal.Header >
+          <Modal.Header>
             <Modal.Title>
               <h6 className="text-light m-0"></h6>
             </Modal.Title>
@@ -827,14 +676,14 @@ function Staking() {
           </Modal.Body>
         </Modal>
         <Modal show={modal2Open} onHide={() => setModal2Open(false)} centered>
-          <Modal.Header >
+          <Modal.Header>
             <Modal.Title>Slab Details</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
             <p>
               Your % return will be calculated based on amount of tokens staked.
-              You can see the  SIRslab details below.
+              You can see the SIRslab details below.
             </p>
             <div className="d-flex">
               <div className="w-50">

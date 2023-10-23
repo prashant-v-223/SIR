@@ -60,7 +60,7 @@ export const VerticalSocial = [
   },
   {
     nameIco: "fa fa-instagram",
-    link: "https://instagram.com/UUDTinity.ai_coin_official?igshid=YmMyMTA2M2Y=",
+    link: "https://instagram.com/SIRinity.ai_coin_official?igshid=YmMyMTA2M2Y=",
   },
   {
     nameIco: "fa fa-youtube",

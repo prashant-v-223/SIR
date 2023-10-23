@@ -13,7 +13,7 @@ function DISCLAIMER() {
         cannot guarantee that the investors in Digital Assets would not lose
         money. Any one can create a token , including creating fake version of
         existing token. So check the contract address Twice and verify the same
-        from the website i.e. UUDT.ORG and BSC scan before making any
+        from the website i.e. SIR.ORG and BSC scan before making any
         investment decision.
       </p>
     </div>

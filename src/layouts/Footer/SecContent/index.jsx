@@ -14,12 +14,12 @@ const SecContent = () => {
               <a href><p>Privacy Policy</p></a>
               <a href='asasdad'><p>Terms & Conditions</p></a>
               <a href><p>Disclaimer</p></a>
-              <a href><p>About UUDT</p></a>
+              <a href><p>About SIR</p></a>
             </div>
             {/* Content Info */}
             <div className="contact_info text-center wow fadeInUp" data-wow-delay="0.4s">
               <h5>Contact Us</h5>
-              <p>support@UUDT</p>
+              <p>support@SIR</p>
             </div>
           </div>
         </div>

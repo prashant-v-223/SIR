@@ -28,7 +28,7 @@ const SecContent = () => {
             <p>Disclaimer</p>
           </a>
           <a href="#about">
-            <p>About UUDT</p>
+            <p>About SIR</p>
           </a>
         </div>
         {/* Content Info */}
@@ -37,7 +37,7 @@ const SecContent = () => {
           data-wow-delay="0.4s"
         >
           <h5>Contact Us</h5>
-          <p>support@UUDT</p>
+          <p>support@SIR</p>
         </div>
       </div>
     </div>

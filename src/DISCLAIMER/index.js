@@ -5,21 +5,21 @@ function Termsandconditions() {
     <div className="container">
       <h4 className="text-light pt-5 pb-3"> SIRToken TERMS & CONDITIONS.</h4>
       <p>
-        The website UUDT.ORG is operated by  SIRToken, Throughout the site, the
-        terms “we”, “us” and “our” refer to  SIRToken, and/or UUDT.ORG.  SIRToken,
+        The website SIR.ORG is operated by  SIRToken, Throughout the site, the
+        terms “we”, “us” and “our” refer to  SIRToken, and/or SIR.ORG.  SIRToken,
         offers this website, including all information, tools and services
         available from this site to you, the user, conditioned upon your
         acceptance of all terms, conditions, policies and notices stated here.
       </p>
       <p>
-        By visiting our site and/ or purchasing  SIRToken from UUDT.ORG, you
+        By visiting our site and/ or purchasing  SIRToken from SIR.ORG, you
         engage in our “Service” and agree to be bound by the following terms and
         conditions (“Terms of Service”, “Terms”), including those additional
         terms and conditions and policies referenced herein and/or available by
         hyperlink. These Terms of Service apply to all users of the site,
       </p>
       <p>
-        By visiting our site and/ or purchasing  SIRToken from UUDT.ORG, you
+        By visiting our site and/ or purchasing  SIRToken from SIR.ORG, you
         engage in our “Service” and agree to be bound by the following terms and
         conditions (“Terms of Service”, “Terms”), including those additional
         terms and conditions and policies referenced herein and/or available by
@@ -198,7 +198,7 @@ function Termsandconditions() {
       <h4 className="text-light pt-5 pb-3">CONTACT INFORMATION:</h4>
       <p>
         Questions about the Terms of Service should be sent to us at
-        info@UUDT.org
+        info@SIR.org
       </p>
     </div>
   );

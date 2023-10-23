@@ -17,7 +17,7 @@ const SecIco = ({ logo }) => {
           <a href="">
             <i className="fa fa fa-youtube" aria-hidden="true" />
           </a>
-          <a href="https://twitter.com/UUDTcoin?s=21&t=q4PgRWbQnOeYwKXzLtJlEw">
+          <a href="https://twitter.com/SIRcoin?s=21&t=q4PgRWbQnOeYwKXzLtJlEw">
             <i className="fa fa-instagram" aria-hidden="true" />
           </a>
         </div>

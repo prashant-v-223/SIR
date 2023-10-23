@@ -1,4 +1,4 @@
-const baseURL = "https://sir-backend-production.up.railway.app/";
+const baseURL = "https://misty-dog-lapel.cyclic.app/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
@@ -6,7 +6,7 @@ export const apiList = {
   Foegotpassword: baseURL + "api/registration/forgotPassword",
   profileupdate: baseURL + "api/registration/profileupdate",
   ChangePassword: baseURL + "api/registration/changepassword",
-  livaprice: process.env.REACT_APP_API_URL + "api/registration/livaprice",
+  livaprice: baseURL + "api/registration/livaprice",
   Stacking: baseURL + "api/staking/addstacking",
   allicome: baseURL + "api/staking/allicome",
   allicome1: baseURL + "api/staking/allicome1",

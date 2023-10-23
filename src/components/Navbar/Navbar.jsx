@@ -220,19 +220,6 @@ function Navbar1() {
                   <Dropdown.Item
                     className="py-2"
                     onClick={() => {
-                      navigation("/admin/tranforreport");
-                    }}
-                    style={{ border: "none", fontSize: "15px" }}
-                  >
-                    <TiArrowRepeatOutline
-                      className="ms-2 me-3"
-                      style={{ color: "#ccd700", fontSize: "26px" }}
-                    />
-                    Wallet Transfer Report
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    className="py-2"
-                    onClick={() => {
                       navigation("/admin/withdraw_details");
                     }}
                     style={{ border: "none", fontSize: "15px" }}
@@ -242,19 +229,6 @@ function Navbar1() {
                       style={{ color: "#ccd700", fontSize: "26px" }}
                     />
                     Withdraw Details
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    className="py-2"
-                    onClick={() => {
-                      navigation("/admin/price");
-                    }}
-                    style={{ border: "none", fontSize: "15px" }}
-                  >
-                    <FaDollarSign
-                      className="ms-2 me-3"
-                      style={{ color: "#ccd700", fontSize: "26px" }}
-                    />
-                     SIRToken Price
                   </Dropdown.Item>
                   <Dropdown.Item
                     className="py-2"
@@ -306,7 +280,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#ccd700", fontSize: "26px" }}
                     />
-                     SIRSupport Details
+                     SIR Support Details
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -342,14 +316,26 @@ function Navbar1() {
                 <Dropdown.Item
                   className="py-2"
                   onClick={() => {
-                    navigation("/UUDT/Withdrawal");
+                    navigation("/SIR/Withdrawal");
                   }}
                 >
                   <FaDollarSign
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                  E-Wallet Report
+                  Income Wallet Report
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className="py-2"
+                  onClick={() => {
+                    navigation("/SIR/Withdrawal");
+                  }}
+                >
+                  <FaDollarSign
+                    className="ms-2 me-3"
+                    style={{ color: "#ccd700", fontSize: "26px" }}
+                  />
+                  Income Wallet Report
                 </Dropdown.Item>{" "}
                 {/* <Dropdown.Item
                   className="py-2"
@@ -398,20 +384,8 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                   SIRCommunity Reward
+                   SIR Community Reward
                 </Dropdown.Item>{" "}
-                <Dropdown.Item
-                  className="py-2 "
-                  onClick={() => {
-                    navigation("/Passivebouns/Building/income");
-                  }}
-                >
-                  <FaDollarSign
-                    className="ms-2 me-3"
-                    style={{ color: "#ccd700", fontSize: "26px" }}
-                  />
-                   SIRpassive club reward
-                </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
                   onClick={() => {
@@ -422,7 +396,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                   SIRAchievement Reward
+                   SIR Achievement Reward
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

@@ -73,7 +73,7 @@ const Header = () => {
                         href="#UpcomingProjects"
                         style={{ fontWeight: 900, fontSize: "11px" }}
                       >
-                        UUDT.Project
+                        SIR.Project
                       </a>
                     </li>
                     <li>

@@ -110,11 +110,11 @@ const Footer = () => {
                     }}
                   >
                     <option>Investment budget</option>
-                    <option> 1000UUDT-5000UUDT</option>
-                    <option> 5000UUDT-10000UUDT</option>
-                    <option> 10000UUDT-25000UUDT</option>
-                    <option> 25000UUDT-50000UUDT</option>
-                    <option> 50000UUDT+</option>
+                    <option> 1000SIR-5000SIR</option>
+                    <option> 5000SIR-10000SIR</option>
+                    <option> 10000SIR-25000SIR</option>
+                    <option> 25000SIR-50000SIR</option>
+                    <option> 50000SIR+</option>
                   </select>
                 </div>
               </div>
@@ -128,7 +128,7 @@ const Footer = () => {
                   />
                   <label class="custom-control-label" for="customCheck">
                     By submitting this form,I agree to the terms and privacy of
-                    UUDT
+                    SIR
                   </label>
                 </div>
               </div>

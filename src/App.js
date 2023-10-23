@@ -90,7 +90,7 @@ function App() {
               <Route path="/admin/all_income" element={<Allicome />} />
               <Route path="/userallincome" element={<Allcome1 />} />
               <Route path="/mian/Withdrawal" element={<Mainwallate />} />
-              <Route path="/UUDT/Withdrawal" element={<Ewallate />} />
+              <Route path="/SIR/Withdrawal" element={<Ewallate />} />
               <Route path="/Withdrdata" element={<Withdrdatadata1 />} />
               <Route path="/Staking/Active" element={<StakingActive />} />
               <Route path="/Termsandconditions" element={<Termsandconditions />} />

@@ -18,6 +18,9 @@ import { Tree, TreeNode } from "react-organizational-chart";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Modal } from "react-bootstrap";
+import { AiOutlineMoneyCollect } from "react-icons/ai";
+import { HiUserGroup } from "react-icons/hi2";
+import { FaMoneyCheckDollar } from "react-icons/fi";
 const Dashboard = () => {
   const StackingSlice = useSelector((state) => state.WallatedatSlice);
   const [address, setaddress] = React.useState("");
@@ -63,9 +66,9 @@ const Dashboard = () => {
               <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/solar_user-bold.png")}
-                      alt=""
+                    <FaUsers
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -93,34 +96,6 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-4  text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
-                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/WhatsApp_Image_2023-09-09_at_3.34.26_PM__1_-removebg-preview.png")}
-                      alt=""
-                      style={{ width: 200, hight: 200 }}
-                    />
-                  </div>
-                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0  mb-2 text-center text-lg-left">
-                      Locked  SIR Token
-                    </h4>
-                    <p className="text-center text-lg-left">
-                      <b>
-                        {Number(
-                          StackingSlice.Wallatedata?.data?.profile[0]
-                            ?.lockamount
-                        ).toFixed(3) + " UUDT"}
-                      </b>
-                    </p>
-                    <p className="text-center text-lg-left">
-                      {"Release Data: " +
-                        StackingSlice.Wallatedata?.data?.lockeddate}
-                    </p>
-                  </div>
-                </div>
-              </div>
               <div className="col-12 col-lg-4 text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
@@ -133,16 +108,14 @@ const Dashboard = () => {
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-3 text-center">
-                      Current  SIRToken Live price
+                      Current SIR Token Live price
                     </h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.V4Xtokenprice}$
                     </h6>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="row px-3  pb-3 justify-content-lg-center">
+              </div>{" "}
               <div
                 className="col-12 col-lg-4 text-light py-2"
                 style={{
@@ -154,9 +127,9 @@ const Dashboard = () => {
               >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100 ">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (71).png")}
-                      alt=""
+                    <FaUsers
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div
@@ -178,6 +151,8 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="row px-3  pb-3 justify-content-lg-center">
               <div
                 className="col-12 col-lg-4 text-light py-2"
                 style={{
@@ -190,9 +165,9 @@ const Dashboard = () => {
                 {" "}
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (71).png")}
-                      alt=""
+                    <FaUsers
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -218,7 +193,7 @@ const Dashboard = () => {
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-25 h-md-100">
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#848b02", fontSize: "61px" }}
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center ">
@@ -295,10 +270,9 @@ const Dashboard = () => {
                   }}
                 >
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (72).png")}
-                      alt=""
-                      className="img-fluid"
+                    <HiUserGroup
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -323,10 +297,9 @@ const Dashboard = () => {
                   }}
                 >
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/Vector (73).png")}
-                      alt=""
-                      className="img-fluid"
+                    <AiOutlineMoneyCollect
+                      className="ms-2 me-3"
+                      style={{ color: "#ccd700", fontSize: "85px" }}
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
