@@ -1,4 +1,4 @@
-const baseURL = "https://misty-dog-lapel.cyclic.app/";
+const baseURL = "http://localhost:8080/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
