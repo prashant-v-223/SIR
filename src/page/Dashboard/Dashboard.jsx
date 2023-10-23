@@ -96,34 +96,6 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-4  text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
-                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/WhatsApp_Image_2023-09-09_at_3.34.26_PM__1_-removebg-preview.png")}
-                      alt=""
-                      style={{ width: 200, hight: 200 }}
-                    />
-                  </div>
-                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0  mb-2 text-center text-lg-left">
-                      Locked  SIR Token
-                    </h4>
-                    <p className="text-center text-lg-left">
-                      <b>
-                        {Number(
-                          StackingSlice.Wallatedata?.data?.profile[0]
-                            ?.lockamount
-                        ).toFixed(3) + " UUDT"}
-                      </b>
-                    </p>
-                    <p className="text-center text-lg-left">
-                      {"Release Data: " +
-                        StackingSlice.Wallatedata?.data?.lockeddate}
-                    </p>
-                  </div>
-                </div>
-              </div>
               <div className="col-12 col-lg-4 text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
