@@ -101,7 +101,8 @@ function AdminTransfer() {
           {record.Note + " "}
         </Tooltip>
       ),
-    },  {
+    },
+    {
       title: "username",
       dataIndex: "username",
       key: "username",
@@ -149,7 +150,6 @@ function AdminTransfer() {
                       value: "Main Wallet",
                       label: `Main Wallet`,
                     },
-                    { value: "E-Wallet", label: "E-Wallet" },
                   ]}
                   onChange={(e) => {
                     setValues({ ...values, Walletname: e });
@@ -161,6 +161,7 @@ function AdminTransfer() {
                   type="text"
                   name="username"
                   placeholder="Enter username"
+                  style={{ color: "#fff !important", border: "1px solid #fff" }}
                   value={values.username}
                   onChange={(e) => {
                     handleChange(e);
@@ -173,6 +174,7 @@ function AdminTransfer() {
                   name="Amount"
                   min={0}
                   placeholder="Enter Amount to Tranfer"
+                  style={{ color: "red !important", border: "1px solid #fff" }}
                   value={values.Amount}
                   onChange={(e) => {
                     handleChange(e);
