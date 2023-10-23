@@ -58,6 +58,7 @@ function AdminTransfer() {
       );
       if (res.payload.data.isSuccess) {
         toast.success(res.payload.data.message);
+        getalldata();
       } else {
         toast.error(res.payload.data.message);
       }
