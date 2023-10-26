@@ -443,7 +443,9 @@ function Staking() {
                           />
                         </div>
                         <div className="px-3">
-                          <p className="m-0"> Main wallet Staking</p>
+                          <h6 className="pt-3 ps-1 text-dark">
+                            <b>Main wallet Staking</b>
+                          </h6>
                         </div>
                       </div>
                     </div>
@@ -468,12 +470,14 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
+                    <h6 className="pt-3 ps-1 text-dark">
+                      <b>Amount in USDT</b>
+                    </h6>
                     <select
                       id="numberSelector"
                       className="p-2 w-100"
                       name="Mainwalletstacking"
-                      style={{ border: "1px solid #fff", color: "#fff" }}
+                      style={{ border: "1px solid #000", color: "#000" }}
                       onChange={handleChange}
                     >
                       {multiplesOf40.map((option, index) => (
@@ -494,7 +498,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#848b02",
+                          background: "#31A872",
                           height: 52,
                           border: "none",
                         }}
@@ -516,7 +520,9 @@ function Staking() {
                           />
                         </div>
                         <div className="px-3">
-                          <p className="m-0">DAPP-Wallet Staking</p>
+                          <h6 className="pt-3 ps-1 text-dark">
+                            <b>DAPP-Wallet Staking</b>
+                          </h6>
                         </div>
                       </div>
                     </div>
@@ -536,12 +542,14 @@ function Staking() {
                         <h5 className="m-0">...</h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
+                    <h6 className="pt-3 ps-1 text-dark">
+                      <b>Amount in USDT</b>
+                    </h6>
                     <select
                       id="numberSelector"
                       name="dappwalletstacking"
                       className="p-2 w-100"
-                      style={{ border: "1px solid #fff", color: "#fff" }}
+                      style={{ border: "1px solid #000", color: "#000" }}
                       onChange={handleChange}
                     >
                       {multiplesOf40.map((option, index) => (
@@ -561,7 +569,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#848b02",
+                          background: "#31A872",
                           height: 52,
                           border: "none",
                         }}

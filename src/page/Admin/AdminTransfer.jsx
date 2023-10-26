@@ -185,7 +185,7 @@ function AdminTransfer() {
               <div className="col-12 py-4">
                 <button
                   style={{
-                    background: "#848b02",
+                    background: "#31A872",
                     color: "#fff",
                     height: 60,
                     width: 180,

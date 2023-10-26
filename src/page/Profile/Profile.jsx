@@ -598,7 +598,7 @@ function Profile() {
                       className={" text-dark px-4 py-2"}
                       loading={authSlice.isLoader}
                       onClick={() => handleSubmit1()}
-                      style={{ background: "#848b02" }}
+                      style={{ background: "#31A872" }}
                     >
                       Submit
                     </button>

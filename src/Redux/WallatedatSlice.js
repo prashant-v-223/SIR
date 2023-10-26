@@ -12,6 +12,17 @@ export const Wallatedata = createAsyncThunk(
     }
   }
 );
+export const treee = createAsyncThunk(
+  "auth/Wallatedata",
+  async (data) => {
+    try {
+      const res = await GET(apiList.gelUserWallate, {}, data.Token);
+      return res;
+    } catch (e) {
+      return e.response;
+    }
+  }
+);
 export const getdappWallatedata = createAsyncThunk(
   "auth/gelUserWallate",
   async (data) => {

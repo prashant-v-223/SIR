@@ -169,8 +169,8 @@ function Withdrawal() {
               <div className="row px-3 pt-4">
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
-                    <h6 className="text-light d-flex ">
-                      Withdraw USDT
+                    <h6 className="text-dark d-flex ">
+                      <b> Withdraw USDT</b>
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -186,7 +186,7 @@ function Withdrawal() {
                         />
                       </div>
                       <div className="img-div2">
-                        <p className="m-0 text-light">
+                        <p className="m-0 text-dark">
                           USDT Withdrawals are activated after 15days of your
                           staking. USDT Token are released as bonus in
                           withdrawal process. You can withdraw your rewards
@@ -283,8 +283,8 @@ function Withdrawal() {
                       </div>
                     </div>
                     <div className="row py-1">
-                      <div className="col-12 col-sm-9 text-light">
-                        <label htmlFor="" className="mb-1 text-light">
+                      <div className="col-12 col-sm-9 text-dark">
+                        <label htmlFor="" className="mb-1 text-dark">
                           <b>Amount in USDT</b>
                         </label>
                         <InputNumber
@@ -303,7 +303,7 @@ function Withdrawal() {
                           className={" w-100 text-light"}
                           Stake={!false}
                           style={{
-                            background: "#848b02",
+                            background: "#31A872",
                             height: 65,
                             border: "none",
                           }}
@@ -332,8 +332,8 @@ function Withdrawal() {
                 </div>
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
-                    <h6 className="text-light d-flex ">
-                      Withdraw SIR
+                    <h6 className="text-dark d-flex ">
+                      <b>Withdraw SIR</b>
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -365,7 +365,7 @@ function Withdrawal() {
                           </h6>
                         </div>
                         <div className="px-3 py-2 py-lg-0">
-                          <h6 className="m-0 text-light text-center">
+                          <h6 className="m-0 text-darks text-center">
                             {Alldata[0]?.mainWallet?.toFixed(4)} SIR
                           </h6>
                         </div>
@@ -447,8 +447,8 @@ function Withdrawal() {
                     </div>
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-light">
-                        <label htmlFor="" className="mb-1 text-light">
-                          <b>Amount in USDT</b>
+                        <label htmlFor="" className="mb-1 text-dark">
+                          <b>Amount in SIR</b>
                         </label>
                         <InputNumber
                           size="large"
@@ -466,7 +466,7 @@ function Withdrawal() {
                           className={" w-100 text-light"}
                           Stake={!false}
                           style={{
-                            background: "#848b02",
+                            background: "#31A872",
                             height: 65,
                             border: "none",
                           }}
@@ -495,12 +495,14 @@ function Withdrawal() {
                 </div>
                 <div className="col-12">
                   <div className="Boxcard p-4 my-4">
-                    <h6 className="text-light d-flex pb-3">Withdraw USDT</h6>
+                    <h6 className="text-dark d-flex pb-3">
+                      <b>Withdraw USDT</b>
+                    </h6>
                     <Button
                       className={" w-100 text-light"}
                       Stake={!false}
                       style={{
-                        background: "#848b02",
+                        background: "#31A872",
                         height: 60,
                         border: "none",
                       }}

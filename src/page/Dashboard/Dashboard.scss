@@ -23,7 +23,7 @@
   ) !important;
 }
 .ant-menu-item-icon {
-  color: #848b02 !important;
+  color: #31a872 !important;
 }
 .ant-menu-title-content {
   color: #1e1e1e !important;
@@ -34,7 +34,7 @@
 .Username {
   background: transparent;
   color: #fff;
-  border: 1px solid #848b02;
+  border: 1px solid #31a872;
   border-radius: 8px;
   padding: 10px 12px;
 }
@@ -65,9 +65,110 @@
   }
 }
 .Boxcard {
-  background: #1e1e1e;
+  background: #ffffff;
   border-radius: 11px;
-  border: 2px solid #848b02;
+  border: 2px solid #31a872;
   justify-content: space-around !important;
   z-index: -1;
+}
+.manage-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: max-content;
+  margin: auto;
+  margin-bottom: 32px;
+  > svg {
+    margin-top: 16px;
+  }
+  .manage-h {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+.manage-grid-1 {
+  overflow: hidden;
+  grid-column: 1/2;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 24px 24px 48px 0 rgba(0, 0, 0, 0.08);
+}
+.manage-grid-head {
+  border-bottom: 1px solid #bababa;
+  background: #31a872;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 14px;
+}
+
+.manage-circle-flex {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.manage-icon {
+  display: flex;
+  gap: 24px;
+}
+.manage-head-circle {
+  padding: 16px;
+  border-radius: 100px;
+  background: #fdb034;
+}
+.manage-three {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 8px;
+}
+.manage-three-para-upper {
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+}
+.manage-three-para-lower {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+.manage-grid-2 {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 14px;
+}
+@media only screen and (max-width: 600px) {
+  .manage-flex {
+    flex-direction: column !important;
+    .manage-h,
+    .service-h {
+      font-size: 20px !important;
+      font-weight: 700 !important;
+    }
+  }
+  .service-h {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+  }
+}
+
+.service-circle {
+  padding: 16px;
+  border-radius: 100px;
+  background: rgba(130, 136, 14, 0.08);
+  width: max-content;
+  margin: auto;
+  margin-bottom: 16px;
+}
+.service-h {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  margin-bottom: 16px;
 }

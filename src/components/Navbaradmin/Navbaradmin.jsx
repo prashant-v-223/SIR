@@ -32,7 +32,7 @@ function Navbar1() {
     <div className="headermain">
       <div
         className="justify-content-between px-4 py-2 align-items-center d-lg-flex d-none hedar"
-        style={{ background: "#0a0a0a" }}
+        style={{ background: "#fff" }}
       >
         <div className="">
           <div className="p-1 ">
