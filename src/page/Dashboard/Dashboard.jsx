@@ -58,7 +58,7 @@ const Dashboard = () => {
     };
 
     let reqOptions = {
-      url: "http://localhost:8080/api/profile/maintree",
+      url: "http://api.sirglobal.org/api/profile/maintree",
       method: "POST",
       headers: headersList,
       data: {
@@ -75,7 +75,7 @@ const Dashboard = () => {
     };
 
     let reqOptions = {
-      url: "http://localhost:8080/api/profile/supportertree",
+      url: "http://api.sirglobal.org/api/profile/supportertree",
       method: "POST",
       headers: headersList,
       data: {
