@@ -91,7 +91,7 @@ const Dashboard = () => {
     <>
       <Spin spinning={!StackingSlice.isLoader}>
         <Navbar />
-        <div className=" ">
+        <div className="container-fluid ">
           <div className="mainsection">
             <div class="d-flex justify-content-between pt-5 pb-3 px-4">
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-dark">
