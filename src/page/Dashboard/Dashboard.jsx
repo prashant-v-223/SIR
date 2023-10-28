@@ -91,7 +91,7 @@ const Dashboard = () => {
     <>
       <Spin spinning={!StackingSlice.isLoader}>
         <Navbar />
-        <div className=" ">
+        <div className="container-fluid bg-light">
           <div className="mainsection">
             <div class="d-flex justify-content-between pt-5 pb-3 px-4">
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-dark">
@@ -447,55 +447,56 @@ const Dashboard = () => {
                     }
                   >
                     <div className="py-5 d-flex">
-                      {activetree?.data?.map((e) => {
-                        return (
-                          <>
-                            <TreeNode
-                              label={
-                                <>
-                                  <div
-                                    className="d-flex justify-content-center align-items-center my-2"
-                                    style={{
-                                      cursor: "pointer",
-                                    }}
-                                    onClick={async () => {
-                                      getusertree(e.username);
-                                    }}
-                                  >
-                                    <img
-                                      src={require("../../assets/img/solar_user-bold.png")}
-                                      alt=""
-                                      className="img-fluid"
-                                      width={70}
-                                      height={70}
-                                    />
-                                  </div>
+                      {activetree?.data &&
+                        activetree?.data?.map((e) => {
+                          return (
+                            <>
+                              <TreeNode
+                                label={
+                                  <>
+                                    <div
+                                      className="d-flex justify-content-center align-items-center my-2"
+                                      style={{
+                                        cursor: "pointer",
+                                      }}
+                                      onClick={async () => {
+                                        getusertree(e.username);
+                                      }}
+                                    >
+                                      <img
+                                        src={require("../../assets/img/solar_user-bold.png")}
+                                        alt=""
+                                        className="img-fluid"
+                                        width={70}
+                                        height={70}
+                                      />
+                                    </div>
 
-                                  <h6
-                                    className="my-0 mx-3"
-                                    style={{
-                                      color: "#000",
-                                      fontSize: 18,
-                                    }}
-                                  >
-                                    {e.username}
-                                  </h6>
-                                  <h6
-                                    className="my-0 mx-3"
-                                    style={{
-                                      color: "#000",
-                                      fontSize: 18,
-                                      widows: 100,
-                                    }}
-                                  >
-                                    {e.Fullname}
-                                  </h6>
-                                </>
-                              }
-                            />
-                          </>
-                        );
-                      })}
+                                    <h6
+                                      className="my-0 mx-3"
+                                      style={{
+                                        color: "#000",
+                                        fontSize: 18,
+                                      }}
+                                    >
+                                      {e.username}
+                                    </h6>
+                                    <h6
+                                      className="my-0 mx-3"
+                                      style={{
+                                        color: "#000",
+                                        fontSize: 18,
+                                        widows: 100,
+                                      }}
+                                    >
+                                      {e.Fullname}
+                                    </h6>
+                                  </>
+                                }
+                              />
+                            </>
+                          );
+                        })}
                     </div>
                   </Tree>
                 </div>
