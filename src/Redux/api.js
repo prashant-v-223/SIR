@@ -1,4 +1,4 @@
-const baseURL = "https://api.sirglobal.org/";
+const baseURL = "http://api.sirglobal.org/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
