@@ -29,6 +29,8 @@ const Dashboard = () => {
   const [otp, setotp] = React.useState("");
   const [Profile, setProfile] = React.useState({});
   const [activetree, setactivetree] = React.useState({});
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered1, setIsHovered1] = useState(false);
   const [activetree1, setactivetree1] = React.useState({});
   const dispatch = useDispatch();
   const navigation = useNavigate();
@@ -454,43 +456,74 @@ const Dashboard = () => {
                               <TreeNode
                                 label={
                                   <>
-                                    <div
-                                      className="d-flex justify-content-center align-items-center my-2"
-                                      style={{
-                                        cursor: "pointer",
-                                      }}
-                                      onClick={async () => {
-                                        getusertree(e.username);
-                                      }}
-                                    >
-                                      <img
-                                        src={require("../../assets/img/solar_user-bold.png")}
-                                        alt=""
-                                        className="img-fluid"
-                                        width={70}
-                                        height={70}
-                                      />
-                                    </div>
+                                    <div>
+                                      <div
+                                        className="d-flex justify-content-center align-items-center my-2"
+                                        style={{
+                                          cursor: "pointer",
+                                          position: "relative",
+                                        }}
+                                        onMouseEnter={() =>
+                                          setIsHovered1(e.username)
+                                        }
+                                        onMouseLeave={() => setIsHovered1("")}
+                                        onClick={async () => {
+                                          getusertree1(e.username);
+                                        }}
+                                      >
+                                        <img
+                                          src={require("../../assets/img/solar_user-bold.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
+                                      </div>
 
-                                    <h6
-                                      className="my-0 mx-3"
-                                      style={{
-                                        color: "#000",
-                                        fontSize: 18,
-                                      }}
-                                    >
-                                      {e.username}
-                                    </h6>
-                                    <h6
-                                      className="my-0 mx-3"
-                                      style={{
-                                        color: "#000",
-                                        fontSize: 18,
-                                        widows: 100,
-                                      }}
-                                    >
-                                      {e.Fullname}
-                                    </h6>
+                                      <h6
+                                        className="my-0 mx-3"
+                                        style={{
+                                          color: "#000",
+                                          fontSize: 18,
+                                        }}
+                                      >
+                                        {e.username}
+                                      </h6>
+                                    </div>
+                                    {isHovered1 === e.username && (
+                                      <table
+                                        style={{
+                                          width: 100,
+                                          overflow: "scroll",
+                                          position: "absolute",
+                                          left: 0,
+                                          top: 0,
+                                        }}
+                                      >
+                                        <tr>
+                                          <th className="text-dark">
+                                            Fullname
+                                          </th>
+                                          <th className="text-dark">
+                                            Self Stack
+                                          </th>
+                                          <th className="text-dark">
+                                            Team Stack
+                                          </th>
+                                        </tr>
+                                        <tr>
+                                          <td className="text-dark">
+                                            {e.Fullname}
+                                          </td>
+                                          <td className="text-dark">
+                                            {e.mystack}
+                                          </td>
+                                          <td className="text-dark">
+                                            {e.teamtotalstack}
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    )}
                                   </>
                                 }
                               />
@@ -581,48 +614,122 @@ const Dashboard = () => {
                   >
                     <div className="py-5 d-flex">
                       {activetree1?.data?.map((e) => {
+                        // Initialize variables to keep track of the first and second highest teamtotalstack objects
+                        let firstMaxTotalStack = -Infinity;
+                        let secondMaxTotalStack = -Infinity;
+                        let firstMaxTotalStackObject = null;
+                        let secondMaxTotalStackObject = null;
+
+                        // Loop through the array to find the first and second highest teamtotalstack
+                        for (const obj of activetree1?.data) {
+                          if (obj.teamtotalstack > firstMaxTotalStack) {
+                            secondMaxTotalStack = firstMaxTotalStack;
+                            secondMaxTotalStackObject =
+                              firstMaxTotalStackObject;
+                            firstMaxTotalStack = obj.teamtotalstack;
+                            firstMaxTotalStackObject = obj;
+                          } else if (
+                            obj.teamtotalstack > secondMaxTotalStack &&
+                            obj.teamtotalstack !== firstMaxTotalStack
+                          ) {
+                            secondMaxTotalStack = obj.teamtotalstack;
+                            secondMaxTotalStackObject = obj;
+                          }
+                        }
+
+                        console.log(firstMaxTotalStackObject);
+                        console.log(secondMaxTotalStackObject);
                         return (
                           <>
                             <TreeNode
                               label={
                                 <>
-                                  <div
-                                    className="d-flex justify-content-center align-items-center my-2"
-                                    style={{
-                                      cursor: "pointer",
-                                    }}
-                                    onClick={async () => {
-                                      getusertree1(e.username);
-                                    }}
-                                  >
-                                    <img
-                                      src={require("../../assets/img/solar_user-bold.png")}
-                                      alt=""
-                                      className="img-fluid"
-                                      width={70}
-                                      height={70}
-                                    />
-                                  </div>
+                                  <div>
+                                    <div
+                                      className="d-flex justify-content-center align-items-center my-2"
+                                      style={{
+                                        cursor: "pointer",
+                                        position: "relative",
+                                      }}
+                                      onMouseEnter={() =>
+                                        setIsHovered(e.username)
+                                      }
+                                      onMouseLeave={() => setIsHovered("")}
+                                      onClick={async () => {
+                                        getusertree1(e.username);
+                                      }}
+                                    >
+                                      {firstMaxTotalStackObject.username ===
+                                      e.username ? (
+                                        <img
+                                          src={require("../../assets/img/partners/game-icons_team-idea (2).png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
+                                      ) : secondMaxTotalStackObject.username ===
+                                        e.username ? (
+                                        <img
+                                          src={require("../../assets/img/partners/fluent_people-team-20-filled.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
+                                      ) : (
+                                        <img
+                                          src={require("../../assets/img/solar_user-bold.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
+                                      )}
+                                    </div>
 
-                                  <h6
-                                    className="my-0 mx-3"
-                                    style={{
-                                      color: "#000",
-                                      fontSize: 18,
-                                    }}
-                                  >
-                                    {e.username}
-                                  </h6>
-                                  <h6
-                                    className="my-0 mx-3"
-                                    style={{
-                                      color: "#000",
-                                      fontSize: 18,
-                                      widows: 100,
-                                    }}
-                                  >
-                                    {e.Fullname}
-                                  </h6>
+                                    <h6
+                                      className="my-0 mx-3"
+                                      style={{
+                                        color: "#000",
+                                        fontSize: 18,
+                                      }}
+                                    >
+                                      {e.username}
+                                    </h6>
+                                  </div>
+                                  {isHovered === e.username && (
+                                    <table
+                                      style={{
+                                        width: 100,
+                                        overflow: "scroll",
+                                        position: "absolute",
+                                        left: 0,
+                                        top: 0,
+                                      }}
+                                    >
+                                      <tr>
+                                        <th className="text-dark">Fullname</th>
+                                        <th className="text-dark">
+                                          Self Stack
+                                        </th>
+                                        <th className="text-dark">
+                                          Team Stack
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <td className="text-dark">
+                                          {e.Fullname}
+                                        </td>
+                                        <td className="text-dark">
+                                          {e.mystack}
+                                        </td>
+                                        <td className="text-dark">
+                                          {e.teamtotalstack}
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  )}
                                 </>
                               }
                             />
@@ -661,8 +768,7 @@ const Dashboard = () => {
               </svg>
               <div class="manage-h">Our Services</div>
             </div>
-            <div className="services-grid row">
-            </div>
+            <div className="services-grid row"></div>
             <Modal show={open} onHide={() => setopen(!open)} centered>
               <Modal.Header>
                 <Modal.Title>

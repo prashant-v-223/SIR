@@ -30,6 +30,7 @@ function Withdrawal() {
   const [otp, setotp] = React.useState("");
   const [address, setaddress] = React.useState("");
   const [WalletAmountcal, setWalletAmountcal] = React.useState(0);
+  const [WalletAmountcal1, setWalletAmountcal1] = React.useState(0);
   const handleClose = () => setopen(!false);
   let refurserdata =
     WallatedatSlice.Wallatedata?.data &&
@@ -84,6 +85,7 @@ function Withdrawal() {
     );
     setAlldata(res.payload.data.data);
     setWalletAmountcal(res.payload.data.data[0]?.mainWallet);
+    setWalletAmountcal1(res.payload.data.data[0]?.incomeWallet);
     setProfile(res.payload.data.profile);
   };
   const onChange = (value) => {
@@ -213,7 +215,7 @@ function Withdrawal() {
                         <div
                           className="Withdrawalboxp py-3 d-flex justify-content-center"
                           onClick={() => {
-                            setWalletAmountcal((data) => {
+                            setWalletAmountcal1((data) => {
                               return (Alldata[0]?.incomeWallet * 25) / 100;
                             });
                           }}
@@ -231,7 +233,7 @@ function Withdrawal() {
                         <div
                           className="Withdrawalboxp py-3 d-flex justify-content-center"
                           onClick={() => {
-                            setWalletAmountcal((data) => {
+                            setWalletAmountcal1((data) => {
                               return (Alldata[0]?.incomeWallet * 50) / 100;
                             });
                           }}
@@ -249,7 +251,7 @@ function Withdrawal() {
                         <div
                           className="Withdrawalboxp py-3 d-flex justify-content-center"
                           onClick={() => {
-                            setWalletAmountcal((data) => {
+                            setWalletAmountcal1((data) => {
                               return (Alldata[0]?.incomeWallet * 75) / 100;
                             });
                           }}
@@ -267,7 +269,7 @@ function Withdrawal() {
                         <div
                           className="Withdrawalboxp py-3 d-flex justify-content-center"
                           onClick={() => {
-                            setWalletAmountcal((data) => {
+                            setWalletAmountcal1((data) => {
                               return (Alldata[0]?.incomeWallet * 100) / 100;
                             });
                           }}
@@ -291,7 +293,7 @@ function Withdrawal() {
                           size="large"
                           className="w-100 mb-2"
                           onChange={onChange}
-                          value={WalletAmountcal}
+                          value={WalletAmountcal1}
                           style={{
                             padding: "10px 0px",
                             border: "1px solid #fff !important",
