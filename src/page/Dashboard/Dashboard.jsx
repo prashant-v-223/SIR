@@ -659,7 +659,7 @@ const Dashboard = () => {
                                         getusertree1(e.username);
                                       }}
                                     >
-                                      {firstMaxTotalStackObject.username ===
+                                      {firstMaxTotalStackObject?.username ===
                                       e.username ? (
                                         <img
                                           src={require("../../assets/img/partners/game-icons_team-idea (2).png")}
@@ -668,7 +668,7 @@ const Dashboard = () => {
                                           width={70}
                                           height={70}
                                         />
-                                      ) : secondMaxTotalStackObject.username ===
+                                      ) : secondMaxTotalStackObject?.username ===
                                         e.username ? (
                                         <img
                                           src={require("../../assets/img/partners/fluent_people-team-20-filled.png")}
