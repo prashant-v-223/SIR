@@ -166,7 +166,7 @@ function Withdrawal() {
       <Spin spinning={!WallatedatSlice?.isLoader}>
         <>
           <Navbar />
-          <div className="container-fluid blackbg">
+          <div className="container-fluid bg-light">
             <div className="mainsection">
               <div className="row px-3 pt-4">
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
@@ -287,7 +287,7 @@ function Withdrawal() {
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-dark">
                         <label htmlFor="" className="mb-1 text-dark">
-                          <b>Amount in USDT</b>
+                          Amount in USDT
                         </label>
                         <InputNumber
                           size="large"
@@ -450,7 +450,7 @@ function Withdrawal() {
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-light">
                         <label htmlFor="" className="mb-1 text-dark">
-                          <b>Amount in SIR</b>
+                          Amount in SIR
                         </label>
                         <InputNumber
                           size="large"

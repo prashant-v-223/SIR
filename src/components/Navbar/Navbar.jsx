@@ -45,7 +45,7 @@ function Navbar1() {
                 "https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
               }
               alt=""
-              className="img-fluid"
+              className="img-fluid "
               width={80}
             />
           </div>
@@ -77,16 +77,15 @@ function Navbar1() {
           </button>
         </div>
       </div>
-      <Navbar collapseOnSelect expand="lg" className="hedar1">
+      <Navbar collapseOnSelect expand="lg" className="hedar1 pt-0">
         <div className="">
           <img
             src={
               "https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
             }
             alt=""
-            className="img-fluid d-lg-none d-block mx-4"
+            className="img-fluid d-lg-none d-block mx-4 py-2"
             width={70}
-            height={"100%"}
           />
         </div>
         <div className="p-1">
@@ -378,18 +377,6 @@ function Navbar1() {
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
                   Main Wallet Report
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="py-2"
-                  onClick={() => {
-                    navigation("/SIR/Withdrawal");
-                  }}
-                >
-                  <FaDollarSign
-                    className="ms-2 me-3"
-                    style={{ color: "#ccd700", fontSize: "26px" }}
-                  />
-                  Income Wallet Report
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"

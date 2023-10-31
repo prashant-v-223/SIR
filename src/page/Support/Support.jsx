@@ -46,7 +46,7 @@ function Support() {
             >
               <div className="d-block m-auto">
                 <div className="p-4 Boxcard">
-                  <h5 className="py-2 text-light">Create your new ticket</h5>
+                  <h5 className="py-2 text-dark">Create your new ticket</h5>
                   <Formik
                     initialValues={{}}
                     validationSchema={LoginValidation1}
@@ -116,7 +116,7 @@ function Support() {
                                   style={{
                                     height: "100px",
                                     background: "transparent",
-                                    color: "#fff",
+                                    color: "#000",
                                   }}
                                 />
                                 <label

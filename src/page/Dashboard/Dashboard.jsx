@@ -128,7 +128,7 @@ const Dashboard = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <div class="manage-h">Manage Your Portfolio</div>
+              <div class="manage-h">Portfolio</div>
             </div>
             <div
               className="alert achiever-tag withdrawal-btn mx-1"
@@ -354,7 +354,7 @@ const Dashboard = () => {
                       <div
                         class="circle-para text-light"
                         style={{
-                          fontSize: "20px",
+                          fontSize: "28px",
                         }}
                       >
                         <b>Wallets </b>
@@ -377,7 +377,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div class="row py-2 px-4">
-                    <div class="col-md-4 d-flex justify-content-between d-md-block ">
+                    <div class="col-md-6 d-flex justify-content-between d-md-block ">
                       <p class="manage-three-para-upper">Staking Reward</p>
                       <p class="manage-three-para-lower" id="upcoming_amount">
                       ${" "}
@@ -386,7 +386,7 @@ const Dashboard = () => {
                         )}
                       </p>
                     </div>{" "}
-                    <div class="col-md-4 d-flex justify-content-between d-md-block">
+                    <div class="col-md-6 d-flex justify-content-between d-md-block">
                       <p class="manage-three-para-upper">Community Reward</p>
                       <p class="manage-three-para-lower" id="total_amount">
                       ${" "}
@@ -418,9 +418,6 @@ const Dashboard = () => {
                   </div> */}
                 </div>
               </div>
-            </div>
-            <div class="manage-flex pt-4 pb-5">
-              <div class="manage-h">Our Services</div>
             </div>
             <div className="services-grid row"></div>
             <Modal show={open} onHide={() => setopen(!open)} centered>

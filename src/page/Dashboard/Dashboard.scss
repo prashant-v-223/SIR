@@ -189,12 +189,28 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+input,
+p,
+span,
+b,
+div,
+li,
+button,
+select,
+a {
+  font-family: "Poppins", sans-serif !important;
+  // font-size: 22px !important;
+  font-weight: 500;
+}
+.manage-three-para-upper {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 24px !important;
+}
 @media (max-width: 992px) {
   .navbar-nav {
     height: 580px !important;
     overflow-y: scroll !important;
   }
-  label,
   input,
   p,
   span,
