@@ -100,7 +100,7 @@ const Dashboard = () => {
                 <b> Level : {Profile[0]?.leval}</b>
               </h5>{" "}
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-dark">
-                <b> Rank : {Profile[0]?.Rank}</b>
+                <b> Trainee  : {Profile[0]?.Rank}</b>
               </h5>{" "}
             </div>
             <div class="manage-flex">
