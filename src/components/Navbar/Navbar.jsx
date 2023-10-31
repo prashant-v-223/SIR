@@ -41,7 +41,9 @@ function Navbar1() {
             }}
           >
             <img
-              src={"https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"}
+              src={
+                "https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+              }
               alt=""
               className="img-fluid"
               width={80}
@@ -75,14 +77,12 @@ function Navbar1() {
           </button>
         </div>
       </div>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        className="hedar1"
-      >
+      <Navbar collapseOnSelect expand="lg" className="hedar1">
         <div className="">
           <img
-            src={"https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"}
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+            }
             alt=""
             className="img-fluid d-lg-none d-block mx-4"
             width={70}
@@ -158,9 +158,77 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#ccd700", fontSize: "26px" }}
               />
-               SIR Staking
+              SIR Staking
             </Nav.Link>
-            <Nav.Link
+            <Dropdown>
+              <Dropdown.Toggle
+                variant="none"
+                id="dropdown-basic"
+                className="d-flex justify-content-start align-items-center px-0  py-3 text-light"
+                style={{ border: "none", color: "#fff", fontSize: "13px" }}
+              >
+                <FaUsers
+                  className="ms-2 me-3"
+                  style={{ color: "#ccd700", fontSize: "26px" }}
+                />
+                Team
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="py-2">
+                <Dropdown.Item
+                  className="py-2"
+                  onClick={() => {
+                    navigation("/Totaltrem");
+                  }}
+                  style={{ border: "none", fontSize: "15px" }}
+                >
+                  <FaDollarSign
+                    className="ms-2 me-3"
+                    style={{ color: "#ccd700", fontSize: "26px" }}
+                  />
+                  My SIR Team
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className="py-2"
+                  onClick={() => {
+                    navigation("/daireactterm");
+                  }}
+                  style={{ border: "none", fontSize: "15px" }}
+                >
+                  <FaDollarSign
+                    className="ms-2 me-3"
+                    style={{ color: "#ccd700", fontSize: "26px" }}
+                  />
+                  SIR Direct Team
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className="py-2"
+                  onClick={() => {
+                    navigation("/mysharetree");
+                  }}
+                  style={{ border: "none", fontSize: "15px" }}
+                >
+                  <FaDollarSign
+                    className="ms-2 me-3"
+                    style={{ color: "#ccd700", fontSize: "26px" }}
+                  />
+                  My VIP Share Tree
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className="py-2"
+                  onClick={() => {
+                    navigation("/mytreeview");
+                  }}
+                  style={{ border: "none", fontSize: "15px" }}
+                >
+                  <FaDollarSign
+                    className="ms-2 me-3"
+                    style={{ color: "#ccd700", fontSize: "26px" }}
+                  />
+                  My Tree View
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* <Nav.Link
               className="d-flex justify-content-start align-items-center  py-3 text-light"
               style={{ fontSize: "13px" }}
               onClick={() => {
@@ -185,7 +253,7 @@ function Navbar1() {
                 style={{ color: "#ccd700", fontSize: "26px" }}
               />
                My SIR Direct Team
-            </Nav.Link>
+            </Nav.Link> */}
             {Profile?.Roll === "admin" && (
               <Dropdown>
                 <Dropdown.Toggle
@@ -278,7 +346,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#ccd700", fontSize: "26px" }}
                     />
-                     SIR Support Details
+                    SIR Support Details
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -370,7 +438,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                  Refer And Earn
+                  Membership Rewards
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -382,7 +450,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                   SIR Community Reward
+                  SIR Community Reward
                 </Dropdown.Item>{" "}
                 <Dropdown.Item
                   className="py-2"
@@ -394,7 +462,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#ccd700", fontSize: "26px" }}
                   />
-                   SIR Achievement Reward
+                  SIR Achievement Reward
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

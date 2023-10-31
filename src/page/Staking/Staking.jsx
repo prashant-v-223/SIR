@@ -454,7 +454,7 @@ function Staking() {
                         <img src={drop} alt="" className="img-fluid" />
                       </div>
                       <div className="w-75">
-                        Your tokens will be staked for a period of 12 months.
+                        Your tokens will be staked for a period of 1000 Days
                       </div>
                     </div>
                     <div className="stakingbox p-4">
@@ -531,7 +531,7 @@ function Staking() {
                         <img src={drop} alt="" className="img-fluid" />
                       </div>
                       <div className="w-75">
-                        Your tokens will be staked for a period of 12 months.
+                        Your tokens will be staked for a period of 1000 Days
                       </div>
                     </div>
                     <div className="stakingbox p-4">

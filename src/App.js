@@ -39,6 +39,8 @@ import DISCLAIMER from "./Termsandconditions copy";
 import Banars from "./page/Banars/Banars";
 import StakingActive from "./page/StakingActive/StakingActive";
 import Withdrdatadata1 from "./page/Admin/Withdrdatadata1";
+import Mysharetree from "./page/Mysharetree/Mysharetree";
+import MyTreeView from "./page/MyTreeView/MyTreeView";
 const Spinner = () => {
   return (
     <div className="body">
@@ -75,6 +77,8 @@ function App() {
                 element={<ResetPassword />}
               />
               <Route path="/Staking" element={<Staking />} />
+              <Route path="/mysharetree" element={<Mysharetree />} />
+              <Route path="/mytreeview" element={<MyTreeView />} />
               <Route path="/Profile" element={<Profile />} />
               <Route path="/admin/dashboard" element={<Admin />} />
               <Route path="/admin/tranforreport" element={<Alltranfrorreport />} />
