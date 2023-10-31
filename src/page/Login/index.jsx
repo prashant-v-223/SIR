@@ -738,7 +738,7 @@ function Login() {
                   onClick={() => {
                     settype(!false);
                   }}
-                  style={{ background: "#73730e", height: 55, width: "100%" }}
+                  style={{ background: "#73730e", height: 55, width: "100%",fontSize:"14px !important" }}
                 >
                   Don’t have an account? Sign up
                 </button>
