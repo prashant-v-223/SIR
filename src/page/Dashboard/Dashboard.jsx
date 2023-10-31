@@ -93,14 +93,14 @@ const Dashboard = () => {
     <>
       <Spin spinning={!StackingSlice.isLoader}>
         <Navbar />
-        <div className="container-fluid ">
+        <div className="container-fluid  bg-light">
           <div className="mainsection">
             <div class="d-flex justify-content-between pt-5 pb-3 px-4">
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-dark">
                 <b> Level : {Profile[0]?.leval}</b>
               </h5>{" "}
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-dark">
-                <b> Trainee  : {Profile[0]?.Rank}</b>
+                <b> Trainee : {Profile[0]?.Rank}</b>
               </h5>{" "}
             </div>
             <div class="manage-flex">
@@ -202,8 +202,8 @@ const Dashboard = () => {
                       </svg>
                     </div>
                   </div>
-                  <div class="row py-2">
-                    <div class="col-md-4">
+                  <div class="row py-2 px-4">
+                    <div class="col-md-4 d-flex justify-content-between d-md-block ">
                       <p class="manage-three-para-upper">Self Staking</p>
                       <p class="manage-three-para-lower" id="upcoming_amount">
                         ${" "}
@@ -212,7 +212,7 @@ const Dashboard = () => {
                           : 0}
                       </p>
                     </div>{" "}
-                    <div class="col-md-4">
+                    <div class="col-md-4 d-flex justify-content-between d-md-block">
                       <p class="manage-three-para-upper">Total Team Staking</p>
                       <p class="manage-three-para-lower" id="upcoming_amount">
                         ${" "}
@@ -221,7 +221,7 @@ const Dashboard = () => {
                           : 0}
                       </p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 d-flex justify-content-between d-md-block">
                       <p class="manage-three-para-upper">Booster</p>
                       <p class="manage-three-para-lower" id="total_amount">
                         off
@@ -273,7 +273,36 @@ const Dashboard = () => {
                       </svg>
                     </div>
                   </div>
-                  <div class="row py-2">
+                  <div class="row py-2 px-4">
+                    <div class="col-md-4 d-flex justify-content-between d-md-block ">
+                      <p class="manage-three-para-upper">Referral & Earn</p>
+                      <p class="manage-three-para-lower" id="upcoming_amount">
+                      ${" "}
+                        {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
+                          2
+                        )}
+                      </p>
+                    </div>{" "}
+                    <div class="col-md-4 d-flex justify-content-between d-md-block">
+                      <p class="manage-three-para-upper">Staking Bonus</p>
+                      <p class="manage-three-para-lower" id="upcoming_amount">
+                      ${" "}
+                        {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
+                          2
+                        )}
+                      </p>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-between d-md-block">
+                      <p class="manage-three-para-upper">Community reward</p>
+                      <p class="manage-three-para-lower" id="total_amount">
+                      $
+                        {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
+                          2
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  {/* <div class="row py-2">
                     <div class="col-md-4">
                       <p class="manage-three-para-upper">Referral & Earn</p>
                       <p class="manage-three-para-lower" id="upcoming_amount">
@@ -301,7 +330,7 @@ const Dashboard = () => {
                         )}
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="col-12 col-md-6 p-3">
@@ -347,7 +376,27 @@ const Dashboard = () => {
                       </svg>
                     </div>
                   </div>
-                  <div class="row py-2">
+                  <div class="row py-2 px-4">
+                    <div class="col-md-4 d-flex justify-content-between d-md-block ">
+                      <p class="manage-three-para-upper">Staking Reward</p>
+                      <p class="manage-three-para-lower" id="upcoming_amount">
+                      ${" "}
+                        {StackingSlice.Wallatedata?.data?.data[0].mainWallet?.toFixed(
+                          2
+                        )}
+                      </p>
+                    </div>{" "}
+                    <div class="col-md-4 d-flex justify-content-between d-md-block">
+                      <p class="manage-three-para-upper">Community Reward</p>
+                      <p class="manage-three-para-lower" id="total_amount">
+                      ${" "}
+                        {StackingSlice.Wallatedata?.data?.data[0].incomeWallet?.toFixed(
+                          2
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  {/* <div class="row py-2">
                     <div class="col-md-6">
                       <p class="manage-three-para-upper">Staking Reward</p>
                       <p class="manage-three-para-lower" id="upcoming_amount">
@@ -366,7 +415,7 @@ const Dashboard = () => {
                         )}
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

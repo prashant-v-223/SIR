@@ -179,7 +179,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -188,7 +189,31 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-.navbar-nav{
-  height: 580px !important;
-  overflow-y: scroll !important;
+@media (max-width: 992px) {
+  .navbar-nav {
+    height: 580px !important;
+    overflow-y: scroll !important;
+  }
+  label,
+  input,
+  p,
+  span,
+  b,
+  div,
+  li,
+  button,
+  select,
+  a {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 18px !important;
+  }
+  .manage-three-para-upper {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 20px !important;
+  }
+}
+@media (min-width: 992px) {
+  .Username {
+    color: #000 !important;
+  }
 }
