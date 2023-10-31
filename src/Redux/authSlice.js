@@ -18,8 +18,9 @@ export const Signup = createAsyncThunk("auth/Signup", async (data) => {
 });
 export const Signin = createAsyncThunk("auth/Signin", async (data) => {
   try {
+    console.log(data.Email.slice(3));
     const res = await POST(apiList.Signin, {
-      email: ("SIR" + data.Email.slice(2, -1)),
+      email: ("SIR" + data.Email.slice(3)),
       password: data.Password,
     });
     return res;
