@@ -188,3 +188,7 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.navbar-nav{
+  height: 580px !important;
+  overflow-y: scroll !important;
+}
