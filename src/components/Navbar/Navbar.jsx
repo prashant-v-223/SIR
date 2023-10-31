@@ -112,9 +112,9 @@ function Navbar1() {
             }}
           >
             {open ? (
-              <BiMenu style={{ color: "#ccd700", fontSize: "26px" }} />
+              <BiMenu style={{ color: "#000", fontSize: "26px" }} />
             ) : (
-              <IoMdClose style={{ color: "#ccd700", fontSize: "26px" }} />
+              <IoMdClose style={{ color: "#000", fontSize: "26px" }} />
             )}
           </Navbar.Toggle>
         </div>
