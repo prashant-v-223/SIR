@@ -201,7 +201,7 @@ const Dashboard = () => {
                     <div class="col-md-4 d-flex justify-content-between d-md-block">
                       <p class="manage-three-para-upper">Booster</p>
                       <p class="manage-three-para-lower" id="total_amount">
-                        off
+                        {Profile[0]?.STAKINGBOOSTER === true?"ON":"OFF"}
                       </p>
                     </div>
                   </div>
