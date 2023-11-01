@@ -120,7 +120,7 @@ const MyTreeView = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <div class="manage-h">My Tree View</div>
+                <div class="manage-h">My CBB View</div>
               </div>
               <div class="d-flex justify-content-end pt-5 pb-3 px-4">
                 <h4

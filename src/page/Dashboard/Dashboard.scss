@@ -189,6 +189,11 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+input {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500;
+  color: #000;
+}
 p,
 span,
 b,
@@ -230,4 +235,16 @@ a {
   .Username {
     color: #000 !important;
   }
+}
+.card-body {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(13, 123, 85, 0.9)),
+    color-stop(100%, rgba(49, 168, 114, 0.65))
+  ) !important;
+
+  border-radius: 15px;
+  color: #000;
 }

@@ -108,7 +108,7 @@ const Dashboard = () => {
               <div class="manage-h">Portfolio</div>
             </div>
             <div
-              className="alert achiever-tag withdrawal-btn mx-1"
+              className="alert achiever-tag withdrawal-btn mx-1 card-body"
               role="alert"
               style={{ textAlign: "center", background: "#31A872" }}
             >
@@ -138,7 +138,7 @@ const Dashboard = () => {
             <div className="row">
               <div className="col-12 col-md-6 p-3">
                 <div class="manage-grid-2">
-                  <div class="manage-grid-head">
+                  <div class="manage-grid-head card-body">
                     <div class="manage-circle-flex">
                       <div class="manage-head-circle">
                         <svg
@@ -201,7 +201,7 @@ const Dashboard = () => {
                     <div class="col-md-4 d-flex justify-content-between d-md-block">
                       <p class="manage-three-para-upper">Booster</p>
                       <p class="manage-three-para-lower" id="total_amount">
-                        {Profile[0]?.STAKINGBOOSTER === true?"ON":"OFF"}
+                        {Profile[0]?.STAKINGBOOSTER === true ? "ON" : "OFF"}
                       </p>
                     </div>
                   </div>
@@ -209,7 +209,7 @@ const Dashboard = () => {
               </div>
               <div className="col-12 col-md-6 p-3">
                 <div class="manage-grid-2">
-                  <div class="manage-grid-head">
+                  <div class="manage-grid-head  card-body">
                     <div class="manage-circle-flex">
                       <div class="manage-head-circle">
                         <svg
@@ -312,7 +312,7 @@ const Dashboard = () => {
               </div>
               <div className="col-12 col-md-6 p-3">
                 <div class="manage-grid-2">
-                  <div class="manage-grid-head">
+                  <div class="manage-grid-head card-body">
                     <div class="manage-circle-flex">
                       <div class="manage-head-circle">
                         <svg
@@ -396,6 +396,110 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+            <div className="container-fluid">
+              <div class="manage-flex mt-4">
+                <div class="manage-h">Earning</div>
+              </div>
+              <div className="row">
+                <div className="col-6 p-1">
+                  <div className="card-body d-flex align-items-center p-6 justify-content-between ">
+                    <div>
+                      {/* <h5 class="text-white font-weight-bolder line-height-lg mb-0" style="visibility:hidden">.</h5> */}
+                      <h4 className="text-white font-weight-bolder line-height-lg mb-0">
+                        Total inventment
+                      </h4>
+                      <h1 className="text-white font-weight-bolder line-height-lg mb-1">
+                        ${" "}
+                        {StackingSlice.Wallatedata?.data?.mystack
+                          ? StackingSlice.Wallatedata?.data?.mystack.toFixed(2)
+                          : 0}
+                      </h1>
+                      <hr style={{ borderColor: "#fff", margin: "20px 0px" }} />
+                      <h4 className="text-white font-weight-bolder line-height-lg mb-0">
+                        Remaining Limit
+                      </h4>
+                      <h1 className="text-white font-weight-bolder line-height-lg mb-1">
+                        ${" "}
+                        {StackingSlice.Wallatedata?.data?.data[0].mainWallet?.toFixed(
+                          2
+                        )}
+                      </h1>
+                      {/* <h1 class="text-white font-weight-bolder line-height-lg mb-1" style="visibility:hidden">.</h1>
+										<a href='#' class="btn btn-custom font-weight-bold px-6 py-3" style="visibility:hidden">.</a> */}
+                    </div>
+                    {/* <img src="https://thesoilverse.com/v2/img/short-logo.png" alt="" class="img-fluid" /> */}
+                    <div className="text-center">
+                      <img
+                        alt="icon"
+                        src="https://thesoilverse.com/v2/img/x4.png"
+                        height="100%"
+                        width={100}
+                      />
+                      <h4 className="text-white font-weight-bolder line-height-lg mb-0">
+                        Total Earned
+                      </h4>
+                      <h1 className="text-white font-weight-bolder line-height-lg mb-1 text-right">
+                        ${" "}
+                        {StackingSlice.Wallatedata?.data?.mystack
+                          ? StackingSlice.Wallatedata?.data?.mystack.toFixed(
+                              2
+                            ) * 2
+                          : 0}
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6 p-1">
+                  <div className="card-body d-flex align-items-center p-6 justify-content-between ">
+                    <div>
+                      {/* <h5 class="text-white font-weight-bolder line-height-lg mb-0" style="visibility:hidden">.</h5> */}
+                      <h4 className="text-white font-weight-bolder line-height-lg mb-0">
+                        Total inventment
+                      </h4>
+                      <h1 className="text-white font-weight-bolder line-height-lg mb-1">
+                        ${" "}
+                        {StackingSlice.Wallatedata?.data?.mystack
+                          ? StackingSlice.Wallatedata?.data?.mystack.toFixed(2)
+                          : 0}
+                      </h1>
+                      <hr style={{ borderColor: "#fff", margin: "20px 0px" }} />
+                      <h4 className="text-white font-weight-bolder line-height-lg mb-0">
+                        Remaining Limit
+                      </h4>
+                      <h1 className="text-white font-weight-bolder line-height-lg mb-1">
+                        ${" "}
+                        {StackingSlice.Wallatedata?.data?.data[0].incomeWallet?.toFixed(
+                          2
+                        )}
+                      </h1>
+                      {/* <h1 class="text-white font-weight-bolder line-height-lg mb-1" style="visibility:hidden">.</h1>
+										<a href='#' class="btn btn-custom font-weight-bold px-6 py-3" style="visibility:hidden">.</a> */}
+                    </div>
+                    {/* <img src="https://thesoilverse.com/v2/img/short-logo.png" alt="" class="img-fluid" /> */}
+                    <div className="text-center">
+                      <img
+                        alt="icon"
+                        src="https://thesoilverse.com/v2/img/x4.png"
+                        height="100%"
+                        width={100}
+                      />
+                      <h4 className="text-white font-weight-bolder line-height-lg mb-0">
+                        Total Earned
+                      </h4>
+                      <h1 className="text-white font-weight-bolder line-height-lg mb-1 text-right">
+                      ${" "}
+                        {StackingSlice.Wallatedata?.data?.mystack
+                          ? StackingSlice.Wallatedata?.data?.mystack.toFixed(
+                              2
+                            ) * 3
+                          : 0}
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="services-grid row"></div>
             <Modal show={open} onHide={() => setopen(!open)} centered>
               <Modal.Header>
