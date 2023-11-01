@@ -160,7 +160,7 @@ const Dashboard = () => {
                           fontSize: "20px",
                         }}
                       >
-                        <b> Stake</b>
+                        <b> Staking Report</b>
                       </div>
                     </div>
                     <div class="manage-icon">
@@ -181,7 +181,7 @@ const Dashboard = () => {
                   </div>
                   <div class="row py-2 px-4">
                     <div class="col-md-4 d-flex justify-content-between d-md-block ">
-                      <p class="manage-three-para-upper">Self Staking</p>
+                      <p class="manage-three-para-upper">Self</p>
                       <p class="manage-three-para-lower" id="upcoming_amount">
                         ${" "}
                         {StackingSlice.Wallatedata?.data?.mystack
