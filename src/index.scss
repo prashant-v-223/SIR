@@ -1256,6 +1256,14 @@ input {
 .loginbackimg input {
   border: none !important;
 }
-input{
+input {
   color: #000 !important;
+}
+:where(.css-dev-only-do-not-override-mxhywb).ant-input-affix-wrapper
+  > input.ant-input {
+  font-weight: 500 !important;
+}
+:where(.css-dev-only-do-not-override-mxhywb).ant-input-affix-wrapper
+  > input.ant-input::placeholder {
+  font-weight: 500 !important;
 }

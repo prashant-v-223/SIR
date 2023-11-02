@@ -1,7 +1,7 @@
 .loginbackimg {
   background-image: url(https://wallpaperaccess.com/full/3648410.jpg) !important;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover !important;
 }
 .loginbackimg::before {
   content: "";
