@@ -187,24 +187,21 @@ const Mysharetree = () => {
                       let firstMaxTotalStackObject = null;
                       let secondMaxTotalStackObject = null;
 
+                      const resultArray = [];
+
                       // Loop through the array to find the first and second highest teamtotalstack
                       for (const obj of activetree1?.data) {
-                        if (obj.teamtotalstack > firstMaxTotalStack) {
-                          secondMaxTotalStack = firstMaxTotalStack;
-                          secondMaxTotalStackObject = firstMaxTotalStackObject;
-                          firstMaxTotalStack = obj.teamtotalstack;
-                          firstMaxTotalStackObject = obj;
-                        } else if (
-                          obj.teamtotalstack > secondMaxTotalStack &&
-                          obj.teamtotalstack !== firstMaxTotalStack
-                        ) {
-                          secondMaxTotalStack = obj.teamtotalstack;
-                          secondMaxTotalStackObject = obj;
+                        if (obj) {
+                          resultArray.push({
+                            totalInvestment: obj.mystack + obj.teamtotalstack,
+                            username: obj.username,
+                          });
                         }
                       }
-
-                      console.log(firstMaxTotalStackObject);
-                      console.log(secondMaxTotalStackObject);
+                      let data = resultArray.sort(
+                        (e, s) => s.totalInvestment - e.totalInvestment
+                      );
+                      console.log(data[0].username);
                       return (
                         <>
                           <TreeNode
@@ -225,8 +222,7 @@ const Mysharetree = () => {
                                       getusertree1(e.username);
                                     }}
                                   >
-                                    {firstMaxTotalStackObject?.username ===
-                                    e.username ? (
+                                    {data[0].username === e.username ? (
                                       <img
                                         src={require("../../assets/img/partners/game-icons_team-idea (2).png")}
                                         alt=""
@@ -234,8 +230,7 @@ const Mysharetree = () => {
                                         width={70}
                                         height={70}
                                       />
-                                    ) : secondMaxTotalStackObject?.username ===
-                                      e.username ? (
+                                    ) : data[1].username === e.username ? (
                                       <img
                                         src={require("../../assets/img/partners/fluent_people-team-20-filled.png")}
                                         alt=""
@@ -253,7 +248,6 @@ const Mysharetree = () => {
                                       />
                                     )}
                                   </div>
-
                                   <h6
                                     className="my-0 mx-3"
                                     style={{
