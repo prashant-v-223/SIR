@@ -138,6 +138,7 @@ const MyTreeView = () => {
                   style={{
                     cursor: "pointer",
                     overflowX: "scroll",
+                    height: "800px !important",
                   }}
                 >
                   <Tree
@@ -153,7 +154,7 @@ const MyTreeView = () => {
                         }}
                       >
                         <img
-                          src={require("../../assets/img/solar_user-bold.png")}
+                          src={require("../Dashboard/1-1-optimized 1.png")}
                           alt=""
                           className="img-fluid"
                           width={85}
@@ -188,23 +189,21 @@ const MyTreeView = () => {
                               <TreeNode
                                 label={
                                   <>
-                                    <div>
+                                    <div
+                                      onMouseEnter={() =>
+                                        setIsHovered1(e.username)
+                                      }
+                                      onMouseLeave={() => setIsHovered1("")}
+                                    >
                                       <div
                                         className=" my-2"
                                         style={{
                                           cursor: "pointer",
                                           position: "relative",
                                         }}
-                                        onMouseEnter={() =>
-                                          setIsHovered1(e.username)
-                                        }
-                                        onMouseLeave={() => setIsHovered1("")}
-                                        onClick={async () => {
-                                          getusertree1(e.username);
-                                        }}
                                       >
                                         <img
-                                          src={require("../../assets/img/solar_user-bold.png")}
+                                          src={require("../Dashboard/1-1-optimized 1.png")}
                                           alt=""
                                           className="img-fluid"
                                           width={70}
@@ -218,6 +217,9 @@ const MyTreeView = () => {
                                           color: "#000",
                                           fontSize: 18,
                                         }}
+                                        onClick={async () => {
+                                          getusertree1(e.username);
+                                        }}
                                       >
                                         {e.username}
                                       </h6>
@@ -227,32 +229,83 @@ const MyTreeView = () => {
                                           color: "#000",
                                           fontSize: 18,
                                         }}
+                                        onClick={async () => {
+                                          getusertree1(e.username);
+                                        }}
                                       >
                                         {e.Fullname}
                                       </h6>
                                     </div>
                                     {isHovered1 === e.username && (
-                                      <table
+                                      <div
+                                        onMouseEnter={() =>
+                                          setIsHovered1(e.username)
+                                        }
+                                        onMouseLeave={() => setIsHovered1("")}
                                         style={{
-                                          width: 100,
                                           overflow: "scroll",
                                           position: "absolute",
                                           left: 0,
-                                          top: 0,
+                                          background: "#fff",
+                                          margin: 4,
+                                          borderRadius: "20px",
+                                          height: "200px",
+                                          width: "99%",
+                                          top: "40px",
+                                          border: "3px solid #000",
+                                          borderRadius: "14px",
                                         }}
                                       >
-                                        <tr>
-                                          <th className="text-dark">
-                                            Fullname
-                                          </th>
-                                          <th className="text-dark">
-                                            Self Stack
-                                          </th>
-                                          <th className="text-dark">
-                                            Team Stack
-                                          </th>
-                                        </tr>
-                                        <tr>
+                                        <div
+                                          className=" my-2"
+                                          style={{
+                                            cursor: "pointer",
+                                            position: "relative",
+                                          }}
+                                        >
+                                          <img
+                                            src={require("../Dashboard/1-1-optimized 1.png")}
+                                            alt=""
+                                            className="img-fluid"
+                                            width={70}
+                                            height={70}
+                                          />
+                                        </div>
+                                        <div className="d-flex justify-content-between px-3">
+                                          <div className="text-dark">
+                                            Refer Code
+                                          </div>
+                                          <div className="text-dark">
+                                            {e.refId}
+                                          </div>
+                                        </div>
+                                        <div className="d-flex justify-content-between px-3">
+                                          <div className="text-dark">
+                                            Activation Date
+                                          </div>
+                                          <div className="text-dark">
+                                            {new Date(
+                                              e.createdAt
+                                            ).toLocaleDateString()}
+                                          </div>
+                                        </div>
+                                        <div className="d-flex justify-content-between px-3">
+                                          <div className="text-dark">
+                                            Self Stake
+                                          </div>
+                                          <div className="text-dark">
+                                            {e.mystack}
+                                          </div>
+                                        </div>
+                                        <div className="d-flex justify-content-between px-3">
+                                          <div className="text-dark">
+                                            Team Stake
+                                          </div>
+                                          <div className="text-dark">
+                                            {e.teamtotalstack}
+                                          </div>
+                                        </div>
+                                        {/* <tr>
                                           <td className="text-dark">
                                             {e.Fullname}
                                           </td>
@@ -262,8 +315,8 @@ const MyTreeView = () => {
                                           <td className="text-dark">
                                             {e.teamtotalstack}
                                           </td>
-                                        </tr>
-                                      </table>
+                                        </tr> */}
+                                      </div>
                                     )}
                                   </>
                                 }

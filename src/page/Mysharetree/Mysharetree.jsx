@@ -152,7 +152,7 @@ const Mysharetree = () => {
                       }}
                     >
                       <img
-                        src={require("../../assets/img/solar_user-bold.png")}
+                        src={require("../Dashboard/1-1-optimized 1.png")}
                         alt=""
                         className="img-fluid"
                         width={85}
@@ -180,7 +180,215 @@ const Mysharetree = () => {
                   }
                 >
                   <div className="py-5 d-flex">
-                    {activetree1?.data?.map((e) => {
+                    {activetree1?.data &&
+                      activetree1?.data?.map((e) => {
+                        const resultArray = [];
+                        for (const obj of activetree1?.data) {
+                          if (obj) {
+                            resultArray.push({
+                              totalInvestment: obj.mystack + obj.teamtotalstack,
+                              username: obj.username,
+                            });
+                          }
+                        }
+                        let data = resultArray.sort(
+                          (e, s) => s.totalInvestment - e.totalInvestment
+                        );
+                        console.log(data[0].username);
+                        return (
+                          <>
+                            <TreeNode
+                              label={
+                                <>
+                                  <div
+                                    onMouseEnter={() =>
+                                      setIsHovered1(e.username)
+                                    }
+                                    onMouseLeave={() => setIsHovered1("")}
+                                    onClick={async () => {
+                                      getusertree1(e.username);
+                                    }}
+                                  >
+                                    <div
+                                      className=" my-2"
+                                      style={{
+                                        cursor: "pointer",
+                                        position: "relative",
+                                      }}
+                                    >
+                                      {data[0].username === e.username ? (
+                                        <img
+                                          src={require("../Dashboard/icons8-active-male-100.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
+                                      ) : data[1].username === e.username ? (
+                                        <img
+                                          src={require("../Dashboard/godigital_1939742712_popular-man (1)h 1.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
+                                      ) : (
+                                        <img
+                                          src={require("../Dashboard/1-1-optimized 1.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
+                                      )}
+                                      {/* <img
+                                        src={require("../Dashboard/1-1-optimized 1.png")}
+                                        alt=""
+                                        className="img-fluid"
+                                        width={70}
+                                        height={70}
+                                      /> */}
+                                    </div>
+
+                                    <h6
+                                      className="my-0 mx-3"
+                                      style={{
+                                        color: "#000",
+                                        fontSize: 18,
+                                      }}
+                                    >
+                                      {e.username}
+                                    </h6>
+                                    <h6
+                                      className="my-0 mx-3"
+                                      style={{
+                                        color: "#000",
+                                        fontSize: 18,
+                                      }}
+                                      onClick={async () => {
+                                        getusertree1(e.username);
+                                      }}
+                                    >
+                                      {e.Fullname}
+                                    </h6>
+                                  </div>
+                                  {isHovered1 === e.username && (
+                                    <div
+                                      onMouseEnter={() =>
+                                        setIsHovered1(e.username)
+                                      }
+                                      onMouseLeave={() => setIsHovered1("")}
+                                      onClick={async () => {
+                                        getusertree1(e.username);
+                                      }}
+                                      style={{
+                                        overflow: "scroll",
+                                        position: "absolute",
+                                        left: 0,
+                                        background: "#fff",
+                                        margin: 4,
+                                        borderRadius: "20px",
+                                        height: "200px",
+                                        width: "99%",
+                                        top: "40px",
+                                        border: "3px solid #000",
+                                        borderRadius: "14px",
+                                      }}
+                                    >
+                                      <div
+                                        className=" my-2"
+                                        style={{
+                                          cursor: "pointer",
+                                          position: "relative",
+                                        }}
+                                      >
+                                        {data[0].username === e.username ? (
+                                          <img
+                                            src={require("../Dashboard/icons8-active-male-100.png")}
+                                            alt=""
+                                            className="img-fluid"
+                                            width={70}
+                                            height={70}
+                                          />
+                                        ) : data[1].username === e.username ? (
+                                          <img
+                                            src={require("../Dashboard/godigital_1939742712_popular-man (1)h 1.png")}
+                                            alt=""
+                                            className="img-fluid"
+                                            width={70}
+                                            height={70}
+                                          />
+                                        ) : (
+                                          <img
+                                            src={require("../Dashboard/1-1-optimized 1.png")}
+                                            alt=""
+                                            className="img-fluid"
+                                            width={70}
+                                            height={70}
+                                          />
+                                        )}
+                                        {/* <img
+                                          src={require("../Dashboard/1-1-optimized 1.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        /> */}
+                                      </div>
+                                      <div className="d-flex justify-content-between px-3">
+                                        <div className="text-dark">
+                                          Refer Code
+                                        </div>
+                                        <div className="text-dark">
+                                          {e.refId}
+                                        </div>
+                                      </div>
+                                      <div className="d-flex justify-content-between px-3">
+                                        <div className="text-dark">
+                                          Activation Date
+                                        </div>
+                                        <div className="text-dark">
+                                          {new Date(
+                                            e.createdAt
+                                          ).toLocaleDateString()}
+                                        </div>
+                                      </div>
+                                      <div className="d-flex justify-content-between px-3">
+                                        <div className="text-dark">
+                                          Self Stake
+                                        </div>
+                                        <div className="text-dark">
+                                          {e.mystack}
+                                        </div>
+                                      </div>
+                                      <div className="d-flex justify-content-between px-3">
+                                        <div className="text-dark">
+                                          Team Stake
+                                        </div>
+                                        <div className="text-dark">
+                                          {e.teamtotalstack}
+                                        </div>
+                                      </div>
+                                      {/* <tr>
+                                          <td className="text-dark">
+                                            {e.Fullname}
+                                          </td>
+                                          <td className="text-dark">
+                                            {e.mystack}
+                                          </td>
+                                          <td className="text-dark">
+                                            {e.teamtotalstack}
+                                          </td>
+                                        </tr> */}
+                                    </div>
+                                  )}
+                                </>
+                              }
+                            />
+                          </>
+                        );
+                      })}
+                    {/* {activetree1?.data?.map((e) => {
                       // Initialize variables to keep track of the first and second highest teamtotalstack objects
                       let firstMaxTotalStack = -Infinity;
                       let secondMaxTotalStack = -Infinity;
@@ -298,7 +506,7 @@ const Mysharetree = () => {
                           />
                         </>
                       );
-                    })}
+                    })} */}
                   </div>
                 </Tree>
               </div>

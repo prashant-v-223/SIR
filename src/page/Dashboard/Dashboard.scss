@@ -268,6 +268,23 @@ a {
     z-index: -1;
   }
 }
+.aaa {
+  background-image: url("./istockphoto-jBy4K8mqEH 1 (1).png");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05); /* 0.75% black */
+    border-radius: 25px; /* Make sure the overlay matches the border-radius */
+    z-index: -1;
+  }
+}
 .Portfolio {
   background: url("./5329647\ 1.png");
   min-height: 250px;
@@ -307,4 +324,7 @@ a {
     border-radius: 25px; /* Make sure the overlay matches the border-radius */
     z-index: -1;
   }
+}
+.erning-imgs{
+  background: url("./earnings.png");
 }
