@@ -477,7 +477,7 @@ const Dashboard = () => {
                           alt=""
                           width={30}
                         />
-                        <b>Total Investment</b>
+                        <b>Total Earned</b>
                       </h4>
                       <h2 className="text-start text-danger">
                         SIR {Profile[0]?.mystack}
@@ -500,7 +500,7 @@ const Dashboard = () => {
                         height="85"
                       />
                       <h4 className="text-left pt-3" style={{ color: "#000" }}>
-                        Total Earned
+                        Earning Limit
                       </h4>
                       <h4 className="text-left pt-3 text-success">
                         SIR {Profile[0]?.mystack * 2}
@@ -525,7 +525,7 @@ const Dashboard = () => {
                         alt=""
                         width={30}
                       />
-                      <b>Total Investment</b>
+                      <b>Total Earned</b>
                     </h4>{" "}
                     <h4 className="pt-2 m-0 text-danger">
                       USDT {Profile[0]?.mystack}
@@ -552,7 +552,7 @@ const Dashboard = () => {
                         class="img-fluid"
                         width="30"
                       />
-                      <b>Total Earned</b>
+                      <b>Earning Limit</b>
                     </h4>
                     <h4 className="pt-2 m-0 text-success">
                       USDT {Profile[0]?.mystack * 3}
