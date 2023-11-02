@@ -87,20 +87,6 @@ function Achievementpage() {
       ),
     },
     {
-      title: "Amount",
-      dataIndex: "Amount",
-      key: "Amount",
-      width: "250px",
-      ellipsis: {
-        showTitle: false,
-      },
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address.toFixed(4)}>
-          {address.toFixed(4)}
-        </Tooltip>
-      ),
-    },
-    {
       title: "Created At",
       dataIndex: "createdAt",
       key: "createdAt",

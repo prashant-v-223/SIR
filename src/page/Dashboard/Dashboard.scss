@@ -248,3 +248,63 @@ a {
   border-radius: 15px;
   color: #000;
 }
+.Portfolio3 {
+  background: url("./gel7\ 1.png");
+  min-height: 250px;
+  border-radius: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05); /* 0.75% black */
+    border-radius: 25px; /* Make sure the overlay matches the border-radius */
+    z-index: -1;
+  }
+}
+.Portfolio {
+  background: url("./5329647\ 1.png");
+  min-height: 250px;
+  border-radius: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 0.75% black */
+    border-radius: 25px; /* Make sure the overlay matches the border-radius */
+    z-index: -1;
+  }
+}
+.Portfolio1 {
+  background: url("./4459586 1.png");
+  min-height: 250px;
+  border-radius: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 0.75% black */
+    border-radius: 25px; /* Make sure the overlay matches the border-radius */
+    z-index: -1;
+  }
+}

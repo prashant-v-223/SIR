@@ -1155,7 +1155,7 @@ input::placeholder {
 .headermain {
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 126;
   background: #fff;
 }
 .mainsection {
@@ -1256,6 +1256,6 @@ input {
 .loginbackimg input {
   border: none !important;
 }
-.navbar {
-  border: 2px solid #fcd21d !important;
+input{
+  color: #000 !important;
 }
