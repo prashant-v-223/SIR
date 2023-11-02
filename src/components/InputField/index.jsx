@@ -47,7 +47,7 @@ const index = (props) => {
             prefix={icons}
             disabled={disabled}
             maxLength={maxLength}
-            style={style}
+            style={{ ...style, color: "#000", fontWeight: "500 !important" }}
             autoComplete="new-state"
             autoSave="off"
           />
@@ -66,6 +66,7 @@ const index = (props) => {
             autoComplete="off"
             size="large"
             maxLength={maxLength}
+            style={{ color: "#000", fontWeight: "500 !important" }}
           />
         </>
       )}
@@ -89,6 +90,7 @@ const index = (props) => {
         onChange={onChange}
         format="dd/mm/yyyy"
         value={value}
+        style={{ color: "#000", fontWeight: "500 !important" }}
         max={moment().format("YYYY-MM-DD")}
       />
       {error ? <span className="error">{error}</span> : null}

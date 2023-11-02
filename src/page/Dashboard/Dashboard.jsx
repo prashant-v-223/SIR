@@ -253,8 +253,8 @@ const Dashboard = () => {
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
                       ${" "}
-                      {StackingSlice.Wallatedata?.data?.mystack
-                        ? StackingSlice.Wallatedata?.data?.mystack
+                      {Profile[0]?.mystack
+                        ? Profile[0]?.mystack
                         : 0}{" "}
                     </h6>
                   </div>
@@ -276,9 +276,9 @@ const Dashboard = () => {
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
                       ${" "}
-                      {StackingSlice.Wallatedata?.data?.teamtotalstack
-                        ? StackingSlice.Wallatedata?.data?.teamtotalstack
-                        : 0}
+                      {Profile[0]?.teamtotalstack
+                        ? Profile[0]?.teamtotalstack
+                        : 0}{" "}
                     </h6>
                   </div>{" "}
                   <div
