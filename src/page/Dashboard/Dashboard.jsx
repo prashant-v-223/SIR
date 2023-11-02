@@ -488,7 +488,7 @@ const Dashboard = () => {
                       </h4>
                       <h2 className="text-start text-dark">
                         SIR{" "}
-                        {StackingSlice.Wallatedata?.data?.data[0]?.mainWallet}
+                        {StackingSlice.Wallatedata?.data?.data[0]?.mainWallet.toFixed(2)}
                       </h2>
                     </div>
                     <div className="w-25">
