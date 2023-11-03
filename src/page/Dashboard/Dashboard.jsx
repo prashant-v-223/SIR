@@ -554,7 +554,7 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="col-12 col-md-6 py-3 py-md-0">
-                <h4 className="text-dark">Community Income  3X</h4>
+                <h4 className="text-dark pt-4 pt-md-0">Community Income  3X</h4>
                 <div
                   className="Portfolio234  d-flex w-100"
                   style={{
