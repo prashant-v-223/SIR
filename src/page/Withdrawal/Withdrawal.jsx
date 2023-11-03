@@ -88,8 +88,11 @@ function Withdrawal() {
     setWalletAmountcal1(res.payload.data.data[0]?.incomeWallet);
     setProfile(res.payload.data.profile);
   };
+  const onChange1 = (value) => {
+    setWalletAmountcal1(value);
+  };
   const onChange = (value) => {
-    setWallet(value);
+    setWalletAmountcal(value);
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -179,23 +182,6 @@ function Withdrawal() {
                         className="img-fluid mx-3"
                       />{" "}
                     </h6>
-                    <div className="Withdrawalbox px-4 py-5 my-3 d-sm-flex">
-                      <div className="d-flex justify-content-center align-items-center img-div1">
-                        <img
-                          src={require("../../assets/img/Vector (26).png")}
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </div>
-                      <div className="img-div2">
-                        <p className="m-0 text-dark">
-                          USDT Withdrawals are activated after 15days of your
-                          staking. USDT Token are released as bonus in
-                          withdrawal process. You can withdraw your rewards
-                          everyday.
-                        </p>
-                      </div>
-                    </div>
                     <div className="Withdrawalbox px-4 py-4 mt-4">
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
@@ -210,80 +196,6 @@ function Withdrawal() {
                         </div>
                       </div>
                     </div>
-                    <div className="row">
-                      <div className="col-12 col-lg-6 my-4">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal1((data) => {
-                              return (Alldata[0]?.incomeWallet * 25) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 25%
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="col-12 col-lg-6 mb-3 mt-lg-4 ">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal1((data) => {
-                              return (Alldata[0]?.incomeWallet * 50) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 50%
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="col-12 col-lg-6 mb-3 mb-lg-0 ">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal1((data) => {
-                              return (Alldata[0]?.incomeWallet * 75) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 75%
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="col-12 col-lg-6 mb-3 mb-lg-0 ">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal1((data) => {
-                              return (Alldata[0]?.incomeWallet * 100) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 100%
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-dark">
                         <label htmlFor="" className="mb-1 text-dark">
@@ -292,7 +204,7 @@ function Withdrawal() {
                         <InputNumber
                           size="large"
                           className="w-100 mb-2"
-                          onChange={onChange}
+                          onChange={onChange1}
                           value={WalletAmountcal1}
                           style={{
                             padding: "10px 0px",
@@ -342,23 +254,6 @@ function Withdrawal() {
                         className="img-fluid mx-3"
                       />{" "}
                     </h6>
-                    <div className="Withdrawalbox px-4 py-5 my-3 d-sm-flex">
-                      <div className="d-flex justify-content-center align-items-center img-div1">
-                        <img
-                          src={require("../../assets/img/Vector (26).png")}
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </div>
-                      <div className="img-div2">
-                        <p className="m-0 text-light">
-                          USDT Withdrawals are activated after 15days of your
-                          staking. USDT Token are released as bonus in
-                          withdrawal process. You can withdraw your rewards
-                          everyday.
-                        </p>
-                      </div>
-                    </div>
                     <div className="Withdrawalbox px-4 py-4 mt-4">
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
@@ -369,80 +264,6 @@ function Withdrawal() {
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-darks text-center">
                             {Alldata[0]?.mainWallet?.toFixed(4)} SIR
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-lg-6 my-4">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal((data) => {
-                              return (Alldata[0]?.mainWallet * 25) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 25%
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="col-12 col-lg-6 mb-3 mt-lg-4 ">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal((data) => {
-                              return (Alldata[0]?.mainWallet * 50) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 50%
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="col-12 col-lg-6 mb-3 mb-lg-0 ">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal((data) => {
-                              return (Alldata[0]?.mainWallet * 75) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 75%
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="col-12 col-lg-6 mb-3 mb-lg-0 ">
-                        <div
-                          className="Withdrawalboxp py-3 d-flex justify-content-center"
-                          onClick={() => {
-                            setWalletAmountcal((data) => {
-                              return (Alldata[0]?.mainWallet * 100) / 100;
-                            });
-                          }}
-                        >
-                          <h6 className="m-0">
-                            <HiArrowsRightLeft
-                              className="mx-2"
-                              style={{ fontSize: "20px", fontWeight: 900 }}
-                            />
-                            Withdraw 100%
                           </h6>
                         </div>
                       </div>
