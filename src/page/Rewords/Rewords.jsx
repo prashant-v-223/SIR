@@ -8,7 +8,8 @@ import { Wallatedata } from "../../Redux/WallatedatSlice";
 function Rewords() {
   const dispatch = useDispatch();
   const navigation = useNavigate();
-  const [Profile, setProfile] = React.useState({});
+  const [Profile, setProfile] = React.useState([]);
+  const [Profile1, setProfile1] = React.useState([]);
   useEffect(() => {
     getalldata();
   }, []);
@@ -22,12 +23,25 @@ function Rewords() {
       })
     );
     if (res.payload.data.isSuccess) {
-      setProfile(res.payload.data);
+      const resultArray = [];
+      setProfile1(res.payload.data.profile);
+      for (const obj of res.payload.data?.ReffData1) {
+        if (obj) {
+          resultArray.push({
+            totalInvestment: obj.mystack + obj.teamtotalstack,
+            username: obj.username,
+          });
+        }
+      }
+      let data = resultArray.sort(
+        (e, s) => s.totalInvestment - e.totalInvestment
+      );
+      setProfile(data);
     } else {
       navigation("/");
     }
   };
-  console.log(Profile);
+
   const data = [
     {
       name: "ACE",
@@ -121,17 +135,61 @@ function Rewords() {
       },
     },
     {
-      title: "Active",
-      dataIndex: "Active",
-      key: "Active",
+      title: "First Power",
+      dataIndex: "amount",
+      key: "amount",
       width: "200px",
       ellipsis: {
         showTitle: false,
       },
       render: (text, record, index) => {
         return (
-          <Tooltip placement="topLeft" title={record.Active}>
-            {record.Active}
+          <Tooltip placement="topLeft" title={record.amount}>
+            {record.amount * 0.5} <br />
+            My First Power TotalInvestment{" "}
+            {Profile.length > 0 ? Profile[0].totalInvestment : 0}
+          </Tooltip>
+        );
+      },
+    },
+    {
+      title: "Second Power",
+      dataIndex: "amount",
+      key: "amount",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => {
+        return (
+          <Tooltip placement="topLeft" title={record.amount}>
+            {record.amount * 0.25} <br />
+            My Second Power TotalInvestment{" "}
+            {Profile.length > 1 ? Profile[1].totalInvestment : 0}
+          </Tooltip>
+        );
+      },
+    },
+    {
+      title: "Remaining Power",
+      dataIndex: "amount",
+      key: "amount",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => {
+        return (
+          <Tooltip placement="topLeft" title={record.amount}>
+            {record?.amount * 0.25} <br />
+            My Remaining Power TotalInvestment
+            {Profile.length > 2
+              ? Profile[2]?.totalInvestment + Profile.length > 3
+                ? Profile[3]?.totalInvestment
+                : 0 + Profile.length > 4
+                ? Profile[4]?.totalInvestment
+                : 0
+              : 0}
           </Tooltip>
         );
       },
@@ -143,6 +201,11 @@ function Rewords() {
       <div className="container-fluid blackbg">
         <div className="mainsection">
           <div className="row px-3 pt-4 justify-content-center">
+            <div className="d-flex justify-content-between py-4">
+              <div className="">My Rank :{Profile1[0]?.Rank}</div>
+              <div className="">My leval :{Profile1[0]?.leval}</div>
+            </div>
+            <p>you want to 5 direct to achieve new rank</p>
             <Table
               columns={columns}
               dataSource={data}

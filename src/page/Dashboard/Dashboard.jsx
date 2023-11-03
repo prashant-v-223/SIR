@@ -566,7 +566,11 @@ const Dashboard = () => {
                         <b>Remaining Limit</b>
                       </h4>
                       <h2 className="text-start text-dark">
-                        SIR {Profile[0]?.mystack}
+                        SIR{" "}
+                        {Profile[0]?.mystack * 2 -
+                          StackingSlice.Wallatedata?.data?.data[0]?.mainWallet.toFixed(
+                            2
+                          )}
                       </h2>
                     </div>
                     <div className="w-25">
@@ -622,7 +626,11 @@ const Dashboard = () => {
                       <b>Remaining Limit</b>
                     </h4>
                     <h4 className="pt-2 m-0 text-dark">
-                      USDT {Profile[0]?.mystack}{" "}
+                      USDT{" "}
+                      {Profile[0]?.mystack * 3 -
+                        StackingSlice.Wallatedata?.data?.data[0]?.incomeWallet?.toFixed(
+                          2
+                        )}
                     </h4>
                     <h4 className="pt-2  text-dark d-flex   align-content-center">
                       <img
