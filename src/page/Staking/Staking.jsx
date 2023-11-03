@@ -724,11 +724,12 @@ function Staking() {
         </Modal>
         <Modal show={show} onHide={handleClose} centered>
           <Modal.Body>
-            {/* <div
+            <div
               className="p-3 d-flex align-items-center"
               onClick={() => {
-                activate(WalletConnect);
+                activate(Injected);
                 handleClose();
+                getBalance();
               }}
             >
               <img
@@ -740,7 +741,7 @@ function Staking() {
                 borderRadius="3px"
               />
               <h6 className="text-light m-0">Wallet Connect</h6>
-            </div> */}
+            </div>
             <div
               className="p-3 d-flex align-items-center"
               onClick={() => {
