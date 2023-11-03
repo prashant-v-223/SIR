@@ -124,14 +124,14 @@ const Dashboard = () => {
                         width="100"
                         height="100"
                       />
-                      <h6 className="text-left pt-3" style={{ color: "#fff" }}>
+                      <h6 className="text-left pt-3 ps-1 ps-md-3" style={{ color: "#fff" }}>
                         {Profile[0]?.username}{" "}
                       </h6>
                     </div>
                   </div>
-                  <div className="d-flex">
+                  <div className="d-md-flex">
                     <div
-                      className="w-50 bg-light p-4 mx-1 d-flex justify-content-between align-content-center"
+                      className="w-100 w-m-50 bg-light p-4 mx-0 d-flex justify-content-between align-content-center mt-3 mt-md-0 mx-md-1"
                       style={{
                         borderRadius: "12px",
                       }}
@@ -150,7 +150,7 @@ const Dashboard = () => {
                       </div>
                     </div>
                     <div
-                      className="w-50 bg-light p-4 mx-1 d-flex justify-content-between align-content-center"
+                      className="w-100 w-m-50 bg-light p-4 mx-0 d-flex justify-content-between align-content-center mt-3 mt-md-0 mx-md-1"
                       style={{
                         borderRadius: "12px",
                       }}
@@ -183,7 +183,9 @@ const Dashboard = () => {
                         className="img-fluid  ps-3"
                         style={{ width: "20%" }}
                       />
-                      <h6 className="m-0 px-3 text-dark">Today Released </h6>
+                      <h6 className="m-0 px-3 text-dark">
+                        Today SCB Released{" "}
+                      </h6>
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       $
