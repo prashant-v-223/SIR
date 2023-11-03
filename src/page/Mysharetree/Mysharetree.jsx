@@ -205,9 +205,6 @@ const Mysharetree = () => {
                                       setIsHovered1(e.username)
                                     }
                                     onMouseLeave={() => setIsHovered1("")}
-                                    onClick={async () => {
-                                      getusertree1(e.username);
-                                    }}
                                   >
                                     <div
                                       className=" my-2"
@@ -242,7 +239,7 @@ const Mysharetree = () => {
                                     >
                                       {e.username}
                                     </h6>
-                                    <h6
+                                    {/* <h6
                                       className="my-0 mx-3"
                                       style={{
                                         color: "#000",
@@ -253,7 +250,7 @@ const Mysharetree = () => {
                                       }}
                                     >
                                       {e.Fullname}
-                                    </h6>
+                                    </h6> */}
                                   </div>
                                   {isHovered1 === e.username && (
                                     <div

@@ -255,7 +255,7 @@ const MyTreeView = () => {
                                       >
                                         {e.username}
                                       </h6>
-                                      <h6
+                                      {/* <h6
                                         className="my-0 mx-3"
                                         style={{
                                           color: "#000",
@@ -266,7 +266,7 @@ const MyTreeView = () => {
                                         }}
                                       >
                                         {e.Fullname}
-                                      </h6>
+                                      </h6> */}
                                     </div>
                                     {isHovered1 === e.username && (
                                       <div
@@ -274,6 +274,9 @@ const MyTreeView = () => {
                                           setIsHovered1(e.username)
                                         }
                                         onMouseLeave={() => setIsHovered1("")}
+                                        onClick={async () => {
+                                          getusertree(e.username);
+                                        }}
                                         style={{
                                           overflow: "scroll",
                                           position: "absolute",
