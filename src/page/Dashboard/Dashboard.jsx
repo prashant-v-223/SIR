@@ -193,6 +193,8 @@ const Dashboard = () => {
                         style={{
                           background:
                             "linear-gradient(180deg, #4DD667 0%, #48C79C 100%)",
+                          width: "100% !important",
+                          display: "block",
                         }}
                       >
                         New Stake
@@ -247,6 +249,48 @@ const Dashboard = () => {
                       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
                     }}
                   >
+                    <div className="d-flex align-items-center py-2  ">
+                      <img
+                        src={require("./icons8-hand-with-crypto-token-78 (3).png")}
+                        alt=""
+                        width={75}
+                      />
+                      <h6 className="m-0 px-3 text-dark">Total Team Staking</h6>
+                    </div>
+                    <h6 className="m-0 px-3 text-dark">
+                      {" "}
+                      ${" "}
+                      {Profile[0]?.teamtotalstack
+                        ? Profile[0]?.teamtotalstack
+                        : 0}{" "}
+                    </h6>
+                  </div>{" "}
+                  <div
+                    className="d-flex align-items-center justify-content-between bg-light my-2"
+                    style={{
+                      borderRadius: 12,
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    }}
+                  >
+                    <div className="d-flex align-items-center py-2  ">
+                      <img
+                        src={require("./icons8-rocket-100.png")}
+                        alt=""
+                        width={75}
+                      />
+                      <h6 className="m-0 px-3 text-dark">Booster</h6>
+                    </div>
+                    <h6 className="m-0 px-3 text-dark">
+                      {Profile[0]?.STAKINGBOOSTER === true ? "ON" : "OFF"}{" "}
+                    </h6>
+                  </div>{" "}
+                  <div
+                    className="d-flex align-items-center justify-content-between bg-light my-2"
+                    style={{
+                      borderRadius: 12,
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    }}
+                  >
                     <div className="d-flex align-items-center py-4  ">
                       <img
                         src={require("./icons8-community-96 (1).png")}
@@ -283,9 +327,12 @@ const Dashboard = () => {
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
                       $
-                      {StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.total1.toFixed(
                         2
-                      )}{" "}
+                      ) -
+                        StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
+                          2
+                        )}{" "}
                     </h6>
                   </div>
                   <div
@@ -307,56 +354,11 @@ const Dashboard = () => {
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
                       $
-                      {StackingSlice.Wallatedata?.data?.income[0]?.total1.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming.toFixed(
                         2
-                      ) -
-                        StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
-                          2
-                        )}{" "}
+                      )}{" "}
                     </h6>
                   </div>
-                  <div
-                    className="d-flex align-items-center justify-content-between bg-light my-2"
-                    style={{
-                      borderRadius: 12,
-                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                    }}
-                  >
-                    <div className="d-flex align-items-center py-2  ">
-                      <img
-                        src={require("./icons8-hand-with-crypto-token-78 (3).png")}
-                        alt=""
-                        width={75}
-                      />
-                      <h6 className="m-0 px-3 text-dark">Total Team Staking</h6>
-                    </div>
-                    <h6 className="m-0 px-3 text-dark">
-                      {" "}
-                      ${" "}
-                      {Profile[0]?.teamtotalstack
-                        ? Profile[0]?.teamtotalstack
-                        : 0}{" "}
-                    </h6>
-                  </div>{" "}
-                  <div
-                    className="d-flex align-items-center justify-content-between bg-light my-2"
-                    style={{
-                      borderRadius: 12,
-                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                    }}
-                  >
-                    <div className="d-flex align-items-center py-2  ">
-                      <img
-                        src={require("./icons8-rocket-100.png")}
-                        alt=""
-                        width={75}
-                      />
-                      <h6 className="m-0 px-3 text-dark">Booster</h6>
-                    </div>
-                    <h6 className="m-0 px-3 text-dark">
-                      {Profile[0]?.STAKINGBOOSTER === true ? "ON" : "OFF"}{" "}
-                    </h6>
-                  </div>{" "}
                 </div>
               </div>
               <div className="col-12 col-md-6  py-md-2">
