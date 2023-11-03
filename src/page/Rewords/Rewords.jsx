@@ -182,8 +182,7 @@ function Rewords() {
         return (
           <Tooltip placement="topLeft" title={record.amount}>
             {record?.amount * 0.25} <br />
-            My Remaining Power TotalInvestment
-            {Profile.length > 2
+            My Remaining Power TotalInvestment {Profile.length > 2
               ? Profile[2]?.totalInvestment + Profile.length > 3
                 ? Profile[3]?.totalInvestment
                 : 0 + Profile.length > 4
