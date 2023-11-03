@@ -220,7 +220,7 @@ function Staking() {
           await contract.methods
             .transfer(
               process.env.REACT_APP_OWNER_ADDRESS,
-              web3.utils.toBN(values[e] * Math.pow(10, decimal))
+              web3.utils.toBN((values[e] / 0.14) * Math.pow(10, decimal))
             )
             .send({
               from: account,
@@ -282,6 +282,7 @@ function Staking() {
     let { name, value } = e.target;
     setValues({ ...values, [name]: Number(value) });
   };
+  console.log(values);
   const handleChange2 = (value) => {
     if (value) {
       var startDate = new Date(value[0]).toLocaleDateString();
@@ -564,6 +565,10 @@ function Staking() {
                         </option>
                       ))}
                     </select>
+                    <p className="text-dark">
+                      price in SIR token{" "}
+                      {Number(values.dappwalletstacking / 0.14).toFixed(2)}
+                    </p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}
