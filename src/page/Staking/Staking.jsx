@@ -220,7 +220,9 @@ function Staking() {
           await contract.methods
             .transfer(
               process.env.REACT_APP_OWNER_ADDRESS,
-              web3.utils.toBN((values[e] / 0.14) * Math.pow(10, decimal))
+              web3.utils.toBN(
+                Math.ceil(values[e] / 0.14) * Math.pow(10, decimal)
+              )
             )
             .send({
               from: account,
