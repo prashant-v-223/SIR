@@ -327,7 +327,7 @@ const Dashboard = () => {
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
                       $
-                      {StackingSlice.Wallatedata?.data?.income[0]?.total1.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.total2.toFixed(
                         2
                       ) -
                         StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
