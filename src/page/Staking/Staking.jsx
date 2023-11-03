@@ -214,7 +214,7 @@ function Staking() {
           let web3 = await getWeb3();
           let contract = await new web3.eth.Contract(
             v4x,
-            "0x55d398326f99059fF775485246999027B3197955"
+            "0x36a68868fDda32D6ad7a3620557167FC204cf903"
           );
           const decimal = await contract.methods.decimals().call();
           await contract.methods
