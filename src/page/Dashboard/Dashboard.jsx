@@ -124,7 +124,10 @@ const Dashboard = () => {
                         width="100"
                         height="100"
                       />
-                      <h6 className="text-left pt-3 ps-1 ps-md-3" style={{ color: "#fff" }}>
+                      <h6
+                        className="text-left pt-3 ps-1 ps-md-3"
+                        style={{ color: "#fff" }}
+                      >
                         {Profile[0]?.username}{" "}
                       </h6>
                     </div>
@@ -145,7 +148,7 @@ const Dashboard = () => {
                           src={require("./icons8-adjust-100 (1).png")}
                           alt=""
                           className="img-fluid"
-                          width={60}
+                          style={{ width: "65px" }}
                         />
                       </div>
                     </div>
@@ -164,35 +167,40 @@ const Dashboard = () => {
                           src={require("./icons8-rank-65.png")}
                           alt=""
                           className="img-fluid"
-                          width={60}
+                          style={{ width: "65px" }}
                         />
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="d-flex align-items-center justify-content-between bg-light my-3"
-                    style={{
-                      borderRadius: 12,
-                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                    }}
-                  >
-                    <div className="d-flex align-items-center py-4  ">
-                      <img
-                        src={require("./icons8-community-96 (1).png")}
-                        alt=""
-                        className="img-fluid  ps-3"
-                        style={{ width: "20%" }}
-                      />
-                      <h6 className="m-0 px-3 text-dark">
-                        Today SCB Released{" "}
-                      </h6>
-                    </div>
-                    <h6 className="m-0 px-3 text-dark">
-                      $
-                      {StackingSlice.Wallatedata?.data?.income[0]?.TodaStakingBonusIncome.toFixed(
-                        2
-                      )}
-                    </h6>
+
+                  <div className="">
+                    <a
+                      href="/Staking"
+                      className="p-3 text-center my-3 w-100 text-light"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, #4DD667 0%, #48C79C 100%)",
+                        width: "100% !important",
+                        display: "block",
+                        borderRadius: 12,
+                      }}
+                    >
+                      New Stake
+                    </a>
+                    <a
+                      href="https://presale.sirtoken.io/"
+                      target="_blank"
+                      className="p-3 text-center mt-3 w-100 text-light"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, #4DD667 0%, #48C79C 100%)",
+                        width: "100% !important",
+                        display: "block",
+                        borderRadius: 12,
+                      }}
+                    >
+                      Buy SIR Token
+                    </a>
                   </div>
                 </div>
               </div>
@@ -222,7 +230,7 @@ const Dashboard = () => {
                           src={require("./icons8-community-96 (1).png")}
                           alt=""
                           className="img-fluid  ps-3"
-                          style={{ width: "20%" }}
+                          style={{ width: "65px" }}
                         />
                         <h6 className="m-0 px-3 text-dark">SCB Upcomming </h6>
                       </div>
@@ -249,7 +257,7 @@ const Dashboard = () => {
                           src={require("./icons8-community-96 (1).png")}
                           alt=""
                           className="img-fluid  ps-3"
-                          style={{ width: "20%" }}
+                          style={{ width: "65px" }}
                         />
                         <h6 className="m-0 px-3 text-dark">SCB Hold Income </h6>
                       </div>
@@ -261,26 +269,38 @@ const Dashboard = () => {
                         )}{" "}
                       </h6>
                     </div>
-                    <div className="">
-                      <a
-                        href="/Staking"
-                        className="p-3 text-center my-3 w-100 text-light"
-                        style={{
-                          background:
-                            "linear-gradient(180deg, #4DD667 0%, #48C79C 100%)",
-                          width: "100% !important",
-                          display: "block",
-                        }}
-                      >
-                        New Stake
-                      </a>
+
+                    <div
+                      className="d-flex align-items-center justify-content-between bg-light my-2"
+                      style={{
+                        borderRadius: 12,
+                        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                      }}
+                    >
+                      <div className="d-flex align-items-center py-4  ">
+                        <img
+                          src={require("./icons8-community-96 (1).png")}
+                          alt=""
+                          className="img-fluid  ps-3"
+                          style={{ width: "65px" }}
+                        />
+                        <h6 className="m-0 px-3 text-dark">
+                          Today SCB Released{" "}
+                        </h6>
+                      </div>
+                      <h6 className="m-0 px-3 text-dark">
+                        $
+                        {StackingSlice.Wallatedata?.data?.income[0]?.TodaStakingBonusIncome.toFixed(
+                          2
+                        )}
+                      </h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="row pt-4 d-flex justify-content-center">
-              <div className="col-12 col-md-6  py-md-2">
+              <div className="col-12 col-md-6  py-2">
                 <div
                   className="Portfolio3 p-4  w-100"
                   style={{
@@ -292,7 +312,7 @@ const Dashboard = () => {
                       <img
                         src={require("./icons8-report-100.png")}
                         alt=""
-                        width={70}
+                        width={85}
                       />
                     </div>
                     <h4 className="m-0 px-3 text-dark">Staking Report</h4>
@@ -308,7 +328,7 @@ const Dashboard = () => {
                       <img
                         src={require("./icons8-self-64.png")}
                         alt=""
-                        width={50}
+                        style={{ width: "65px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">Self Staking</h6>
                     </div>
@@ -328,7 +348,7 @@ const Dashboard = () => {
                       <img
                         src={require("./icons8-hand-with-crypto-token-78 (3).png")}
                         alt=""
-                        width={75}
+                        style={{ width: "75px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">Total Team Staking</h6>
                     </div>
@@ -347,11 +367,11 @@ const Dashboard = () => {
                       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
                     }}
                   >
-                    <div className="d-flex align-items-center py-2  ">
+                    <div className="d-flex align-items-center py-2 ps-2 ">
                       <img
                         src={require("./icons8-rocket-100.png")}
                         alt=""
-                        width={75}
+                        style={{ width: "75px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">Booster</h6>
                     </div>
@@ -371,7 +391,7 @@ const Dashboard = () => {
                         src={require("./icons8-community-96 (1).png")}
                         alt=""
                         className="img-fluid  ps-3"
-                        style={{ width: "20%" }}
+                        style={{ width: "65px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">SCB Income</h6>
                     </div>
@@ -385,7 +405,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6  py-md-2">
+              <div className="col-12 col-md-6  py-2">
                 <div
                   className="Portfolio3 p-4  w-100"
                   style={{
@@ -397,7 +417,7 @@ const Dashboard = () => {
                       <img
                         src={require("./icons8-badge-64 2.png")}
                         alt=""
-                        width={70}
+                        width={85}
                       />
                     </div>
                     <h4 className="m-0 px-3 text-dark">Community Income</h4>
@@ -413,7 +433,7 @@ const Dashboard = () => {
                       <img
                         src={require("./icons8-reward-100.png")}
                         alt=""
-                        width={50}
+                        style={{ width: "65px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">Mentorship</h6>
                     </div>
@@ -436,7 +456,7 @@ const Dashboard = () => {
                         src={require("./icons8-earn-64.png")}
                         alt=""
                         className="img-fluid ps-3"
-                        style={{ width: "35%" }}
+                        style={{ width: "65px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">CBB </h6>
                     </div>
@@ -463,7 +483,7 @@ const Dashboard = () => {
                         src={require("./icons8-community-96 (1).png")}
                         alt=""
                         className="img-fluid  ps-3"
-                        style={{ width: "25%" }}
+                        style={{ width: "65px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">Royalty</h6>
                     </div>
@@ -481,7 +501,7 @@ const Dashboard = () => {
                         src={require("./icons8-community-96 (1).png")}
                         alt=""
                         className="img-fluid  ps-3"
-                        style={{ width: "28%" }}
+                        style={{ width: "65px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">LAR</h6>
                     </div>
@@ -489,7 +509,7 @@ const Dashboard = () => {
                   </div>{" "}
                 </div>
               </div>
-              <div className="col-12 col-md-6  py-md-2">
+              <div className="col-12 col-md-6  py-2">
                 <div
                   className="Portfolio3 p-4  w-100"
                   style={{
@@ -501,7 +521,7 @@ const Dashboard = () => {
                       <img
                         src={require("./bitcoin-wallet.png")}
                         alt=""
-                        width={70}
+                        style={{ width: "60px" }}
                       />
                     </div>
                     <h4 className="m-0 px-3 text-dark">Wallets</h4>
@@ -517,7 +537,7 @@ const Dashboard = () => {
                       <img
                         src={require("./icons8-earn-64.png")}
                         alt=""
-                        width={50}
+                        style={{ width: "50px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">Staking Report</h6>
                     </div>
@@ -540,7 +560,7 @@ const Dashboard = () => {
                       <img
                         src={require("./icons8-community-96 (1).png")}
                         alt=""
-                        width={50}
+                        style={{ width: "50px" }}
                         className="mx-2"
                       />
                       <h6 className="m-0 px-3 text-dark">Community Reward</h6>
@@ -559,7 +579,9 @@ const Dashboard = () => {
             <div className="row mb-5">
               <h1 className="text-dark py-4">EARNINGS</h1>
               <div className="col-12 col-md-6  py-md-0">
-                <h4 className="text-dark">Staking Income 2X</h4>
+                <h4 className="text-dark pt-4 pb-1 pt-md-0">
+                  Staking Income 2X
+                </h4>
                 <div
                   className=" p-4  w-100 aaa"
                   style={{
@@ -623,6 +645,7 @@ const Dashboard = () => {
                     zIndex: 99,
                     border: "2px solid #000",
                     borderRadius: "16px",
+                    height: "100%",
                   }}
                 >
                   <div className="w-50 p-4">
