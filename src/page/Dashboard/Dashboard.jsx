@@ -115,46 +115,6 @@ const Dashboard = () => {
                       <h6 style={{ color: "#fff" }}>
                         {Profile[0]?.PhoneNumber}
                       </h6>
-                      <div className="d-flex">
-                        <div
-                          className="w-50 bg-light p-4 mx-1 d-flex justify-content-between align-content-center"
-                          style={{
-                            borderRadius: "12px",
-                          }}
-                        >
-                          <div className="">
-                            <h4 className="text-dark">{Profile[0]?.leval}</h4>
-                            <h6 className="text-dark">Level</h6>
-                          </div>
-                          <div className="">
-                            <img
-                              src={require("./icons8-adjust-100 (1).png")}
-                              alt=""
-                              className="img-fluid"
-                              width={60}
-                            />
-                          </div>
-                        </div>
-                        <div
-                          className="w-50 bg-light p-4 mx-1 d-flex justify-content-between align-content-center"
-                          style={{
-                            borderRadius: "12px",
-                          }}
-                        >
-                          <div className="">
-                            <h4 className="text-dark">{Profile[0]?.Rank}</h4>
-                            <h6 className="text-dark">Rank</h6>
-                          </div>
-                          <div className="">
-                            <img
-                              src={require("./icons8-rank-65.png")}
-                              alt=""
-                              className="img-fluid"
-                              width={60}
-                            />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div className="w-25">
                       <img
@@ -168,6 +128,69 @@ const Dashboard = () => {
                         {Profile[0]?.username}{" "}
                       </h6>
                     </div>
+                  </div>
+                  <div className="d-flex">
+                    <div
+                      className="w-50 bg-light p-4 mx-1 d-flex justify-content-between align-content-center"
+                      style={{
+                        borderRadius: "12px",
+                      }}
+                    >
+                      <div className="">
+                        <h4 className="text-dark">{Profile[0]?.leval}</h4>
+                        <h6 className="text-dark">Level</h6>
+                      </div>
+                      <div className="">
+                        <img
+                          src={require("./icons8-adjust-100 (1).png")}
+                          alt=""
+                          className="img-fluid"
+                          width={60}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="w-50 bg-light p-4 mx-1 d-flex justify-content-between align-content-center"
+                      style={{
+                        borderRadius: "12px",
+                      }}
+                    >
+                      <div className="">
+                        <h4 className="text-dark">{Profile[0]?.Rank}</h4>
+                        <h6 className="text-dark">Rank</h6>
+                      </div>
+                      <div className="">
+                        <img
+                          src={require("./icons8-rank-65.png")}
+                          alt=""
+                          className="img-fluid"
+                          width={60}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="d-flex align-items-center justify-content-between bg-light my-3"
+                    style={{
+                      borderRadius: 12,
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    }}
+                  >
+                    <div className="d-flex align-items-center py-4  ">
+                      <img
+                        src={require("./icons8-community-96 (1).png")}
+                        alt=""
+                        className="img-fluid  ps-3"
+                        style={{ width: "20%" }}
+                      />
+                      <h6 className="m-0 px-3 text-dark">Today Released </h6>
+                    </div>
+                    <h6 className="m-0 px-3 text-dark">
+                      $
+                      {StackingSlice.Wallatedata?.data?.income[0]?.TodaStakingBonusIncome.toFixed(
+                        2
+                      )}
+                    </h6>
                   </div>
                 </div>
               </div>
@@ -185,7 +208,57 @@ const Dashboard = () => {
                   <div className="w-100">
                     <h5 className="text-light">My Total Investment</h5>
                     <h4 className="pt-2 pb-2">${Profile[0]?.teamtotalstack}</h4>
-
+                    <div
+                      className="d-flex align-items-center justify-content-between bg-light my-2"
+                      style={{
+                        borderRadius: 12,
+                        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                      }}
+                    >
+                      <div className="d-flex align-items-center py-4  ">
+                        <img
+                          src={require("./icons8-community-96 (1).png")}
+                          alt=""
+                          className="img-fluid  ps-3"
+                          style={{ width: "20%" }}
+                        />
+                        <h6 className="m-0 px-3 text-dark">SCB Upcomming </h6>
+                      </div>
+                      <h6 className="m-0 px-3 text-dark">
+                        {" "}
+                        $
+                        {StackingSlice.Wallatedata?.data?.income[0]?.total2.toFixed(
+                          2
+                        ) -
+                          StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
+                            2
+                          )}{" "}
+                      </h6>
+                    </div>
+                    <div
+                      className="d-flex align-items-center justify-content-between bg-light my-2"
+                      style={{
+                        borderRadius: 12,
+                        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                      }}
+                    >
+                      <div className="d-flex align-items-center py-4  ">
+                        <img
+                          src={require("./icons8-community-96 (1).png")}
+                          alt=""
+                          className="img-fluid  ps-3"
+                          style={{ width: "20%" }}
+                        />
+                        <h6 className="m-0 px-3 text-dark">SCB Hold Income </h6>
+                      </div>
+                      <h6 className="m-0 px-3 text-dark">
+                        {" "}
+                        $
+                        {StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming.toFixed(
+                          2
+                        )}{" "}
+                      </h6>
+                    </div>
                     <div className="">
                       <a
                         href="/Staking"
@@ -304,57 +377,6 @@ const Dashboard = () => {
                       {" "}
                       $
                       {StackingSlice.Wallatedata?.data?.income[0]?.total1?.toFixed(
-                        2
-                      )}{" "}
-                    </h6>
-                  </div>
-                  <div
-                    className="d-flex align-items-center justify-content-between bg-light my-2"
-                    style={{
-                      borderRadius: 12,
-                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                    }}
-                  >
-                    <div className="d-flex align-items-center py-4  ">
-                      <img
-                        src={require("./icons8-community-96 (1).png")}
-                        alt=""
-                        className="img-fluid  ps-3"
-                        style={{ width: "20%" }}
-                      />
-                      <h6 className="m-0 px-3 text-dark">SCB upcomming </h6>
-                    </div>
-                    <h6 className="m-0 px-3 text-dark">
-                      {" "}
-                      $
-                      {StackingSlice.Wallatedata?.data?.income[0]?.total2.toFixed(
-                        2
-                      ) -
-                        StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
-                          2
-                        )}{" "}
-                    </h6>
-                  </div>
-                  <div
-                    className="d-flex align-items-center justify-content-between bg-light my-2"
-                    style={{
-                      borderRadius: 12,
-                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                    }}
-                  >
-                    <div className="d-flex align-items-center py-4  ">
-                      <img
-                        src={require("./icons8-community-96 (1).png")}
-                        alt=""
-                        className="img-fluid  ps-3"
-                        style={{ width: "20%" }}
-                      />
-                      <h6 className="m-0 px-3 text-dark">SCB hold income </h6>
-                    </div>
-                    <h6 className="m-0 px-3 text-dark">
-                      {" "}
-                      $
-                      {StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming.toFixed(
                         2
                       )}{" "}
                     </h6>
