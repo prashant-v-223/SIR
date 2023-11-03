@@ -556,17 +556,17 @@ const Dashboard = () => {
                         <b>Total Earned</b>
                       </h4>
                       <h2 className="text-start text-danger">
-                        SIR {Profile[0]?.mystack}
+                        SIR
+                        {StackingSlice.Wallatedata?.data?.data[0]?.mainWallet.toFixed(
+                          2
+                        )}
                       </h2>
                       <h4 className="pt-5 pb-2 text-dark d-flex   align-content-center">
                         <img src={require("./money.png")} alt="" width={30} />
                         <b>Remaining Limit</b>
                       </h4>
                       <h2 className="text-start text-dark">
-                        SIR{" "}
-                        {StackingSlice.Wallatedata?.data?.data[0]?.mainWallet.toFixed(
-                          2
-                        )}
+                        SIR {Profile[0]?.mystack}
                       </h2>
                     </div>
                     <div className="w-25">
@@ -607,7 +607,10 @@ const Dashboard = () => {
                       <b>Total Earned</b>
                     </h4>{" "}
                     <h4 className="pt-2 m-0 text-danger">
-                      USDT {Profile[0]?.mystack}
+                      USDT{" "}
+                      {StackingSlice.Wallatedata?.data?.data[0]?.incomeWallet?.toFixed(
+                        2
+                      )}
                     </h4>
                     <h4 className="pt-2  text-dark d-flex   align-content-center">
                       <img
@@ -619,10 +622,7 @@ const Dashboard = () => {
                       <b>Remaining Limit</b>
                     </h4>
                     <h4 className="pt-2 m-0 text-dark">
-                      USDT{" "}
-                      {StackingSlice.Wallatedata?.data?.data[0]?.incomeWallet?.toFixed(
-                        2
-                      )}{" "}
+                      USDT {Profile[0]?.mystack}{" "}
                     </h4>
                     <h4 className="pt-2  text-dark d-flex   align-content-center">
                       <img

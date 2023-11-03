@@ -41,6 +41,7 @@ import StakingActive from "./page/StakingActive/StakingActive";
 import Withdrdatadata1 from "./page/Admin/Withdrdatadata1";
 import Mysharetree from "./page/Mysharetree/Mysharetree";
 import MyTreeView from "./page/MyTreeView/MyTreeView";
+import Rewords from "./page/Rewords/Rewords";
 const Spinner = () => {
   return (
     <div className="body">
@@ -72,6 +73,7 @@ function App() {
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/Adminlogin" element={<Adminlogin />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/rewords" element={<Rewords />} />
               <Route
                 path="/reset-password/:token"
                 element={<ResetPassword />}
