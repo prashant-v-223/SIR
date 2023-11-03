@@ -184,6 +184,20 @@ const MyTreeView = () => {
                     <div className="py-5 d-flex">
                       {activetree?.data &&
                         activetree?.data?.map((e) => {
+                          const resultArray = [];
+                          for (const obj of activetree?.data) {
+                            if (obj) {
+                              resultArray.push({
+                                totalInvestment:
+                                  obj.mystack + obj.teamtotalstack,
+                                username: obj.username,
+                              });
+                            }
+                          }
+                          let data = resultArray.sort(
+                            (e, s) => s.totalInvestment - e.totalInvestment
+                          );
+                          console.log(data[0].username);
                           return (
                             <>
                               <TreeNode
@@ -202,13 +216,31 @@ const MyTreeView = () => {
                                           position: "relative",
                                         }}
                                       >
-                                        <img
-                                          src={require("../Dashboard/1-1-optimized 1.png")}
-                                          alt=""
-                                          className="img-fluid"
-                                          width={70}
-                                          height={70}
-                                        />
+                                        {data[0].username === e.username ? (
+                                          <img
+                                            src={require("../Dashboard/icons8-active-male-100.png")}
+                                            alt=""
+                                            className="img-fluid"
+                                            width={70}
+                                            height={70}
+                                          />
+                                        ) : data[1].username === e.username ? (
+                                          <img
+                                            src={require("../Dashboard/godigital_1939742712_popular-man (1)h 1.png")}
+                                            alt=""
+                                            className="img-fluid"
+                                            width={70}
+                                            height={70}
+                                          />
+                                        ) : (
+                                          <img
+                                            src={require("../Dashboard/1-1-optimized 1.png")}
+                                            alt=""
+                                            className="img-fluid"
+                                            width={70}
+                                            height={70}
+                                          />
+                                        )}
                                       </div>
 
                                       <h6
@@ -263,13 +295,32 @@ const MyTreeView = () => {
                                             position: "relative",
                                           }}
                                         >
-                                          <img
-                                            src={require("../Dashboard/1-1-optimized 1.png")}
-                                            alt=""
-                                            className="img-fluid"
-                                            width={70}
-                                            height={70}
-                                          />
+                                          {data[0].username === e.username ? (
+                                            <img
+                                              src={require("../Dashboard/icons8-active-male-100.png")}
+                                              alt=""
+                                              className="img-fluid"
+                                              width={70}
+                                              height={70}
+                                            />
+                                          ) : data[1].username ===
+                                            e.username ? (
+                                            <img
+                                              src={require("../Dashboard/godigital_1939742712_popular-man (1)h 1.png")}
+                                              alt=""
+                                              className="img-fluid"
+                                              width={70}
+                                              height={70}
+                                            />
+                                          ) : (
+                                            <img
+                                              src={require("../Dashboard/1-1-optimized 1.png")}
+                                              alt=""
+                                              className="img-fluid"
+                                              width={70}
+                                              height={70}
+                                            />
+                                          )}
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
                                           <div className="text-dark">

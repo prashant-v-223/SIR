@@ -93,7 +93,7 @@ const Dashboard = () => {
     <>
       <Spin spinning={!StackingSlice.isLoader}>
         <Navbar />
-        <div className="container-fluid   pt-5 bg-light">
+        <div className="container-fluid   py-5 bg-light">
           <div className="container mainsection">
             <div className="row">
               <div className="col-12 col-md-6  py-md-0">
@@ -108,7 +108,9 @@ const Dashboard = () => {
                       <h4 className="pt-2 pb-2 text-light">
                         <b>Portfolio</b>
                       </h4>
-                      <h5 className="text-light pb-3">{Profile[0]?.Fullname}</h5>
+                      <h5 className="text-light pb-3">
+                        {Profile[0]?.Fullname}
+                      </h5>
                       <h6 style={{ color: "#fff" }}>{Profile[0]?.email}</h6>
                       <h6 style={{ color: "#fff" }}>
                         {Profile[0]?.PhoneNumber}
@@ -252,12 +254,33 @@ const Dashboard = () => {
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
-                      ${" "}
-                      {Profile[0]?.mystack
-                        ? Profile[0]?.mystack
-                        : 0}{" "}
+                      $ {Profile[0]?.mystack ? Profile[0]?.mystack : 0}{" "}
                     </h6>
                   </div>
+                  <div
+                    className="d-flex align-items-center justify-content-between bg-light my-2"
+                    style={{
+                      borderRadius: 12,
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    }}
+                  >
+                    <div className="d-flex align-items-center py-4  ">
+                      <img
+                        src={require("./icons8-community-96 (1).png")}
+                        alt=""
+                        className="img-fluid  ps-3"
+                        style={{ width: "20%" }}
+                      />
+                      <h6 className="m-0 px-3 text-dark">SCB Income</h6>
+                    </div>
+                    <h6 className="m-0 px-3 text-dark">
+                      {" "}
+                      $
+                      {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
+                        2
+                      )}{" "}
+                    </h6>
+                  </div>{" "}
                   <div
                     className="d-flex align-items-center justify-content-between bg-light my-2"
                     style={{
@@ -317,7 +340,7 @@ const Dashboard = () => {
                         width={70}
                       />
                     </div>
-                    <h4 className="m-0 px-3 text-dark">Rewards</h4>
+                    <h4 className="m-0 px-3 text-dark">Community Income</h4>
                   </div>{" "}
                   <div
                     className="d-flex align-items-center justify-content-between bg-light my-2"
@@ -332,7 +355,7 @@ const Dashboard = () => {
                         alt=""
                         width={50}
                       />
-                      <h6 className="m-0 px-3 text-dark">Referral and Earn</h6>
+                      <h6 className="m-0 px-3 text-dark">Mentorship</h6>
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       $
@@ -354,14 +377,14 @@ const Dashboard = () => {
                         alt=""
                         className="img-fluid w-25 ps-3"
                       />
-                      <h6 className="m-0 px-3 text-dark">Staking Bonus</h6>
+                      <h6 className="m-0 px-3 text-dark">CBB Income</h6>
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
-                      ${" "}
-                      {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
+                      $ 0
+                      {/* {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
                         2
-                      )}
+                      )} */}
                     </h6>
                   </div>{" "}
                   <div
@@ -378,14 +401,32 @@ const Dashboard = () => {
                         className="img-fluid  ps-3"
                         style={{ width: "20%" }}
                       />
-                      <h6 className="m-0 px-3 text-dark">Community Rewards</h6>
+                      <h6 className="m-0 px-3 text-dark">Royalty Rewards</h6>
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
-                      $
-                      {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
-                        2
-                      )}{" "}
+                      $ 0
+                    </h6>
+                  </div>{" "}
+                  <div
+                    className="d-flex align-items-center justify-content-between bg-light my-2"
+                    style={{
+                      borderRadius: 12,
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    }}
+                  >
+                    <div className="d-flex align-items-center py-4  ">
+                      <img
+                        src={require("./icons8-community-96 (1).png")}
+                        alt=""
+                        className="img-fluid  ps-3"
+                        style={{ width: "18%" }}
+                      />
+                      <h6 className="m-0 px-3 text-dark">Lifetime Achievement Reward</h6>
+                    </div>
+                    <h6 className="m-0 px-3 text-dark">
+                      {" "}
+                      $ 0
                     </h6>
                   </div>{" "}
                 </div>
@@ -457,9 +498,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="row">
+            <div className="row mb-5">
               <h1 className="text-dark py-4">EARNINGS</h1>
               <div className="col-12 col-md-6  py-md-0">
+                <h4 className="text-dark">Staking Income 2X</h4>
                 <div
                   className=" p-4  w-100 aaa"
                   style={{
@@ -488,7 +530,9 @@ const Dashboard = () => {
                       </h4>
                       <h2 className="text-start text-dark">
                         SIR{" "}
-                        {StackingSlice.Wallatedata?.data?.data[0]?.mainWallet.toFixed(2)}
+                        {StackingSlice.Wallatedata?.data?.data[0]?.mainWallet.toFixed(
+                          2
+                        )}
                       </h2>
                     </div>
                     <div className="w-25">
@@ -510,6 +554,7 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="col-12 col-md-6 py-3 py-md-0">
+                <h4 className="text-dark">Community Income  3X</h4>
                 <div
                   className="Portfolio234  d-flex w-100"
                   style={{

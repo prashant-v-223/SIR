@@ -216,31 +216,14 @@ const Mysharetree = () => {
                                         position: "relative",
                                       }}
                                     >
-                                      {data[0].username === e.username ? (
-                                        <img
-                                          src={require("../Dashboard/icons8-active-male-100.png")}
-                                          alt=""
-                                          className="img-fluid"
-                                          width={70}
-                                          height={70}
-                                        />
-                                      ) : data[1].username === e.username ? (
-                                        <img
-                                          src={require("../Dashboard/godigital_1939742712_popular-man (1)h 1.png")}
-                                          alt=""
-                                          className="img-fluid"
-                                          width={70}
-                                          height={70}
-                                        />
-                                      ) : (
-                                        <img
-                                          src={require("../Dashboard/1-1-optimized 1.png")}
-                                          alt=""
-                                          className="img-fluid"
-                                          width={70}
-                                          height={70}
-                                        />
-                                      )}
+                                      <img
+                                        src={require("../Dashboard/1-1-optimized 1.png")}
+                                        alt=""
+                                        className="img-fluid"
+                                        width={70}
+                                        height={70}
+                                      />
+
                                       {/* <img
                                         src={require("../Dashboard/1-1-optimized 1.png")}
                                         alt=""
@@ -302,31 +285,13 @@ const Mysharetree = () => {
                                           position: "relative",
                                         }}
                                       >
-                                        {data[0].username === e.username ? (
-                                          <img
-                                            src={require("../Dashboard/icons8-active-male-100.png")}
-                                            alt=""
-                                            className="img-fluid"
-                                            width={70}
-                                            height={70}
-                                          />
-                                        ) : data[1].username === e.username ? (
-                                          <img
-                                            src={require("../Dashboard/godigital_1939742712_popular-man (1)h 1.png")}
-                                            alt=""
-                                            className="img-fluid"
-                                            width={70}
-                                            height={70}
-                                          />
-                                        ) : (
-                                          <img
-                                            src={require("../Dashboard/1-1-optimized 1.png")}
-                                            alt=""
-                                            className="img-fluid"
-                                            width={70}
-                                            height={70}
-                                          />
-                                        )}
+                                        <img
+                                          src={require("../Dashboard/1-1-optimized 1.png")}
+                                          alt=""
+                                          className="img-fluid"
+                                          width={70}
+                                          height={70}
+                                        />
                                         {/* <img
                                           src={require("../Dashboard/1-1-optimized 1.png")}
                                           alt=""
