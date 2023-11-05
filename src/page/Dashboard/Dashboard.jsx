@@ -620,7 +620,12 @@ const Dashboard = () => {
                         {Number(
                           Profile[0]?.mystack * 2 -
                             StackingSlice.Wallatedata?.data?.income[0]
-                              ?.StakingBonusIncome
+                              ?.StakingBonusIncome <
+                            0
+                            ? Profile[0]?.mystack * 2 -
+                                StackingSlice.Wallatedata?.data?.income[0]
+                                  ?.StakingBonusIncome
+                            : 0
                         ).toFixed(2)}
                       </h2>
                     </div>
@@ -681,7 +686,13 @@ const Dashboard = () => {
                       USDT{" "}
                       {Number(
                         ((Profile[0]?.mystack * 3) / 90) * 14 -
-                          StackingSlice.Wallatedata?.data?.data[0]?.incomeWallet
+                          StackingSlice.Wallatedata?.data?.data[0]
+                            ?.incomeWallet <
+                          0
+                          ? 0
+                          : ((Profile[0]?.mystack * 3) / 90) * 14 -
+                              StackingSlice.Wallatedata?.data?.data[0]
+                                ?.incomeWallet
                       )?.toFixed(2)}
                     </h4>
                     <h4 className="pt-2  text-dark d-flex   align-content-center">
