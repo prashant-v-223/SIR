@@ -216,15 +216,24 @@ function Staking() {
             v4x,
             "0x36a68868fDda32D6ad7a3620557167FC204cf903"
           );
+          // await contract.methods
+          //   .transfer(
+          //     process.env.REACT_APP_OWNER_ADDRESS,
+          //     web3.utils.toBN(
+          //       Math.ceil(Number((values[e] * 90) / 14).toFixed(2)) *
+          //         Math.pow(10, decimal)
+          //     )
+          //   )
+          //   .send({
+          //     from: account,
+          //     gasPrice: web3.utils.toWei("5", "gwei"), // Set gas price to 5 Gwei (adjust as needed)
+          //   })
+          //   .on("receipt", async (receipt) => {
           const decimal = await contract.methods.decimals().call();
+          let a = (values[e] * 90) / 14;
+          const amountInWei = web3.utils.toWei(a.toString(), "ether"); // Convert to Wei
           await contract.methods
-            .transfer(
-              process.env.REACT_APP_OWNER_ADDRESS,
-              web3.utils.toBN(
-                Math.ceil(Number((values[e] * 90) / 14).toFixed(2)) *
-                  Math.pow(10, decimal)
-              )
-            )
+            .transfer(process.env.REACT_APP_OWNER_ADDRESS, amountInWei)
             .send({
               from: account,
               gasPrice: web3.utils.toWei("5", "gwei"), // Set gas price to 5 Gwei (adjust as needed)
