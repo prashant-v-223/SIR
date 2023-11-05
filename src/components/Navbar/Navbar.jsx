@@ -55,7 +55,7 @@ function Navbar1() {
             className="mx-3"
             style={{ color: "#ccd700", fontSize: "26px", cursor: "pointer" }}
             onClick={() => {
-              window.location.replace("https://sir-amber.vercel.app/");
+              window.location.replace("https://sirglobal.org/");
             }}
           />
           {Profile.username && (

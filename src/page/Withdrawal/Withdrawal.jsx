@@ -24,7 +24,8 @@ function Withdrawal() {
   const WallatedatSlice = useSelector((state) => state.WallatedatSlice);
   const [Alldata, setAlldata] = React.useState([]);
   const [Profile, setProfile] = React.useState({});
-  const [Wallet, setWallet] = React.useState("Main Wallet");
+  const [Wallet, setWallet] = React.useState("");
+  const [Wallet12, setWallet12] = React.useState("");
   const [open, setopen] = React.useState(false);
   const [open1, setopen1] = React.useState(false);
   const [otp, setotp] = React.useState("");
@@ -223,6 +224,7 @@ function Withdrawal() {
                           }}
                           label={"Withdraw "}
                           onClick={async () => {
+                            setWallet12("Sir Income Wallate")
                             const res = await dispatch(
                               getdappWallatedata({
                                 Token:
@@ -295,6 +297,7 @@ function Withdrawal() {
                           }}
                           label={"Withdraw "}
                           onClick={async () => {
+                            setWallet12("Sir Wallate")
                             const res = await dispatch(
                               getdappWallatedata({
                                 Token:
@@ -438,7 +441,7 @@ function Withdrawal() {
                     otp: otp,
                     walletaddress: address,
                     Amount: WalletAmountcal,
-                    Remark: "main wallate",
+                    Remark: Wallet12,
                     Token:
                       JSON.parse(localStorage.getItem("data")) &&
                       JSON.parse(localStorage.getItem("data")).data.token,

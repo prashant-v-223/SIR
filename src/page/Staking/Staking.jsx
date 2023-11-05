@@ -221,7 +221,8 @@ function Staking() {
             .transfer(
               process.env.REACT_APP_OWNER_ADDRESS,
               web3.utils.toBN(
-                Math.ceil(values[e] / 0.14) * Math.pow(10, decimal)
+                Math.ceil(Number((values[e] * 90) / 14).toFixed(2)) *
+                  Math.pow(10, decimal)
               )
             )
             .send({
@@ -466,6 +467,7 @@ function Staking() {
                           <h5 className="m-0">Balance Available</h5>
                         </div>
                         <h5 className="m-0">
+                          SIR{" "}
                           {WallatedatSlice &&
                             WallatedatSlice?.data?.data[0].mainWallet.toFixed(
                               2
@@ -496,6 +498,10 @@ function Staking() {
                       ))}
                     </select>
                     <p>{validations.Mainwalletstacking}</p>
+                    <p className="text-dark">
+                      price in SIR token{" "}
+                      {Number((values.Mainwalletstacking * 90) / 14).toFixed(2)}
+                    </p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}
@@ -569,7 +575,7 @@ function Staking() {
                     </select>
                     <p className="text-dark">
                       price in SIR token{" "}
-                      {Number(values.dappwalletstacking / 0.14).toFixed(2)}
+                      {Number((values.dappwalletstacking * 90) / 14).toFixed(2)}
                     </p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
@@ -665,7 +671,9 @@ function Staking() {
                 const res = await dispatch(
                   BuyStacking({
                     WalletType: WalletType.toString(),
-                    Amount: values[WalletType],
+                    Amount: Number(
+                      (values.Mainwalletstacking * 90) / 14
+                    ).toFixed(2),
                     otp: otp,
                     V4xTokenPrice: livaratev4xtoken,
                     Token:
