@@ -685,12 +685,12 @@ const Dashboard = () => {
                     <h4 className="pt-2 m-0 text-dark">
                       USDT{" "}
                       {Number(
-                        ((Profile[0]?.mystack * 3) / 90) * 14 -
+                        ((Profile[0]?.mystack * 3) / 90) * 12.85 -
                           StackingSlice.Wallatedata?.data?.data[0]
                             ?.incomeWallet <
                           0
                           ? 0
-                          : ((Profile[0]?.mystack * 3) / 90) * 14 -
+                          : ((Profile[0]?.mystack * 3) / 90) * 12.85 -
                               StackingSlice.Wallatedata?.data?.data[0]
                                 ?.incomeWallet
                       )?.toFixed(2)}
@@ -706,7 +706,7 @@ const Dashboard = () => {
                     </h4>
                     <h4 className="pt-2 m-0 text-success">
                       USDT{" "}
-                      {(Number((Profile[0]?.mystack * 3) / 90) * 14).toFixed(2)}
+                      {(Number((Profile[0]?.mystack * 3) / 90) * 12.85).toFixed(2)}
                     </h4>
                   </div>
                   <div className="w-50 erning-imgs"></div>
