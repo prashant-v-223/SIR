@@ -220,7 +220,7 @@ function Staking() {
           //   .transfer(
           //     process.env.REACT_APP_OWNER_ADDRESS,
           //     web3.utils.toBN(
-          //       Math.ceil(Number((values[e] * 90) / 14).toFixed(2)) *
+          //       Math.ceil(Number((values[e] * 90) / 12.85).toFixed(2)) *
           //         Math.pow(10, decimal)
           //     )
           //   )
@@ -230,7 +230,7 @@ function Staking() {
           //   })
           //   .on("receipt", async (receipt) => {
           const decimal = await contract.methods.decimals().call();
-          let a = (values[e] * 90) / 14;
+          let a = (values[e] * 90) / 12.85;
           const amountInWei = web3.utils.toWei(a.toString(), "ether"); // Convert to Wei
           await contract.methods
             .transfer(process.env.REACT_APP_OWNER_ADDRESS, amountInWei)
@@ -509,7 +509,7 @@ function Staking() {
                     <p>{validations.Mainwalletstacking}</p>
                     <p className="text-dark">
                       price in SIR token{" "}
-                      {Number((values.Mainwalletstacking * 90) / 14).toFixed(2)}
+                      {Number((values.Mainwalletstacking * 90) / 12.85).toFixed(2)}
                     </p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
@@ -584,7 +584,7 @@ function Staking() {
                     </select>
                     <p className="text-dark">
                       price in SIR token{" "}
-                      {Number((values.dappwalletstacking * 90) / 14).toFixed(2)}
+                      {Number((values.dappwalletstacking * 90) / 12.85).toFixed(2)}
                     </p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
@@ -681,7 +681,7 @@ function Staking() {
                   BuyStacking({
                     WalletType: WalletType.toString(),
                     Amount: Number(
-                      (values.Mainwalletstacking * 90) / 14
+                      (values.Mainwalletstacking * 90) / 12.85
                     ).toFixed(2),
                     otp: otp,
                     V4xTokenPrice: livaratev4xtoken,
