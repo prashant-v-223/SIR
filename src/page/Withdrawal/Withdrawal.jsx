@@ -224,21 +224,33 @@ function Withdrawal() {
                           }}
                           label={"Withdraw "}
                           onClick={async () => {
-                            setWallet12("Sir Income Wallate")
-                            const res = await dispatch(
-                              getdappWallatedata({
-                                Token:
-                                  JSON.parse(localStorage.getItem("data")) &&
-                                  JSON.parse(localStorage.getItem("data")).data
-                                    .token,
-                              })
-                            );
-                            if (res.payload.data.isSuccess) {
-                              setotp("");
-                              toast.success(res.payload.data.message);
-                              setopen(!false);
+                            setWallet12("Sir Income Wallate");
+                            if (
+                              (
+                                Number((Profile[0]?.mystack * 3) / 90) * 14
+                              ).toFixed(2) >= WalletAmountcal1
+                            ) {
+                              const res = await dispatch(
+                                getdappWallatedata({
+                                  Token:
+                                    JSON.parse(localStorage.getItem("data")) &&
+                                    JSON.parse(localStorage.getItem("data"))
+                                      .data.token,
+                                })
+                              );
+                              if (res.payload.data.isSuccess) {
+                                setotp("");
+                                toast.success(res.payload.data.message);
+                                setopen(!false);
+                              } else {
+                                toast.error(res.payload.data.message);
+                              }
                             } else {
-                              toast.error(res.payload.data.message);
+                              toast.error(
+                                `your erning limit is ${Number(
+                                  Profile[0]?.mystack * 2
+                                ).toFixed(2)} you can not Withdraw !`
+                              );
                             }
                           }}
                         />
@@ -297,21 +309,32 @@ function Withdrawal() {
                           }}
                           label={"Withdraw "}
                           onClick={async () => {
-                            setWallet12("Sir Wallate")
-                            const res = await dispatch(
-                              getdappWallatedata({
-                                Token:
-                                  JSON.parse(localStorage.getItem("data")) &&
-                                  JSON.parse(localStorage.getItem("data")).data
-                                    .token,
-                              })
-                            );
-                            if (res.payload.data.isSuccess) {
-                              setotp("");
-                              toast.success(res.payload.data.message);
-                              setopen(!false);
+                            if (
+                              Number(Profile[0]?.mystack * 2).toFixed(2) >=
+                              WalletAmountcal
+                            ) {
+                              setWallet12("Sir Wallate");
+                              const res = await dispatch(
+                                getdappWallatedata({
+                                  Token:
+                                    JSON.parse(localStorage.getItem("data")) &&
+                                    JSON.parse(localStorage.getItem("data"))
+                                      .data.token,
+                                })
+                              );
+                              if (res.payload.data.isSuccess) {
+                                setotp("");
+                                toast.success(res.payload.data.message);
+                                setopen(!false);
+                              } else {
+                                toast.error(res.payload.data.message);
+                              }
                             } else {
-                              toast.error(res.payload.data.message);
+                              toast.error(
+                                `your erning limit is ${Number(
+                                  Profile[0]?.mystack * 2
+                                ).toFixed(2)} you can not Withdraw !`
+                              );
                             }
                           }}
                         />
