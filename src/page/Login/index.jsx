@@ -17,10 +17,6 @@ import { Foegotpassword, Signin, Signup } from "../../Redux/authSlice";
 import { toast } from "react-toastify";
 import { Checkbox, Spin } from "antd";
 import bep20Abi from "../../Helpers/bep20Abi.json";
-// import {
-//   WalletConnectModalAuth,
-//   useSignIn,
-// } from "@walletconnect/modal-auth-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import Web3 from "web3";
@@ -40,8 +36,6 @@ function Login() {
 
   const SignupUser = () => {
     const [finnduser, setfinnduser] = React.useState("");
-  console.log(location.search.split("?")[1]);
-  console.log(location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",);
     const { active, account, library, connector, activate, deactivate, error } =
       useWeb3React();
 
@@ -54,19 +48,27 @@ function Login() {
       username: "",
       Password: "",
       Reenterpassword: "",
-      referralId: location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",
+      referralId:
+        location?.pathname?.split("/").length >= 2
+          ? location?.pathname?.split("/")[2]
+          : "SIR",
     });
 
     const [wallet, setWallet] = React.useState("");
     const [eqxBalance, setEqxBalance] = React.useState(0);
-    useEffect(async () => {
+    useEffect(() => {
+      getdata();
+    }, [location]);
+    const getdata = async () => {
       let headersList = {
         Accept: "*/*",
         "User-Agent": "Thunder Client (https://www.thunderclient.com)",
       };
       let response = await fetch(
         `https://api.sirglobal.org/api/user/usernametogetfullname/${
-          location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",
+          location?.pathname?.split("/").length >= 2
+            ? "SIR" + location?.pathname?.split("/")[2]?.slice(3)
+            : ""
         }`,
         {
           method: "GET",
@@ -81,8 +83,7 @@ function Login() {
       } else {
         setfinnduser("");
       }
-    }, [location]);
-
+    };
     // const { auth, spinner } = props;
     const getWeb3 = async () => {
       try {
@@ -121,7 +122,7 @@ function Login() {
       phone: "",
       Reenterpassword: "",
       username: "",
-      referralId: location.pathname.split("/")[1],
+      referralId: "",
     });
 
     const validateAll = () => {
@@ -210,7 +211,7 @@ function Login() {
         };
         let response = await fetch(
           `https://api.sirglobal.org/api/user/usernametogetfullname/${
-           value
+            "SIR" + value?.slice(3)
           }`,
           {
             method: "GET",
@@ -466,11 +467,10 @@ function Login() {
                       style={{
                         border: "1px solid #fff",
                       }}
-                    />{referralIdVal ? (
-                        <span className="error">
-                          {"referralId is required!"}
-                        </span>
-                      ) : null}
+                    />
+                    {referralIdVal ? (
+                      <span className="error">{"referralId is required!"}</span>
+                    ) : null}
                     {finnduser !== "" && <p className="error">{finnduser}</p>}
                   </div>
                   <div
