@@ -19,11 +19,12 @@ import Navbar1 from "../../components/Navbar/Navbar";
 
 function AdminTransfer() {
   const StackingbounsSlice = useSelector((state) => state.Adminuserdata);
+  const [finnduser, setfinnduser] = React.useState("");
   const [Alldata, setAlldata] = React.useState([]);
   const dispatch = useDispatch();
   const location = useLocation();
   const [values, setValues] = React.useState({
-    username: "",
+    username: "SIR",
     Amount: "",
     Walletname: "Main Wallet",
   });
@@ -164,10 +165,46 @@ function AdminTransfer() {
                   placeholder="Enter username"
                   style={{ color: "#fff !important", border: "1px solid #fff" }}
                   value={values.username}
+                  onChange={async (e) => {
+                    handleChange(e);
+                    let headersList = {
+                      Accept: "*/*",
+                      "User-Agent":
+                        "Thunder Client (https://www.thunderclient.com)",
+                      Authorization: `Bearer ${
+                        JSON.parse(localStorage.getItem("data")) &&
+                        JSON.parse(localStorage.getItem("data")).data.token
+                      }`,
+                    };
+                    let response = await fetch(
+                      `http://localhost:8080/api/user/usernametogetfullname/${e.target.value}`,
+                      {
+                        method: "GET",
+                        headers: headersList,
+                      }
+                    );
+
+                    let data = await response.text();
+                    let res = JSON.parse(data);
+                    if (res.data.length > 0) {
+                      console.log("data", res.data[0].Fullname);
+                      setfinnduser(res.data[0].Fullname);
+                    } else {
+                      setfinnduser("");
+                    }
+                  }}
+                />{" "}
+                {finnduser !== "" && <p className="error">{finnduser}</p>}
+                {/* <InputField
+                  type="text"
+                  name="username"
+                  placeholder="Enter username"
+                  style={{ color: "#fff !important", border: "1px solid #fff" }}
+                  value={values.username}
                   onChange={(e) => {
                     handleChange(e);
                   }}
-                />
+                /> */}
               </div>
               <div className="col-6">
                 <InputField

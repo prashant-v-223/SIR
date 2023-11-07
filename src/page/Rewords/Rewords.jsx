@@ -103,7 +103,7 @@ function Rewords() {
       },
     },
     {
-      title: "name",
+      title: "Name",
       dataIndex: "name",
       key: "name",
       width: "200px",
@@ -119,7 +119,7 @@ function Rewords() {
       },
     },
     {
-      title: "amount",
+      title: "Amount",
       dataIndex: "amount",
       key: "amount",
       width: "200px",
@@ -182,7 +182,8 @@ function Rewords() {
         return (
           <Tooltip placement="topLeft" title={record.amount}>
             {record?.amount * 0.25} <br />
-            My Remaining Power TotalInvestment {Profile.length > 2
+            My Remaining Power TotalInvestment{" "}
+            {Profile.length > 2
               ? Profile[2]?.totalInvestment + Profile.length > 3
                 ? Profile[3]?.totalInvestment
                 : 0 + Profile.length > 4
@@ -200,16 +201,15 @@ function Rewords() {
       <div className="container-fluid blackbg">
         <div className="mainsection">
           <div className="row px-3 pt-4 justify-content-center">
-            <div className="d-flex justify-content-between py-4">
+            <h1 className="text-crnter d-block m-auto text-dark">My Rewards</h1>
+            <div className="d-flex justify-content-between py-4 px-3">
               <div className="">My Rank :{Profile1[0]?.Rank}</div>
               <div className="">My leval :{Profile1[0]?.leval}</div>
             </div>
-            <p>you want to 5 direct to achieve new rank</p>
             <Table
               columns={columns}
               dataSource={data}
               bordered={true}
-              title={() => "Your Staking Details"}
               scroll={{ x: "1500px " }}
               exportable
             />

@@ -24,8 +24,9 @@ function Withdrawal() {
   const WallatedatSlice = useSelector((state) => state.WallatedatSlice);
   const [Alldata, setAlldata] = React.useState([]);
   const [Profile, setProfile] = React.useState({});
-  const [Wallet, setWallet] = React.useState("");
+  const [Wallet, setWallet] = React.useState("Main Wallet");
   const [Wallet12, setWallet12] = React.useState("");
+  const [finnduser, setfinnduser] = React.useState("");
   const [open, setopen] = React.useState(false);
   const [open1, setopen1] = React.useState(false);
   const [otp, setotp] = React.useState("");
@@ -46,6 +47,7 @@ function Withdrawal() {
   const [values, setValues] = React.useState({
     Amount: "",
     Amount1: "",
+    username: "SIR",
   });
   const [validations, setValidations] = React.useState({
     Amount: "",
@@ -176,7 +178,7 @@ function Withdrawal() {
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-dark d-flex ">
-                      <b> Withdraw USDT</b>
+                      <b> USDT Wallet</b>
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -187,7 +189,7 @@ function Withdrawal() {
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            SIR Income Wallet Balance
+                            USDT Wallet Balance
                           </h6>
                         </div>
                         <div className="px-3 py-2 py-lg-0">
@@ -225,32 +227,20 @@ function Withdrawal() {
                           label={"Withdraw "}
                           onClick={async () => {
                             setWallet12("Sir Income Wallate");
-                            if (
-                              (
-                                Number((Profile[0]?.mystack * 3) / 90) * 14
-                              ).toFixed(2) >= WalletAmountcal1
-                            ) {
-                              const res = await dispatch(
-                                getdappWallatedata({
-                                  Token:
-                                    JSON.parse(localStorage.getItem("data")) &&
-                                    JSON.parse(localStorage.getItem("data"))
-                                      .data.token,
-                                })
-                              );
-                              if (res.payload.data.isSuccess) {
-                                setotp("");
-                                toast.success(res.payload.data.message);
-                                setopen(!false);
-                              } else {
-                                toast.error(res.payload.data.message);
-                              }
+                            const res = await dispatch(
+                              getdappWallatedata({
+                                Token:
+                                  JSON.parse(localStorage.getItem("data")) &&
+                                  JSON.parse(localStorage.getItem("data")).data
+                                    .token,
+                              })
+                            );
+                            if (res.payload.data.isSuccess) {
+                              setotp("");
+                              toast.success(res.payload.data.message);
+                              setopen(!false);
                             } else {
-                              toast.error(
-                                `your erning limit is ${Number(
-                                  Profile[0]?.mystack * 2
-                                ).toFixed(2)} you can not Withdraw !`
-                              );
+                              toast.error(res.payload.data.message);
                             }
                           }}
                         />
@@ -261,7 +251,7 @@ function Withdrawal() {
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-dark d-flex ">
-                      <b>Withdraw SIR</b>
+                      <b>SIR Wallet</b>
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -272,7 +262,7 @@ function Withdrawal() {
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            SIR Main Wallet Balance
+                            SIR Wallet Balance
                           </h6>
                         </div>
                         <div className="px-3 py-2 py-lg-0">
@@ -309,32 +299,21 @@ function Withdrawal() {
                           }}
                           label={"Withdraw "}
                           onClick={async () => {
-                            if (
-                              Number(Profile[0]?.mystack * 2).toFixed(2) >=
-                              WalletAmountcal
-                            ) {
-                              setWallet12("Sir Wallate");
-                              const res = await dispatch(
-                                getdappWallatedata({
-                                  Token:
-                                    JSON.parse(localStorage.getItem("data")) &&
-                                    JSON.parse(localStorage.getItem("data"))
-                                      .data.token,
-                                })
-                              );
-                              if (res.payload.data.isSuccess) {
-                                setotp("");
-                                toast.success(res.payload.data.message);
-                                setopen(!false);
-                              } else {
-                                toast.error(res.payload.data.message);
-                              }
+                            setWallet12("Sir Wallate");
+                            const res = await dispatch(
+                              getdappWallatedata({
+                                Token:
+                                  JSON.parse(localStorage.getItem("data")) &&
+                                  JSON.parse(localStorage.getItem("data")).data
+                                    .token,
+                              })
+                            );
+                            if (res.payload.data.isSuccess) {
+                              setotp("");
+                              toast.success(res.payload.data.message);
+                              setopen(!false);
                             } else {
-                              toast.error(
-                                `your erning limit is ${Number(
-                                  Profile[0]?.mystack * 2
-                                ).toFixed(2)} you can not Withdraw !`
-                              );
+                              toast.error(res.payload.data.message);
                             }
                           }}
                         />
@@ -342,10 +321,171 @@ function Withdrawal() {
                     </div>
                   </div>
                 </div>
+                <div className="col-12  py-4 pb-md-0">
+                  <div className="Boxcard p-4">
+                    <h6 className="text-dark d-flex ">
+                      Transfer Tokens
+                      <img
+                        src={require("../../assets/img/Vector (28).png")}
+                        alt=""
+                        className="img-fluid mx-3"
+                      />{" "}
+                    </h6>
+                    <div className="Withdrawalbox px-3 py-4 my-4 d-sm-flex">
+                      <div className="d-flex justify-content-center align-items-center img-div1">
+                        <img
+                          src={require("../../assets/img/Vector (26).png")}
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </div>
+                      <div className="img-div2">
+                        <p className="m-0 text-light">
+                          You can transfer your SIR wallet coins to your
+                          downline team members.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-12 col-lg-6  py-2">
+                        <Select
+                          style={{ width: "100%" }}
+                          name="Walletoname"
+                          defaultValue={"Main Wallet"}
+                          placeholder="Select Wallet To Transfer From"
+                          size="large"
+                          className="my-2"
+                          options={[
+                            {
+                              label: "SIR Wallet",
+                              value: `Main Wallet`,
+                            },
+                            { label: "USDT Wallet", value: "E-Wallet" },
+                          ]}
+                          onChange={(value) => {
+                            setWallet(value);
+                          }}
+                        />
+                      </div>
+                      <div className="#848b02col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center py-2">
+                        <div className="w-100">
+                          <InputField
+                            type="text"
+                            name="username"
+                            placeholder="Enter username"
+                            value={values.username}
+                            onChange={async (e) => {
+                              handleChange(e);
+                              let headersList = {
+                                Accept: "*/*",
+                                "User-Agent":
+                                  "Thunder Client (https://www.thunderclient.com)",
+                                Authorization: `Bearer ${
+                                  JSON.parse(localStorage.getItem("data")) &&
+                                  JSON.parse(localStorage.getItem("data")).data
+                                    .token
+                                }`,
+                              };
+                              let response = await fetch(
+                                `http://localhost:8080/api/user/usernametogetfullname/${e.target.value}`,
+                                {
+                                  method: "GET",
+                                  headers: headersList,
+                                }
+                              );
+
+                              let data = await response.text();
+                              let res = JSON.parse(data);
+                              if (res.data.length > 0) {
+                                console.log("data", res.data[0].Fullname);
+                                setfinnduser(res.data[0].Fullname);
+                              } else {
+                                setfinnduser("");
+                              }
+                            }}
+                          />
+                        </div>
+                        <div className="w-100">
+                          {UsernameVal !== "" && (
+                            <p className="error">{UsernameVal}</p>
+                          )}
+                          {finnduser !== "" && (
+                            <p className="error">{finnduser}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-12 py-2">
+                        <InputField
+                          type="number"
+                          name="Amount"
+                          min={0}
+                          placeholder="Enter Amount of USDT Coin to Transfer"
+                          value={Amount}
+                          pattern="[0-9]*"
+                          error={AmountVal}
+                          onChange={(e) => {
+                            e.target.validity.valid && handleChange(e);
+                          }}
+                          onBlur={validateOne}
+                        />
+                      </div>
+                      <div className="col-12 py-2 ">
+                        <InputField
+                          type="text"
+                          name="Walletaddress"
+                          placeholder={
+                            Wallet === "Main Wallet"
+                              ? "USDT Balance in Main Wallet"
+                              : "USDT Balance in E-Wallet"
+                          }
+                          value={
+                            Wallet === "Main Wallet"
+                              ? WallatedatSlice.Wallatedata?.data?.data[0]
+                                  ?.mainWallet
+                              : WallatedatSlice.Wallatedata?.data?.data[0]
+                                  ?.incomeWallet
+                          }
+                          disabled={true}
+                        />
+                      </div>
+                      <div className="col-12 pt-4">
+                        <Button
+                          className={" w-100 text-light Withdrawalbox"}
+                          Stake={!false}
+                          style={{
+                            background: "#31a872",
+                            height: 60,
+                            border: "none",
+                          }}
+                          onClick={() => handleSubmit()}
+                          label={"Send"}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="Boxcard p-4 my-4">
+                    <h6 className="text-dark d-flex pb-3">
+                      View your transfer reports here
+                    </h6>
+                    <Button
+                      className={" w-100 text-light my-2"}
+                      Stake={!false}
+                      style={{
+                        background: "#31a872",
+                        height: 60,
+                        border: "none",
+                      }}
+                      label={" SIRToken Transfer Report "}
+                      onClick={() => {
+                        navigation("/transfer/income");
+                      }}
+                    />
+                  </div>
+                </div>
                 <div className="col-12">
                   <div className="Boxcard p-4 my-4">
                     <h6 className="text-dark d-flex pb-3">
-                      <b>Withdraw USDT</b>
+                      <b>Withdraw History</b>
                     </h6>
                     <Button
                       className={" w-100 text-light"}
@@ -364,6 +504,9 @@ function Withdrawal() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="container-fluid blackbg">
+            <div className="mainsection"></div>
           </div>
         </>
         <Modal show={open1} centered>
@@ -463,7 +606,10 @@ function Withdrawal() {
                   getdappWallatedata1({
                     otp: otp,
                     walletaddress: address,
-                    Amount: WalletAmountcal,
+                    Amount:
+                      Wallet12 !== "Sir Income Wallate"
+                        ? WalletAmountcal
+                        : WalletAmountcal1,
                     Remark: Wallet12,
                     Token:
                       JSON.parse(localStorage.getItem("data")) &&

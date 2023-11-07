@@ -71,6 +71,7 @@ function App() {
           <React.Suspense fallback={<Spinner />}>
             <Routes>
               <Route exact path="/login" element={<Login />} />
+              <Route exact path="/login/:reffid" element={<Login />} />
               <Route exact path="/Adminlogin" element={<Adminlogin />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/rewords" element={<Rewords />} />

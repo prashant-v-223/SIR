@@ -49,12 +49,12 @@ function TransferRepors() {
       },
       render: (address) => (
         <Tooltip placement="topLeft" title={address}>
-          {address}
+          {address === "Main Wallet" ? "SIR Wallet" : "USDT Wallet"}
         </Tooltip>
       ),
     },
     {
-            title: "To User Name",
+      title: "To User Name",
       dataIndex: "username",
       key: "username",
       ellipsis: {
@@ -91,7 +91,7 @@ function TransferRepors() {
       },
       render: (address) => (
         <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
-        {new Date(address).toLocaleString()}
+          {new Date(address).toLocaleString()}
         </Tooltip>
       ),
     },
@@ -160,7 +160,7 @@ function TransferRepors() {
       },
       render: (address) => (
         <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
-        {new Date(address).toLocaleString()}
+          {new Date(address).toLocaleString()}
         </Tooltip>
       ),
     },

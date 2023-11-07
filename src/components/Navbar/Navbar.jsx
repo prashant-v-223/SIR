@@ -380,7 +380,7 @@ function Navbar1() {
                   fill="#fcd21d"
                 />
               </svg>
-              Rewords
+              Rewards
             </Nav.Link>
             {Profile?.Roll === "admin" && (
               <Dropdown>

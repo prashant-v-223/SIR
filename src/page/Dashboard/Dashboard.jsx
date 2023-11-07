@@ -216,9 +216,21 @@ const Dashboard = () => {
                   }}
                 >
                   <div className="w-100">
-                    <h5 className="text-light">My Total Investment</h5>
-                    <h4 className="pt-2 pb-2">
-                      ${Number(Profile[0]?.teamtotalstack).toFixed(2)}
+                    <h5
+                      className="text-light"
+                      style={{
+                        color: "#fff",
+                      }}
+                    >
+                      My Total Investment
+                    </h5>
+                    <h4
+                      className="pt-2 pb-2"
+                      style={{
+                        color: "#fff",
+                      }}
+                    >
+                      SIR {Number(Profile[0]?.teamtotalstack).toFixed(2)}
                     </h4>
                     <div
                       className="d-flex align-items-center justify-content-between bg-light my-2"
@@ -546,8 +558,7 @@ const Dashboard = () => {
                       <h6 className="m-0 px-3 text-dark">Staking Report</h6>
                     </div>
                     <h6 className="m-0 px-3 text-dark">
-                      {" "}
-                      $
+                      SIR{" "}
                       {Number(
                         StackingSlice.Wallatedata?.data?.data[0]?.mainWallet
                       )?.toFixed(2)}{" "}
@@ -620,7 +631,7 @@ const Dashboard = () => {
                         {Number(
                           Profile[0]?.mystack * 2 -
                             StackingSlice.Wallatedata?.data?.income[0]
-                              ?.StakingBonusIncome <
+                              ?.StakingBonusIncome >
                             0
                             ? Profile[0]?.mystack * 2 -
                                 StackingSlice.Wallatedata?.data?.income[0]
@@ -687,12 +698,12 @@ const Dashboard = () => {
                       {Number(
                         ((Profile[0]?.mystack * 3) / 90) * 12.85 -
                           StackingSlice.Wallatedata?.data?.data[0]
-                            ?.incomeWallet <
+                            ?.incomeWallet >
                           0
-                          ? 0
-                          : ((Profile[0]?.mystack * 3) / 90) * 12.85 -
+                          ? ((Profile[0]?.mystack * 3) / 90) * 12.85 -
                               StackingSlice.Wallatedata?.data?.data[0]
                                 ?.incomeWallet
+                          : 0
                       )?.toFixed(2)}
                     </h4>
                     <h4 className="pt-2  text-dark d-flex   align-content-center">
@@ -706,7 +717,9 @@ const Dashboard = () => {
                     </h4>
                     <h4 className="pt-2 m-0 text-success">
                       USDT{" "}
-                      {(Number((Profile[0]?.mystack * 3) / 90) * 12.85).toFixed(2)}
+                      {(Number((Profile[0]?.mystack * 3) / 90) * 12.85).toFixed(
+                        2
+                      )}
                     </h4>
                   </div>
                   <div className="w-50 erning-imgs"></div>

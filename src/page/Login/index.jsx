@@ -29,6 +29,7 @@ import "react-phone-number-input/style.css";
 function Login() {
   const location = useLocation();
   console.log(location.search.split("?")[1]);
+  console.log(location.pathname.split("/")[2]);
   const [type, settype] = useState(!location.search ? true : false);
   const [check, setcheck] = useState(true);
   const dispatch = useDispatch();
@@ -40,10 +41,12 @@ function Login() {
   }, []);
 
   const SignupUser = () => {
+    const [finnduser, setfinnduser] = React.useState("");
     const { active, account, library, connector, activate, deactivate, error } =
       useWeb3React();
 
     const [show, setShow] = useState(false);
+    const [otp, setotp] = useState("");
     const [values, setValues] = React.useState({
       Walletaddress: "ssssss",
       Email: "",
@@ -51,11 +54,35 @@ function Login() {
       username: "",
       Password: "",
       Reenterpassword: "",
-      referralId: "",
+      referralId: location.pathname.split("/")[2],
     });
 
     const [wallet, setWallet] = React.useState("");
     const [eqxBalance, setEqxBalance] = React.useState(0);
+    useEffect(async () => {
+      let headersList = {
+        Accept: "*/*",
+        "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+      };
+      let response = await fetch(
+        `http://localhost:8080/api/user/usernametogetfullname/${
+          location.pathname.split("/")[2]
+        }`,
+        {
+          method: "GET",
+          headers: headersList,
+        }
+      );
+
+      let data = await response.text();
+      let res = JSON.parse(data);
+      if (res.data.length > 0) {
+        setfinnduser(res.data[0].Fullname);
+      } else {
+        setfinnduser("");
+      }
+    }, [location.pathname.split("/")[2]]);
+
     // const { auth, spinner } = props;
     const getWeb3 = async () => {
       try {
@@ -94,7 +121,7 @@ function Login() {
       phone: "",
       Reenterpassword: "",
       username: "",
-      referralId: "",
+      referralId: location.pathname.split("/")[1],
     });
 
     const validateAll = () => {
@@ -173,9 +200,32 @@ function Login() {
       setValidations({ ...validations, [name]: message });
     };
 
-    const handleChange = (e) => {
+    const handleChange = async (e) => {
       const { name, value } = e.target;
       setValues({ ...values, [name]: value });
+      if (name === "referralId") {
+        let headersList = {
+          Accept: "*/*",
+          "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+        };
+        let response = await fetch(
+          `http://localhost:8080/api/user/usernametogetfullname/${
+            location.pathname.split("/")[2]
+          }`,
+          {
+            method: "GET",
+            headers: headersList,
+          }
+        );
+
+        let data = await response.text();
+        let res = JSON.parse(data);
+        if (res.data.length > 0) {
+          setfinnduser(res.data[0].Fullname);
+        } else {
+          setfinnduser("");
+        }
+      }
     };
 
     const handleSubmit = async (e) => {
@@ -190,6 +240,7 @@ function Login() {
       if (res.payload.data.isSuccess) {
         toast.success(res.payload.data.message);
         navigation("/login?login");
+        // setShow(!show);
       } else {
         toast.error(res.payload.data.message);
       }
@@ -245,13 +296,13 @@ function Login() {
           }}
         >
           <div className="p-4">
-             <a href="/">
-                      <img
-                        src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
-                        alt=""
-                        width="75"
-                      />
-                    </a>
+            <a href="/">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+                alt=""
+                width="75"
+              />
+            </a>
           </div>
           <div
             className=""
@@ -408,12 +459,15 @@ function Login() {
                       value={referralId}
                       error={referralIdVal}
                       icons={<UsergroupAddOutlined />}
-                      onChange={handleChange}
+                      onChange={async (e) => {
+                        handleChange(e);
+                      }}
                       onBlur={validateOne}
                       style={{
                         border: "1px solid #fff",
                       }}
-                    />{" "}
+                    />
+                    {finnduser !== "" && <p className="error">{finnduser}</p>}
                   </div>
                   <div
                     className="d-flex align-items-center  text-light"
@@ -468,7 +522,40 @@ function Login() {
             </div>
           </div>
         </div>
+
         <Modal show={show} onHide={handleClose} centered>
+          <Modal.Header>
+            <Modal.Title>
+              <h6 className="text-light m-0"></h6>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <InputField
+              type="number"
+              name="Amount1"
+              value={otp}
+              placeholder="Enter Your OTP"
+              pattern="[0-9]*"
+              onChange={(e) => {
+                setotp(e.target.value);
+              }}
+              style={{ border: "1px solid #fff" }}
+              onBlur={validateOne}
+            />
+            <Button
+              className={" w-100 text-light"}
+              Stake={!false}
+              style={{
+                background: "#1a1a1a",
+                height: 60,
+                border: "none",
+              }}
+              label={"Submit"}
+              onClick={async () => {}}
+            />
+          </Modal.Body>
+        </Modal>
+        {/* <Modal show={show} onHide={handleClose} centered>
           <Modal.Body>
             <div
               className="p-3 d-flex align-items-center"
@@ -504,7 +591,7 @@ function Login() {
               <h6 className="text-light m-0"> Metamask</h6>
             </div>
           </Modal.Body>
-        </Modal>
+        </Modal> */}
       </>
     );
   };
@@ -646,13 +733,13 @@ function Login() {
           }}
         >
           <div className="p-4">
-   <a href="/">
-                      <img
-                        src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
-                        alt=""
-                        width="75"
-                      />
-                    </a>
+            <a href="/">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+                alt=""
+                width="75"
+              />
+            </a>
           </div>
           <div
             className=""
@@ -738,7 +825,12 @@ function Login() {
                   onClick={() => {
                     settype(!false);
                   }}
-                  style={{ background: "#73730e", height: 55, width: "100%",fontSize:"14px !important" }}
+                  style={{
+                    background: "#73730e",
+                    height: 55,
+                    width: "100%",
+                    fontSize: "14px !important",
+                  }}
                 >
                   Don’t have an account? Sign up
                 </button>
