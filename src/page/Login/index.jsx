@@ -210,7 +210,7 @@ function Login() {
         };
         let response = await fetch(
           `https://api.sirglobal.org/api/user/usernametogetfullname/${
-            location.pathname.split("/")[2]
+           value
           }`,
           {
             method: "GET",
@@ -466,7 +466,11 @@ function Login() {
                       style={{
                         border: "1px solid #fff",
                       }}
-                    />
+                    />{referralIdVal ? (
+                        <span className="error">
+                          {"referralId is required!"}
+                        </span>
+                      ) : null}
                     {finnduser !== "" && <p className="error">{finnduser}</p>}
                   </div>
                   <div
