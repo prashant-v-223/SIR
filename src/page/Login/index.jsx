@@ -28,8 +28,6 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 function Login() {
   const location = useLocation();
-  console.log(location.search.split("?")[1]);
-  console.log(location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",);
   const [type, settype] = useState(!location.search ? true : false);
   const [check, setcheck] = useState(true);
   const dispatch = useDispatch();
@@ -42,6 +40,8 @@ function Login() {
 
   const SignupUser = () => {
     const [finnduser, setfinnduser] = React.useState("");
+  console.log(location.search.split("?")[1]);
+  console.log(location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",);
     const { active, account, library, connector, activate, deactivate, error } =
       useWeb3React();
 
