@@ -132,6 +132,31 @@ const Dashboard = () => {
                       </h6>
                     </div>
                   </div>
+                  <div className="yorefer w-100 ">
+                    <label for="website" className="text-light">
+                      Your Referral Link:
+                    </label>
+                    <div className="ibn d-flex w-100 p-2">
+                      <input
+                        type="text"
+                        id="website"
+                        value={`https://sirglobal.org/login/${Profile[0]?.username}`}
+                      />
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            `https://sirglobal.org/login/${Profile[0]?.username}`
+                          );
+                          toast.success(
+                            "Copied the text: " +
+                              `https://sirglobal.org/login/${Profile[0]?.username}`
+                          );
+                        }}
+                      >
+                        copy
+                      </button>
+                    </div>
+                  </div>
                   <div className="d-md-flex">
                     <div
                       className="w-100 w-m-50 bg-light p-4 mx-0 d-flex justify-content-between align-content-center mt-3 mt-md-0 mx-md-1"
