@@ -29,7 +29,7 @@ import "react-phone-number-input/style.css";
 function Login() {
   const location = useLocation();
   console.log(location.search.split("?")[1]);
-  console.log(location.pathname.split("/")[2]);
+  console.log(location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",);
   const [type, settype] = useState(!location.search ? true : false);
   const [check, setcheck] = useState(true);
   const dispatch = useDispatch();
@@ -54,7 +54,7 @@ function Login() {
       username: "",
       Password: "",
       Reenterpassword: "",
-      referralId: location.pathname.split("/")[2],
+      referralId: location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",
     });
 
     const [wallet, setWallet] = React.useState("");
@@ -66,7 +66,7 @@ function Login() {
       };
       let response = await fetch(
         `https://api.sirglobal.org/api/user/usernametogetfullname/${
-          location.pathname.split("/")[2]
+          location?.pathname?.split("/").length >= 2 ?location?.pathname?.split("/")[2] :"",
         }`,
         {
           method: "GET",
@@ -81,7 +81,7 @@ function Login() {
       } else {
         setfinnduser("");
       }
-    }, [location.pathname.split("/")[2]]);
+    }, [location]);
 
     // const { auth, spinner } = props;
     const getWeb3 = async () => {
