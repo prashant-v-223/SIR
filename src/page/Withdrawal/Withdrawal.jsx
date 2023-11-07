@@ -387,7 +387,7 @@ function Withdrawal() {
                                 }`,
                               };
                               let response = await fetch(
-                                `http://localhost:8080/api/user/usernametogetfullname/${e.target.value}`,
+                                `https://api.sirglobal.org/api/user/usernametogetfullname/${e.target.value}`,
                                 {
                                   method: "GET",
                                   headers: headersList,

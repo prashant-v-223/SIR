@@ -65,7 +65,7 @@ function Login() {
         "User-Agent": "Thunder Client (https://www.thunderclient.com)",
       };
       let response = await fetch(
-        `http://localhost:8080/api/user/usernametogetfullname/${
+        `https://api.sirglobal.org/api/user/usernametogetfullname/${
           location.pathname.split("/")[2]
         }`,
         {
@@ -209,7 +209,7 @@ function Login() {
           "User-Agent": "Thunder Client (https://www.thunderclient.com)",
         };
         let response = await fetch(
-          `http://localhost:8080/api/user/usernametogetfullname/${
+          `https://api.sirglobal.org/api/user/usernametogetfullname/${
             location.pathname.split("/")[2]
           }`,
           {
