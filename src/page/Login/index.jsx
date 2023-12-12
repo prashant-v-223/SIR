@@ -17,10 +17,6 @@ import { Foegotpassword, Signin, Signup } from "../../Redux/authSlice";
 import { toast } from "react-toastify";
 import { Checkbox, Spin } from "antd";
 import bep20Abi from "../../Helpers/bep20Abi.json";
-// import {
-//   WalletConnectModalAuth,
-//   useSignIn,
-// } from "@walletconnect/modal-auth-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import Web3 from "web3";
