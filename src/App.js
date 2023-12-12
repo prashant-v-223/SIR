@@ -42,6 +42,7 @@ import Withdrdatadata1 from "./page/Admin/Withdrdatadata1";
 import Mysharetree from "./page/Mysharetree/Mysharetree";
 import MyTreeView from "./page/MyTreeView/MyTreeView";
 import Rewords from "./page/Rewords/Rewords";
+import Home from "./page/Home";
 const Spinner = () => {
   return (
     <div className="body">
@@ -70,6 +71,7 @@ function App() {
         <BrowserRouter>
           <React.Suspense fallback={<Spinner />}>
             <Routes>
+              <Route exact path="/" element={<Home/>} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/login/:reffid" element={<Login />} />
               <Route exact path="/Adminlogin" element={<Adminlogin />} />

@@ -419,7 +419,7 @@ function Withdrawal() {
                           type="number"
                           name="Amount"
                           min={0}
-                          placeholder="Enter Amount of USDT Coin to Transfer"
+                          placeholder="Enter Amount of Transfer"
                           value={Amount}
                           pattern="[0-9]*"
                           error={AmountVal}

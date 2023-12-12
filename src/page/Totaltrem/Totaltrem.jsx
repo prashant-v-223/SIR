@@ -41,24 +41,24 @@ function Totaltrempage() {
     if (value !== "") {
       let data = Alldata.filter((truck) => {
         return (
-          truck.username.toString().toLowerCase().match(value.toLowerCase()) ||
-          truck.Rank.toString().toLowerCase().match(value.toLowerCase()) ||
-          truck.refferalId
-            .toString()
+          truck.username?.toString().toLowerCase().match(value.toLowerCase()) ||
+          truck.Rank?.toString().toLowerCase().match(value.toLowerCase()) ||
+          truck.refferalId?.toString()
             .toLowerCase()
             .match(value.toLowerCase()) ||
-          truck.refferalBy
-            .toString()
+          truck.refferalBy?.toString()
             .toLowerCase()
             .match(value.toLowerCase()) ||
-          truck.walletaddress
-            .toString()
+          truck.walletaddress?.toString()
             .toLowerCase()
             .match(value.toLowerCase()) ||
-          truck.email.toString().toLowerCase().match(value.toLowerCase()) ||
-          truck.createdAt.toString().toLowerCase().match(value.toLowerCase())
+          truck.email?.toString().toLowerCase().match(value.toLowerCase()) ||
+          truck.supporterId?.toString().toLowerCase().match(value.toLowerCase()) ||
+          truck.mainId?.toString().toLowerCase().match(value.toLowerCase()) ||
+          truck.createdAt?.toString().toLowerCase().match(value.toLowerCase())
         );
       });
+      console.log(data);
       setFillter(data);
     } else {
       getalldata();
@@ -139,6 +139,21 @@ function Totaltrempage() {
       title: "supporterId",
       dataIndex: "supporterId",
       key: "supporterId",
+      sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "150px",
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "mainId",
+      dataIndex: "mainId",
+      key: "mainId",
       sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
       ellipsis: {
         showTitle: false,

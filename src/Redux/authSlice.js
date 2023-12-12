@@ -9,7 +9,8 @@ export const Signup = createAsyncThunk("auth/Signup", async (data) => {
       password: data.Password,
       Fullname: data.username,
       refferalBy: ("SIR" + data.referralId.slice(3)),
-      PhoneNumber: data.phone
+      PhoneNumber: data.phone,
+      ReCAPTCHA: data.ReCAPTCHA
     });
     return res;
   } catch (e) {
@@ -22,6 +23,7 @@ export const Signin = createAsyncThunk("auth/Signin", async (data) => {
     const res = await POST(apiList.Signin, {
       email: ("SIR" + data.Email.slice(3)),
       password: data.Password,
+      ReCAPTCHA: data.ReCAPTCHA
     });
     return res;
   } catch (e) {

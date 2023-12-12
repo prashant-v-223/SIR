@@ -207,6 +207,12 @@ const MyTreeView = () => {
                                       onMouseEnter={() =>
                                         setIsHovered1(e.username)
                                       }
+                                      style={{
+                                        filter:
+                                          e.mystack === 0
+                                            ? "blur(2px)"
+                                            : "blur(0px)",
+                                      }}
                                       onMouseLeave={() => setIsHovered1("")}
                                     >
                                       <div
@@ -286,6 +292,8 @@ const MyTreeView = () => {
                                           borderRadius: "20px",
                                           height: "200px",
                                           width: "99%",
+                                          minWidth: "200px",
+                                          zIndex: 9,
                                           top: "40px",
                                           border: "3px solid #000",
                                           borderRadius: "14px",
@@ -326,39 +334,48 @@ const MyTreeView = () => {
                                           )}
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
-                                          <div className="text-dark">
+                                          <div className="text-dark dd">
                                             Refer Code
                                           </div>
-                                          <div className="text-dark">
+                                          <div className="text-dark dd">
                                             {e.refId}
                                           </div>
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
-                                          <div className="text-dark">
+                                          <div className="text-dark dd">
                                             Activation Date
                                           </div>
-                                          <div className="text-dark">
+                                          <div className="text-dark dd">
                                             {new Date(
                                               e.createdAt
                                             ).toLocaleDateString()}
                                           </div>
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
-                                          <div className="text-dark">
+                                          <div className="text-dark dd">
                                             Self Stake
                                           </div>
-                                          <div className="text-dark">
-                                            {e.mystack}
+                                          <div className="text-dark dd">
+                                            {e.mystack?.toFixed(2)}
                                           </div>
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
-                                          <div className="text-dark">
+                                          <div className="text-dark dd">
                                             Team Stake
                                           </div>
-                                          <div className="text-dark">
-                                            {e.teamtotalstack}
+                                          <div className="text-dark dd">
+                                            {e.teamtotalstack?.toFixed(2)}
                                           </div>
                                         </div>
+                                        <div className="d-flex justify-content-between px-3">
+                                          <div className="text-dark dd">
+                                            leval
+                                          </div>
+                                          <div className="text-dark dd">
+                                            {e.leval}
+                                          </div>
+                                        </div>
+
                                         {/* <tr>
                                           <td className="text-dark">
                                             {e.Fullname}

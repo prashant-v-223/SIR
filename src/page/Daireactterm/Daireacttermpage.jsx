@@ -52,6 +52,11 @@ function Daireacttermpage() {
             .toString()
             .toLowerCase()
             .match(value.toLowerCase()) ||
+          truck.supporterId
+            ?.toString()
+            .toLowerCase()
+            .match(value.toLowerCase()) ||
+          truck.mainId?.toString().toLowerCase().match(value.toLowerCase()) ||
           truck.walletaddress
             .toString()
             .toLowerCase()
@@ -130,6 +135,21 @@ function Daireacttermpage() {
       title: "supporterId",
       dataIndex: "supporterId",
       key: "supporterId",
+      sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "150px",
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "mainId",
+      dataIndex: "mainId",
+      key: "mainId",
       sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
       ellipsis: {
         showTitle: false,

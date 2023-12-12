@@ -4,6 +4,7 @@ import { Spin, Table, Tooltip } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Wallatedata } from "../../Redux/WallatedatSlice";
+import Progress from "antd/lib/progress";
 
 function Rewords() {
   const dispatch = useDispatch();
@@ -46,46 +47,57 @@ function Rewords() {
     {
       name: "ACE",
       amount: 1000,
+      amount1: 1000,
     },
     {
       name: "WARRIOR",
       amount: 7000,
+      amount1: 8000,
     },
     {
       name: "CADET",
       amount: 20000,
+      amount1: 28000,
     },
     {
       name: "CAPTAIN",
       amount: 50000,
+      amount1: 78000,
     },
     {
       name: "COMMANDER",
       amount: 150000,
+      amount1: 228000,
     },
     {
       name: "PIONEER",
       amount: 300000,
+      amount1: 528000,
     },
     {
       name: "MASTERMIND",
       amount: 700000,
+      amount1: 12528000,
     },
     {
       name: "RULER",
       amount: 1500000,
+      amount1: 14028000,
     },
     {
       name: "AMBASSADOR",
       amount: 3400000,
+      amount1: 17428000,
     },
     {
       name: "CROWN",
       amount: 7000000,
+      amount1: 24428000,
     },
     {
       name: "CROWN AMBASSADOR",
       amount: 15000000,
+      amount1: 39428000,
     },
   ];
   const columns = [
@@ -143,11 +155,25 @@ function Rewords() {
         showTitle: false,
       },
       render: (text, record, index) => {
+        console.log(index >= 1 ? data[index - 1]?.amount : 0);
+        console.log(index >= 1 ? Profile[0]?.totalInvestment : 0);
+        console.log(data[index]);
         return (
-          <Tooltip placement="topLeft" title={record.amount}>
-            {record.amount * 0.5} <br />
-            My First Power TotalInvestment{" "}
-            {Profile.length > 0 ? Profile[0].totalInvestment : 0}
+          <Tooltip
+            placement="topLeft"
+            title={Profile.length > 0 ? Profile[0]?.totalInvestment : 0}
+          >
+            <Progress
+              type="circle"
+              percent={
+                (Profile[0]?.totalInvestment / (record.amount1 * 0.5)) * 100
+              }
+              format={() => (
+                <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
+                  {record.amount * 0.5}
+                </h6>
+              )}
+            />
           </Tooltip>
         );
       },
@@ -162,11 +188,27 @@ function Rewords() {
       },
       render: (text, record, index) => {
         return (
-          <Tooltip placement="topLeft" title={record.amount}>
-            {record.amount * 0.25} <br />
-            My Second Power TotalInvestment{" "}
-            {Profile.length > 1 ? Profile[1].totalInvestment : 0}
+          <Tooltip
+            placement="topLeft"
+            title={Profile.length > 0 ? Profile[1]?.totalInvestment : 0}
+          >
+            <Progress
+              type="circle"
+              percent={
+                (Profile[1]?.totalInvestment / (record.amount1 * 0.25)) * 100
+              }
+              format={() => (
+                <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
+                  {record.amount * 0.25}
+                </h6>
+              )}
+            />
           </Tooltip>
+          // <Tooltip placement="topLeft" title={record.amount}>
+          //   {record.amount * 0.25} <br />
+          //   My Second Power TotalInvestment{" "}
+          //   {Profile.length > 1 ? Profile[1].totalInvestment : 0}
+          // </Tooltip>
         );
       },
     },
@@ -179,19 +221,39 @@ function Rewords() {
         showTitle: false,
       },
       render: (text, record, index) => {
+        let lastteamtotalstack = 0;
+        const lastThreeObjects = Profile?.slice(2, -1);
+        for (let index = 0; index < lastThreeObjects.length; index++) {
+          lastteamtotalstack += lastThreeObjects[index].totalInvestment;
+        }
+        console.log(lastteamtotalstack);
         return (
-          <Tooltip placement="topLeft" title={record.amount}>
-            {record?.amount * 0.25} <br />
-            My Remaining Power TotalInvestment{" "}
-            {Profile.length > 2
-              ? Profile[2]?.totalInvestment + Profile.length > 3
-                ? Profile[3]?.totalInvestment
-                : 0 + Profile.length > 4
-                ? Profile[4]?.totalInvestment
-                : 0
-              : 0}
+          <Tooltip
+            placement="topLeft"
+            title={Profile.length > 0 ? lastteamtotalstack : 0}
+          >
+            <Progress
+              type="circle"
+              percent={(lastteamtotalstack / (record.amount1 * 0.25)) * 100}
+              format={() => (
+                <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
+                  {record.amount * 0.25}
+                </h6>
+              )}
+            />
           </Tooltip>
         );
+        // <Tooltip placement="topLeft" title={record.amount}>
+        //   {record?.amount * 0.25} <br />
+        //   My Remaining Power TotalInvestment{" "}
+        //   {Profile.length > 2
+        //     ? Profile[2]?.totalInvestment + Profile.length > 3
+        //       ? Profile[3]?.totalInvestment
+        //       : 0 + Profile.length > 4
+        //       ? Profile[4]?.totalInvestment
+        //       : 0
+        //     : 0}
+        // </Tooltip>
       },
     },
   ];

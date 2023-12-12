@@ -26,12 +26,20 @@ import "./Login.scss";
 import Web3 from "web3";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import ReCAPTCHA from "react-google-recaptcha";
+
 function Login() {
   const location = useLocation();
   console.log(location.search.split("?")[1]);
-  console.log(location.pathname.split("/")[2]);
+  console.log(
+    location?.pathname?.split("/").length >= 2
+      ? location?.pathname?.split("/")
+      : ""[2]
+  );
   const [type, settype] = useState(!location.search ? true : false);
   const [check, setcheck] = useState(true);
+  const [loadding, setloadding] = useState(true);
+  const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const authSlice = useSelector((state) => state.authSlice);
   const navigation = useNavigate();
@@ -44,29 +52,37 @@ function Login() {
     const [finnduser, setfinnduser] = React.useState("");
     const { active, account, library, connector, activate, deactivate, error } =
       useWeb3React();
-
-    const [show, setShow] = useState(false);
+    const [reCAPTCHA, setReCAPTCHA] = useState("");
     const [otp, setotp] = useState("");
+    const [data, setdata] = useState({});
     const [values, setValues] = React.useState({
       Walletaddress: "ssssss",
       Email: "",
       phone: "",
       username: "",
+      OTP: "",
       Password: "",
       Reenterpassword: "",
-      referralId: location.pathname.split("/")[2],
+      referralId: location?.pathname?.split("/")[2]
+        ? location?.pathname?.split("/")[2]
+        : "SIR",
     });
 
     const [wallet, setWallet] = React.useState("");
     const [eqxBalance, setEqxBalance] = React.useState(0);
-    useEffect(async () => {
+    useEffect(() => {
+      getdata();
+    }, [location]);
+    const getdata = async () => {
       let headersList = {
         Accept: "*/*",
         "User-Agent": "Thunder Client (https://www.thunderclient.com)",
       };
       let response = await fetch(
         `https://api.sirglobal.org/api/user/usernametogetfullname/${
-          location.pathname.split("/")[2]
+          location?.pathname?.split("/").length >= 2
+            ? location?.pathname?.split("/")[2]
+            : ""
         }`,
         {
           method: "GET",
@@ -81,8 +97,7 @@ function Login() {
       } else {
         setfinnduser("");
       }
-    }, [location.pathname.split("/")[2]]);
-
+    };
     // const { auth, spinner } = props;
     const getWeb3 = async () => {
       try {
@@ -121,7 +136,7 @@ function Login() {
       phone: "",
       Reenterpassword: "",
       username: "",
-      referralId: location.pathname.split("/")[1],
+      referralId: "",
     });
 
     const validateAll = () => {
@@ -190,10 +205,6 @@ function Login() {
           name === "Reenterpassword" ? "Confirm Password" : name
         } is required!`;
       }
-      if (value && name === "Email" && !/\S+@\S+\.\S+/.test(value)) {
-        message = "Email format must be as example@mail.com!";
-      }
-
       if (value && name === "Reenterpassword" && value !== values.Password) {
         message = "Passwords must match!";
       }
@@ -209,9 +220,7 @@ function Login() {
           "User-Agent": "Thunder Client (https://www.thunderclient.com)",
         };
         let response = await fetch(
-          `https://api.sirglobal.org/api/user/usernametogetfullname/${
-            location.pathname.split("/")[2]
-          }`,
+          `https://api.sirglobal.org/api/user/usernametogetfullname/${value}`,
           {
             method: "GET",
             headers: headersList,
@@ -227,20 +236,21 @@ function Login() {
         }
       }
     };
+    const handleShow = () => setShow(true);
 
     const handleSubmit = async (e) => {
       e.preventDefault();
       const isValid = validateAll();
-
       if (!isValid) {
         return false;
       }
       console.log(values);
-      const res = await dispatch(Signup(values));
+      const res = await dispatch(Signup({ ...values, ReCAPTCHA: reCAPTCHA }));
       if (res.payload.data.isSuccess) {
+        setShow(!show);
         toast.success(res.payload.data.message);
-        navigation("/login?login");
-        // setShow(!show);
+        localStorage.setItem("data", JSON.stringify(res.payload.data.data));
+        setdata(res.payload.data.data);
       } else {
         toast.error(res.payload.data.message);
       }
@@ -253,6 +263,7 @@ function Login() {
       referralId,
       username,
       phone,
+      OTP,
     } = values;
     const {
       Walletaddress: WalletaddressVal,
@@ -270,7 +281,6 @@ function Login() {
       getBalance();
     }, [account]);
 
-    const handleShow = () => setShow(true);
     const connect = async () => {
       try {
         if (!account) {
@@ -286,7 +296,7 @@ function Login() {
         console.log("error", error);
       }
     };
-    const handleClose = () => setShow(false);
+    console.log(localStorage.getItem("data"));
     return (
       <>
         <div
@@ -328,22 +338,23 @@ function Login() {
             </div>
           </div>
         </div>
-        <div className="col-12 col-xl-7 px-0 px-lg-5 zindex">
-          <div
-            className="flex-column"
-            style={{
-              minHeight: "100vh",
-              height: "100%",
-              display: "flex",
-              justifyContent: "center",
-              padding: "15px 7px",
-            }}
-          >
-            <div className="Box">
-              <form onSubmit={handleSubmit}>
-                <div className="row px-2 px-sm-4">
-                  <h1 className="px-4  pb-2 main-text">Sign up</h1>
-                  {/* <div className="col-12 col-md-9 py-md-1">
+        {!show ? (
+          <div className="col-12 col-xl-7 px-0 px-lg-5 zindex">
+            <div
+              className="flex-column"
+              style={{
+                minHeight: "100vh",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                padding: "15px 7px",
+              }}
+            >
+              <div className="Box">
+                <form onSubmit={handleSubmit}>
+                  <div className="row px-2 px-sm-4">
+                    <h1 className="px-4  pb-2 main-text">Sign up</h1>
+                    {/* <div className="col-12 col-md-9 py-md-1">
                         <InputField
                           type="text"
                           name="Walletaddress"
@@ -371,79 +382,185 @@ function Login() {
                           onClick={connect}
                         />
                       </div> */}
-                  <div className="col-12  py-md-1">
-                    <InputField
-                      type="text"
-                      name="Email"
-                      placeholder="Enter e-mail address"
-                      value={Email}
-                      error={EmailVal}
-                      icons={<MailFilled />}
-                      onChange={handleChange}
-                      onBlur={validateOne}
-                      style={{
-                        border: "1px solid #fff",
+                    <div className="col-12  py-md-1">
+                      <InputField
+                        type="text"
+                        name="Email"
+                        placeholder="Enter e-mail address"
+                        value={Email}
+                        error={EmailVal}
+                        icons={<MailFilled />}
+                        onChange={handleChange}
+                        onBlur={validateOne}
+                        style={{
+                          border: "1px solid #fff",
+                        }}
+                      />
+                    </div>
+                    <div className="col-12  py-md-1">
+                      <InputField
+                        type="text"
+                        name="username"
+                        placeholder="Enter your Full name"
+                        value={username}
+                        error={usernameVal}
+                        icons={<MailFilled />}
+                        onChange={handleChange}
+                        onBlur={validateOne}
+                        style={{
+                          border: "1px solid #fff",
+                        }}
+                      />
+                    </div>{" "}
+                    <div className="col-12 py-md-1">
+                      <div className="form-group  ">
+                        <PhoneInput
+                          name="phone"
+                          value={phone}
+                          defaultCountry="IN"
+                          placeholder="Enter your Phone Number"
+                          className={`form-control d-flex bg-transparent h-100`}
+                          onChange={(e) => {
+                            setValues({ ...values, ["phone"]: e });
+                          }}
+                          onBlur={validateOne}
+                        />
+                        {phoneVal ? (
+                          <span className="error">
+                            {"PhoneNumber is required!"}
+                          </span>
+                        ) : null}
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-6 py-md-1">
+                      <InputField
+                        type="Password"
+                        name="Password"
+                        placeholder="Enter password"
+                        value={Password}
+                        error={PasswordVal}
+                        icons={<LockFilled />}
+                        onChange={handleChange}
+                        onBlur={validateOne}
+                        style={{
+                          border: "1px solid #fff",
+                        }}
+                      />
+                    </div>
+                    <div className="col-12 col-md-6 py-md-1">
+                      <InputField
+                        type="Password"
+                        name="Reenterpassword"
+                        placeholder="Re-enter password"
+                        icons={<LockFilled />}
+                        value={Reenterpassword}
+                        error={ReenterpasswordVal}
+                        onChange={handleChange}
+                        onBlur={validateOne}
+                        style={{
+                          border: "1px solid #fff",
+                        }}
+                      />
+                    </div>
+                    <div className="col-12 py-md-1">
+                      <InputField
+                        type="text"
+                        name="referralId"
+                        placeholder="Enter Referral Link"
+                        value={referralId}
+                        error={referralIdVal}
+                        icons={<UsergroupAddOutlined />}
+                        onChange={async (e) => {
+                          handleChange(e);
+                        }}
+                        onBlur={validateOne}
+                        style={{
+                          border: "1px solid #fff",
+                        }}
+                      />
+                      {finnduser !== "" && <p className="error">{finnduser}</p>}
+                    </div>
+                    <ReCAPTCHA
+                      sitekey="6LfQRgkpAAAAAKqNb8njjkOG95goA02Xfoed9ahQ"
+                      onChange={(er) => {
+                        setReCAPTCHA(er);
                       }}
                     />
+                    <div
+                      className="d-flex align-items-center  text-light"
+                      style={{ alignItems: "center" }}
+                    >
+                      <Checkbox
+                        className=" me-3"
+                        style={{ fontSize: "20px" }}
+                        checked={check}
+                        onChange={(e) => {
+                          setcheck(e.target.checked);
+                        }}
+                      />
+                      <p className="mt-1 mb-0 main-text ">
+                        I have read and agree to the
+                        <a
+                          href="/Termsandconditions"
+                          target="_blank"
+                          className="px-1 text-dark"
+                        >
+                          Terms and Conditions
+                        </a>
+                        of SIR Token
+                      </p>
+                    </div>
+                    <p className="">
+                      <b>{!check && "Terms and conditions is required"}</b>
+                    </p>
+                    <div className="col-12 ">
+                      <button
+                        type="submit"
+                        className={" w-100 text-dark"}
+                        disabled={!check}
+                        style={{ background: "#dcdc46", height: 55 }}
+                      >
+                        Submit
+                      </button>
+                    </div>
                   </div>
-                  <div className="col-12  py-md-1">
+                </form>
+                <div className=" px-2 px-sm-4 pt-3">
+                  <button
+                    className={"text-light "}
+                    onClick={() => {
+                      settype(false);
+                    }}
+                    style={{ background: "#73730e", height: 55, width: "100%" }}
+                  >
+                    Already Registered? Login
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="col-12 col-xl-7 px-0 px-lg-5 zindex">
+            <div
+              className="flex-column"
+              style={{
+                minHeight: "100vh",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                padding: "15px 7px",
+              }}
+            >
+              <div className="Box">
+                <div className="row px-2 px-sm-4">
+                  <h1 className="px-4  pb-2 main-text">verify your account</h1>
+                  <div className="col-12 py-md-1">
                     <InputField
                       type="text"
                       name="username"
-                      placeholder="Enter your Full name"
-                      value={username}
-                      error={usernameVal}
-                      icons={<MailFilled />}
-                      onChange={handleChange}
-                      onBlur={validateOne}
-                      style={{
-                        border: "1px solid #fff",
-                      }}
-                    />
-                  </div>{" "}
-                  <div className="col-12 py-md-1">
-                    <div className="form-group  ">
-                      <PhoneInput
-                        name="phone"
-                        value={phone}
-                        defaultCountry="IN"
-                        placeholder="Enter your Phone Number"
-                        className={`form-control d-flex bg-transparent h-100`}
-                        onChange={(e) => {
-                          setValues({ ...values, ["phone"]: e });
-                        }}
-                        onBlur={validateOne}
-                      />
-                      {phoneVal ? (
-                        <span className="error">
-                          {"PhoneNumber is required!"}
-                        </span>
-                      ) : null}
-                    </div>
-                  </div>
-                  <div className="col-12 col-md-6 py-md-1">
-                    <InputField
-                      type="Password"
-                      name="Password"
-                      placeholder="Enter password"
-                      value={Password}
-                      error={PasswordVal}
+                      placeholder="Enter OTP"
+                      value={JSON.parse(localStorage.getItem("data"))?.username}
                       icons={<LockFilled />}
-                      onChange={handleChange}
-                      onBlur={validateOne}
-                      style={{
-                        border: "1px solid #fff",
-                      }}
-                    />
-                  </div>
-                  <div className="col-12 col-md-6 py-md-1">
-                    <InputField
-                      type="Password"
-                      name="Reenterpassword"
-                      placeholder="Re-enter password"
-                      icons={<LockFilled />}
-                      value={Reenterpassword}
-                      error={ReenterpasswordVal}
                       onChange={handleChange}
                       onBlur={validateOne}
                       style={{
@@ -453,77 +570,64 @@ function Login() {
                   </div>
                   <div className="col-12 py-md-1">
                     <InputField
-                      type="text"
-                      name="referralId"
-                      placeholder="Enter Referral Link"
-                      value={referralId}
-                      error={referralIdVal}
-                      icons={<UsergroupAddOutlined />}
-                      onChange={async (e) => {
-                        handleChange(e);
-                      }}
+                      type="OTP"
+                      name="OTP"
+                      placeholder="Enter OTP"
+                      value={OTP}
+                      icons={<LockFilled />}
+                      onChange={handleChange}
                       onBlur={validateOne}
                       style={{
                         border: "1px solid #fff",
                       }}
                     />
-                    {finnduser !== "" && <p className="error">{finnduser}</p>}
                   </div>
-                  <div
-                    className="d-flex align-items-center  text-light"
-                    style={{ alignItems: "center" }}
-                  >
-                    <Checkbox
-                      className=" me-3"
-                      style={{ fontSize: "20px" }}
-                      checked={check}
-                      onChange={(e) => {
-                        setcheck(e.target.checked);
-                      }}
-                    />
-                    <p className="mt-1 mb-0 main-text ">
-                      I have read and agree to the
-                      <a
-                        href="/Termsandconditions"
-                        target="_blank"
-                        className="px-1 text-dark"
-                      >
-                        Terms and Conditions
-                      </a>
-                      of SIR Token
-                    </p>
-                  </div>
-                  <p className="">
-                    <b>{!check && "Terms and conditions is required"}</b>
-                  </p>
                   <div className="col-12 ">
                     <button
                       type="submit"
                       className={" w-100 text-dark"}
-                      disabled={!check}
+                      onClick={async () => {
+                        setloadding(!loadding);
+                        let headersList = {
+                          Accept: "*/*",
+                          "Content-Type": "application/json",
+                        };
+
+                        let bodyContent = JSON.stringify({
+                          username: JSON.parse(localStorage.getItem("data"))
+                            ?.username,
+                          otp: OTP,
+                        });
+
+                        let response = await fetch(
+                          "https://api.sirglobal.org/api/registration/signUp/varify",
+                          {
+                            method: "POST",
+                            body: bodyContent,
+                            headers: headersList,
+                          }
+                        );
+
+                        let data = await response.text();
+                        if (JSON.parse(data).isSuccess) {
+                          settype(!type);
+                        } else {
+                          toast.error(JSON.parse(data).message);
+                        }
+                        setloadding(true);
+                      }}
                       style={{ background: "#dcdc46", height: 55 }}
                     >
                       Submit
                     </button>
                   </div>
                 </div>
-              </form>
-              <div className=" px-2 px-sm-4 pt-3">
-                <button
-                  className={"text-light "}
-                  onClick={() => {
-                    settype(false);
-                  }}
-                  style={{ background: "#73730e", height: 55, width: "100%" }}
-                >
-                  Already Registered? Login
-                </button>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
-        <Modal show={show} onHide={handleClose} centered>
+        {/* <Modal show={show} onHide={handleClose} centered>
           <Modal.Header>
             <Modal.Title>
               <h6 className="text-light m-0"></h6>
@@ -554,7 +658,7 @@ function Login() {
               onClick={async () => {}}
             />
           </Modal.Body>
-        </Modal>
+        </Modal> */}
         {/* <Modal show={show} onHide={handleClose} centered>
           <Modal.Body>
             <div
@@ -597,10 +701,11 @@ function Login() {
   };
   const SignInUser = () => {
     const [modal2Open, setModal2Open] = useState(false);
+    const [reCAPTCHA, setReCAPTCHA] = useState("");
     const [values, setValues] = React.useState({
       Email:
         location.search.split("?")[1] === "login"
-          ? ""
+          ? "SIR"
           : location.search.split("?")[1],
       username: "",
       Emailforgot: "",
@@ -658,13 +763,10 @@ function Login() {
             name === "Reenterpassword" ? "Confirm Password" : name
           } is required!`;
         } else {
-          message = `Email is required!`;
+          message = `username is required!`;
         }
       }
 
-      if (value && name === "Emailforgot" && !/\S+@\S+\.\S+/.test(value)) {
-        message = "Email format must be as example@mail.com!";
-      }
       if (value && name === "Reenterpassword" && value !== values.Password) {
         message = "Passwords must match!";
       }
@@ -682,10 +784,7 @@ function Login() {
         Emailforgot: "",
       };
       if (!Emailforgot) {
-        validations.Emailforgot = "Email is required!";
-      }
-      if (Emailforgot && !/\S+@\S+\.\S+/.test(Emailforgot)) {
-        validations.Emailforgot = "Email format must be as example@mail.com!";
+        validations.Emailforgot = "username is required!";
       }
       setValidations(validations);
       if (validations.Emailforgot === "") {
@@ -707,7 +806,7 @@ function Login() {
       if (!isValid) {
         return false;
       }
-      const res = await dispatch(Signin(values));
+      const res = await dispatch(Signin({ ...values, ReCAPTCHA: reCAPTCHA }));
       if (res.payload.data.isSuccess) {
         toast.success(res.payload.data.message);
         localStorage.setItem("data", JSON.stringify(res.payload));
@@ -808,6 +907,12 @@ function Login() {
                       }}
                     />
                   </div>
+                  <ReCAPTCHA
+                    sitekey="6LfQRgkpAAAAAKqNb8njjkOG95goA02Xfoed9ahQ"
+                    onChange={(er) => {
+                      setReCAPTCHA(er);
+                    }}
+                  />
                   <div className="col-12 pt-4">
                     <button
                       type="submit"
@@ -891,15 +996,16 @@ function Login() {
 
   return (
     <Spin spinning={!authSlice.isLoader}>
-      <div className="container-fluid">
-        <div
-          className="row loginbackimg"
-          style={{ minheight: "100vh", height: "100%" }}
-        >
-          {type ? <SignupUser /> : <SignInUser />}
+      <Spin spinning={!loadding}>
+        <div className="container-fluid">
+          <div
+            className="row loginbackimg"
+            style={{ minheight: "100vh", height: "100%" }}
+          >
+            {type ? <SignupUser /> : <SignInUser />}
+          </div>
         </div>
-      </div>
-      {/* <WalletConnectModalAuth
+        {/* <WalletConnectModalAuth
         projectId={projectId}
         metadata={{
           name: "My Dapp",
@@ -908,6 +1014,7 @@ function Login() {
           icons: ["https://my-dapp.com/logo.png"],
         }}
       /> */}
+      </Spin>
     </Spin>
   );
 }

@@ -24,13 +24,9 @@ import { FaMoneyCheckDollar } from "react-icons/fi";
 import axios from "axios";
 const Dashboard = () => {
   const StackingSlice = useSelector((state) => state.WallatedatSlice);
-  const [address, setaddress] = React.useState("");
-  const [open, setopen] = React.useState(false);
-  const [otp, setotp] = React.useState("");
   const [Profile, setProfile] = React.useState({});
+  const [SIRprice, setSIRprice] = React.useState(0);
   const [activetree, setactivetree] = React.useState({});
-  const [isHovered, setIsHovered] = useState(false);
-  const [isHovered1, setIsHovered1] = useState(false);
   const [activetree1, setactivetree1] = React.useState({});
   const dispatch = useDispatch();
   const navigation = useNavigate();
@@ -50,6 +46,7 @@ const Dashboard = () => {
       setProfile(res.payload.data.profile);
       getusertree(res.payload.data.profile[0]?.username);
       getusertree1(res.payload.data.profile[0]?.username);
+      setSIRprice(res.payload.data.SIRprice);
     } else {
       navigation("/");
     }
@@ -172,7 +169,30 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </div>
-
+                  <div className="container px-0 py-3">
+                    <div className="copy-text  d-flex">
+                      <input
+                        type="text"
+                        className="text"
+                        value={`https://sirglobal.org/login/${Profile[0]?.username}`}
+                        style={{ width: "90%", color: "#fff !important" }}
+                      />
+                      <button
+                        style={{ width: "10%" }}
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            `https://sirglobal.org/login/${Profile[0]?.username}`
+                          );
+                          alert(
+                            "Copied the text: " +
+                              `https://sirglobal.org/login/${Profile[0]?.username}`
+                          );
+                        }}
+                      >
+                        <i className="fa fa-clone"></i>
+                      </button>
+                    </div>
+                  </div>
                   <div className="">
                     <a
                       href="/Staking"
@@ -222,7 +242,7 @@ const Dashboard = () => {
                         color: "#fff",
                       }}
                     >
-                      My Total Investment
+                      Total Investment
                     </h5>
                     <h4
                       className="pt-2 pb-2"
@@ -251,7 +271,7 @@ const Dashboard = () => {
                       <h6 className="m-0 px-3 text-dark">
                         {" "}
                         ${" "}
-                        {StackingSlice.Wallatedata?.data?.income[0]?.holdcbbamout.toFixed(
+                        {StackingSlice.Wallatedata?.data?.income[0]?.holdcbbamout?.toFixed(
                           2
                         )}{" "}
                       </h6>
@@ -275,7 +295,7 @@ const Dashboard = () => {
                       <h6 className="m-0 px-3 text-dark">
                         {" "}
                         SIR{" "}
-                        {StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming.toFixed(
+                        {StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
                           2
                         )}{" "}
                       </h6>
@@ -300,9 +320,33 @@ const Dashboard = () => {
                       </div>
                       <h6 className="m-0 px-3 text-dark">
                         SIR{" "}
-                        {StackingSlice.Wallatedata?.data?.income[0]?.TodaStakingBonusIncome.toFixed(
+                        {StackingSlice.Wallatedata?.data?.income[0]?.TodaStakingBonusIncome?.toFixed(
                           2
                         )}
+                      </h6>
+                    </div>
+                    <div
+                      className="d-flex align-items-center justify-content-between bg-light my-2"
+                      style={{
+                        borderRadius: 12,
+                        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                      }}
+                    >
+                      <div className="d-flex align-items-center py-3  ">
+                        <img
+                          src={require("./icons8-community-96 (1).png")}
+                          alt=""
+                          className="img-fluid  ps-3"
+                          style={{ width: "65px" }}
+                        />
+                        <h6 className="m-0 px-3 text-dark">SIR Live Price</h6>
+                      </div>
+                      <h6 className="m-0 px-3 text-dark">
+                        ₹{StackingSlice.Wallatedata?.data?.SIRprice?.toFixed(2)}
+                        <br />$
+                        {Number(
+                          StackingSlice.Wallatedata?.data?.SIRprice / 90
+                        )?.toFixed(2)}
                       </h6>
                     </div>
                   </div>
@@ -347,7 +391,7 @@ const Dashboard = () => {
                       SIR{" "}
                       {Number(
                         Profile[0]?.mystack ? Profile[0]?.mystack : 0
-                      ).toFixed()}{" "}
+                      )?.toFixed()}{" "}
                     </h6>
                   </div>
                   <div
@@ -372,7 +416,7 @@ const Dashboard = () => {
                         Profile[0]?.teamtotalstack
                           ? Profile[0]?.teamtotalstack
                           : 0
-                      ).toFixed(2)}{" "}
+                      )?.toFixed(2)}{" "}
                     </h6>
                   </div>{" "}
                   <div
@@ -637,7 +681,7 @@ const Dashboard = () => {
                                 StackingSlice.Wallatedata?.data?.income[0]
                                   ?.StakingBonusIncome
                             : 0
-                        ).toFixed(2)}
+                        )?.toFixed(2)}
                       </h2>
                     </div>
                     <div className="w-25">
@@ -652,14 +696,16 @@ const Dashboard = () => {
                         Earning Limit
                       </h4>
                       <h4 className="text-left pt-3 text-success">
-                        SIR {Number(Profile[0]?.mystack * 2).toFixed(2)}
+                        SIR {Number(Profile[0]?.mystack * 2)?.toFixed(2)}
                       </h4>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="col-12 col-md-6 py-3 py-md-0">
-                <h4 className="text-dark pt-4 pt-md-0">Community Income 3X</h4>
+                <h4 className="text-dark pt-4 pt-md-0  mt-3 mt-md-0">
+                  Community Income 3X
+                </h4>
                 <div
                   className="Portfolio234  d-flex w-100"
                   style={{
@@ -696,11 +742,11 @@ const Dashboard = () => {
                     <h4 className="pt-2 m-0 text-dark">
                       USDT{" "}
                       {Number(
-                        ((Profile[0]?.mystack * 3) / 90) * 12.85 -
+                        ((Profile[0]?.mystack * 3) / 90) * SIRprice -
                           StackingSlice.Wallatedata?.data?.data[0]
                             ?.incomeWallet >
                           0
-                          ? ((Profile[0]?.mystack * 3) / 90) * 12.85 -
+                          ? ((Profile[0]?.mystack * 3) / 90) * SIRprice -
                               StackingSlice.Wallatedata?.data?.data[0]
                                 ?.incomeWallet
                           : 0
@@ -717,9 +763,9 @@ const Dashboard = () => {
                     </h4>
                     <h4 className="pt-2 m-0 text-success">
                       USDT{" "}
-                      {(Number((Profile[0]?.mystack * 3) / 90) * 12.85).toFixed(
-                        2
-                      )}
+                      {(
+                        Number((Profile[0]?.mystack * 3) / 90) * SIRprice
+                      )?.toFixed(2)}
                     </h4>
                   </div>
                   <div className="w-50 erning-imgs"></div>

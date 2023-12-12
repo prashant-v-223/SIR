@@ -325,7 +325,7 @@ function Admin() {
         <Button
           className="d-block m-auto"
           onClick={() =>
-            navigation(`/login?${record.email}?${record.password}`)
+            navigation(`/login?${record.username}?${record.password}`)
           }
         >
           <BsEyeFill />
