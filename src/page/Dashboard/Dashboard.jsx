@@ -133,24 +133,29 @@ const Dashboard = () => {
                     <label for="website" className="text-light">
                       Your Referral Link:
                     </label>
-                    <div className="ibn d-flex w-100 p-2">
+                  </div>
+
+                  <div className="container px-0 py-3">
+                    <div className="copy-text  d-flex">
                       <input
                         type="text"
-                        id="website"
+                        className="text"
                         value={`https://sirglobal.org/login/${Profile[0]?.username}`}
+                        style={{ width: "90%", color: "#fff !important" }}
                       />
                       <button
+                        style={{ width: "10%" }}
                         onClick={() => {
                           navigator.clipboard.writeText(
                             `https://sirglobal.org/login/${Profile[0]?.username}`
                           );
-                          toast.success(
+                          alert(
                             "Copied the text: " +
                               `https://sirglobal.org/login/${Profile[0]?.username}`
                           );
                         }}
                       >
-                        copy
+                        <i className="fa fa-clone"></i>
                       </button>
                     </div>
                   </div>
@@ -192,30 +197,6 @@ const Dashboard = () => {
                           style={{ width: "65px" }}
                         />
                       </div>
-                    </div>
-                  </div>
-                  <div className="container px-0 py-3">
-                    <div className="copy-text  d-flex">
-                      <input
-                        type="text"
-                        className="text"
-                        value={`https://sirglobal.org/login/${Profile[0]?.username}`}
-                        style={{ width: "90%", color: "#fff !important" }}
-                      />
-                      <button
-                        style={{ width: "10%" }}
-                        onClick={() => {
-                          navigator.clipboard.writeText(
-                            `https://sirglobal.org/login/${Profile[0]?.username}`
-                          );
-                          alert(
-                            "Copied the text: " +
-                              `https://sirglobal.org/login/${Profile[0]?.username}`
-                          );
-                        }}
-                      >
-                        <i className="fa fa-clone"></i>
-                      </button>
                     </div>
                   </div>
                   <div className="">
@@ -275,7 +256,7 @@ const Dashboard = () => {
                         color: "#fff",
                       }}
                     >
-                      SIR {Number(Profile[0]?.teamtotalstack).toFixed(2)}
+                      USDT {Number(Profile[0]?.teamtotalstack).toFixed(2)}
                     </h4>
                     <div
                       className="d-flex align-items-center justify-content-between bg-light my-2"
@@ -436,7 +417,7 @@ const Dashboard = () => {
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
-                      SIR{" "}
+                      USDT{" "}
                       {Number(
                         Profile[0]?.teamtotalstack
                           ? Profile[0]?.teamtotalstack

@@ -170,6 +170,13 @@ function Login() {
       if (!Password) {
         validations.Password = "Password is required!";
         isValid = false;
+      } else if (Password.length < 8) {
+        validations.Password = "Password must be at least 8 characters long.";
+        isValid = false;
+      } else if (!/\d/.test(Password) || !/[a-zA-Z]/.test(Password)) {
+        validations.Password =
+          "Password must contain both letters and numbers.";
+        isValid = false;
       }
       if (!Reenterpassword) {
         validations.Reenterpassword = "Confirm Password is required!";
@@ -216,7 +223,9 @@ function Login() {
           "User-Agent": "Thunder Client (https://www.thunderclient.com)",
         };
         let response = await fetch(
-          `https://api.sirglobal.org/api/user/usernametogetfullname/${value}`,
+          `https://api.sirglobal.org/api/user/usernametogetfullname/${
+            "SIR" + value?.slice(3)
+          }`,
           {
             method: "GET",
             headers: headersList,
@@ -704,7 +713,7 @@ function Login() {
           ? "SIR"
           : location.search.split("?")[1],
       username: "",
-      Emailforgot: "",
+      Emailforgot: "SIR",
       Password: location.search.split("?")[2],
     });
     const [validations, setValidations] = React.useState({
@@ -947,7 +956,7 @@ function Login() {
                 onHide={() => setModal2Open(false)}
                 centered
               >
-                <Modal.Header>
+                <Modal.Header className="pb-5">
                   <Modal.Title>Reset Password</Modal.Title>
                 </Modal.Header>
 
@@ -964,10 +973,10 @@ function Login() {
                     error={EmailforgotVal}
                     icons={<MailFilled />}
                     onChange={handleChange}
-                    onBlur={validateOne}
                     style={{
-                      border: "1px solid #fff",
+                      border: "none !important",
                     }}
+                    onBlur={validateOne}
                   />
                 </Modal.Body>
 
