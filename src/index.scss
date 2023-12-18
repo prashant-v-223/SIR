@@ -1267,12 +1267,21 @@ input {
   > input.ant-input::placeholder {
   font-weight: 500 !important;
 }
-.ant-input{
+.ant-input {
   font-weight: 500 !important;
 }
 .h4 {
   height: 0px !important;
 }
-.dd{
+.dd {
   font-size: 10px !important;
+}
+.vhead,
+.golden-text,
+.colcard h4,
+.whyhead {
+  color: #000 !important;
+}
+ul li {
+  color: #000 !important;
 }
