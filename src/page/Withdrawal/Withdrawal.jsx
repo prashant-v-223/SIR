@@ -172,7 +172,7 @@ function Withdrawal() {
       <Spin spinning={!WallatedatSlice?.isLoader}>
         <>
           <Navbar />
-          <div className="container-fluid bg-light">
+          <div className="container-fluid bg-light pt-4">
             <div className="mainsection">
               <div className="row px-3 pt-4">
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
@@ -504,9 +504,6 @@ function Withdrawal() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="container-fluid blackbg">
-            <div className="mainsection"></div>
           </div>
         </>
         <Modal show={open1} centered>
