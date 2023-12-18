@@ -392,7 +392,30 @@ function Staking() {
       render: (text, record, index) => {
         return (
           <Tooltip placement="topLeft" title={1000 * record.DailyReword}>
-            {1000 * record.DailyReword}
+            {Number(1000 * record.DailyReword).toFixed(2)}
+          </Tooltip>
+        );
+      },
+    },
+    {
+      title: "upcoming Reward",
+      dataIndex: "TotalRewordRecived",
+      key: "TotalRewordRecived",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => {
+        var date1 = new Date(record.createdAt);
+        var date2 = new Date();
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        return (
+          <Tooltip placement="topLeft" title={diffDays * record.DailyReword}>
+            {Number(
+              (record.Amount * record.bonusAmount) / 100 -
+                diffDays * record.DailyReword
+            ).toFixed(2)}{" "}
           </Tooltip>
         );
       },
@@ -509,7 +532,9 @@ function Staking() {
                     <p>{validations.Mainwalletstacking}</p>
                     <p className="text-dark">
                       price in SIR token{" "}
-                      {Number((values.Mainwalletstacking * 90) / SIRprice).toFixed(2)}
+                      {Number(
+                        (values.Mainwalletstacking * 90) / SIRprice
+                      ).toFixed(2)}
                     </p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
@@ -584,7 +609,9 @@ function Staking() {
                     </select>
                     <p className="text-dark">
                       price in SIR token{" "}
-                      {Number((values.dappwalletstacking * 90) / SIRprice).toFixed(2)}
+                      {Number(
+                        (values.dappwalletstacking * 90) / SIRprice
+                      ).toFixed(2)}
                     </p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button

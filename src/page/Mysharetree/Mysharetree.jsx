@@ -309,6 +309,14 @@ const Mysharetree = () => {
                                       </div>
                                       <div className="d-flex justify-content-between px-3">
                                         <div className="text-dark dd">
+                                          Fullname
+                                        </div>
+                                        <div className="text-dark dd">
+                                          {e.Fullname}
+                                        </div>
+                                      </div>
+                                      <div className="d-flex justify-content-between px-3">
+                                        <div className="text-dark dd">
                                           Activation Date
                                         </div>
                                         <div className="text-dark dd">

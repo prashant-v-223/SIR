@@ -343,6 +343,14 @@ const MyTreeView = () => {
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
                                           <div className="text-dark dd">
+                                            Fullname
+                                          </div>
+                                          <div className="text-dark dd">
+                                            {e.Fullname}
+                                          </div>
+                                        </div>
+                                        <div className="d-flex justify-content-between px-3">
+                                          <div className="text-dark dd">
                                             Activation Date
                                           </div>
                                           <div className="text-dark dd">
@@ -356,7 +364,7 @@ const MyTreeView = () => {
                                             Self Stake
                                           </div>
                                           <div className="text-dark dd">
-                                            {e.mystack?.toFixed(2)}
+                                            {e.mystack}
                                           </div>
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
@@ -364,7 +372,7 @@ const MyTreeView = () => {
                                             Team Stake
                                           </div>
                                           <div className="text-dark dd">
-                                            {e.teamtotalstack?.toFixed(2)}
+                                            {e.teamtotalstack}
                                           </div>
                                         </div>
                                         <div className="d-flex justify-content-between px-3">
@@ -375,7 +383,6 @@ const MyTreeView = () => {
                                             {e.leval}
                                           </div>
                                         </div>
-
                                         {/* <tr>
                                           <td className="text-dark">
                                             {e.Fullname}

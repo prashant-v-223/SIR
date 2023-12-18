@@ -464,9 +464,12 @@ const Dashboard = () => {
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       SIR{" "}
-                      {StackingSlice.Wallatedata?.data?.income[0]?.amountupcomming?.toFixed(
-                        2
-                      )}{" "}
+                      {Number(
+                        StackingSlice.Wallatedata?.data?.income[0]
+                          ?.amountupcomming +
+                          StackingSlice.Wallatedata?.data?.income[0]
+                            ?.amountupcommin1
+                      )?.toFixed(2)}
                     </h6>
                   </div>
                 </div>
