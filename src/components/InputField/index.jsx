@@ -47,7 +47,12 @@ const index = (props) => {
             prefix={icons}
             disabled={disabled}
             maxLength={maxLength}
-            style={{ ...style, color: "#000", fontWeight: "500 !important" }}
+            style={{
+              ...style,
+              color: "#000",
+              fontWeight: "500 !important",
+              border: "none",
+            }}
             autoComplete="new-state"
             autoSave="off"
           />

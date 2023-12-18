@@ -18,3 +18,7 @@
   ); /* Adjust the opacity by changing the last parameter (0.5 in this example) */
   z-index: 1; /* Ensure the black layer is above the image */
 }
+
+.ant-input {
+  border: 0px solid #000 !important;
+}
