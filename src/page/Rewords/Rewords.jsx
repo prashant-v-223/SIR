@@ -166,7 +166,7 @@ function Rewords() {
             <Progress
               type="circle"
               percent={
-                (Profile[0]?.totalInvestment / (record.amount1 * 0.5)) * 100
+                (Profile[0]?.totalInvestment * 12/ 90 / (record.amount1 * 0.5)) * 100
               }
               format={() => (
                 <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
@@ -195,7 +195,7 @@ function Rewords() {
             <Progress
               type="circle"
               percent={
-                (Profile[1]?.totalInvestment / (record.amount1 * 0.25)) * 100
+                (Profile[1]?.totalInvestment * 12/ 90 / (record.amount1 * 0.25)) * 100
               }
               format={() => (
                 <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
@@ -234,7 +234,7 @@ function Rewords() {
           >
             <Progress
               type="circle"
-              percent={(lastteamtotalstack / (record.amount1 * 0.25)) * 100}
+              percent={(lastteamtotalstack * 12/ 90  / (record.amount1 * 0.25)) * 100}
               format={() => (
                 <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
                   {record.amount * 0.25}
