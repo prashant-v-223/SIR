@@ -394,7 +394,7 @@ const Dashboard = () => {
                     </div>
                     <h6 className="m-0 px-3 text-dark">
                       {" "}
-                      SIR{" "}
+                      USDT{" "}
                       {Number(
                         Profile[0]?.mystack ? Profile[0]?.mystack : 0
                       )?.toFixed()}{" "}
@@ -459,7 +459,34 @@ const Dashboard = () => {
                         style={{ width: "65px" }}
                       />
                       <h6 className="m-0 px-3 text-dark">
-                        SCB upcoming Income
+                        Self SCB upcoming Income
+                      </h6>
+                    </div>
+                    <h6 className="m-0 px-3 text-dark">
+                      SIR{" "}
+                      {Number(
+                        StackingSlice.Wallatedata?.data?.income[0]
+                          ?.amountupcommin1
+                      )?.toFixed(2)}
+                    </h6>
+                  </div>
+                  <div
+                    className="d-flex align-items-center justify-content-between bg-light my-2"
+                    style={{
+                      borderRadius: 12,
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    }}
+                  >
+                    <div className="d-flex align-items-center py-4  ">
+                      <img
+                        src={require("./icons8-community-96 (1).png")}
+                        alt=""
+                        className="img-fluid  ps-3"
+                        style={{ width: "65px" }}
+                      />
+                      <h6 className="m-0 px-3 text-dark">
+                     
+                        Team SCB upcoming Income
                       </h6>
                     </div>
                     <h6 className="m-0 px-3 text-dark">
