@@ -38,6 +38,9 @@
   background-color: transparent;
   color: #fff;
 }
+.group input::placeholder {
+  color: #fff !important;
+}
 
 .brand {
   font-size: 1.5rem;
@@ -813,7 +816,7 @@
 .group input[type="tel"]::placeholder {
   color: #fff !important;
 }
-.group input  ::placeholder {
+.group input::placeholder {
   color: #fff !important;
 }
 .group .PhoneInput {
