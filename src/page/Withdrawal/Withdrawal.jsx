@@ -42,7 +42,7 @@ function Withdrawal() {
         label: e.username,
       };
     });
-  const [Username1, setUsername1] = React.useState("");
+  const [SIRprice, setSIRprice] = React.useState("");
   const [Username, setUsername] = React.useState("");
   const [values, setValues] = React.useState({
     Amount: "",
@@ -86,6 +86,7 @@ function Withdrawal() {
           JSON.parse(localStorage.getItem("data")).data.token,
       })
     );
+    setSIRprice(res.payload.data.SIRprice);
     setAlldata(res.payload.data.data);
     setWalletAmountcal(res.payload.data.data[0]?.mainWallet);
     setWalletAmountcal1(res.payload.data.data[0]?.incomeWallet);
@@ -129,7 +130,7 @@ function Withdrawal() {
     }
     return validations;
   };
-
+  console.log(SIRprice);
   const handleSubmit = async (e) => {
     console.log(validateAll());
     if (validateAll().Amount === "" && validateAll().username === "") {
@@ -211,7 +212,7 @@ function Withdrawal() {
                           value={WalletAmountcal1}
                           style={{
                             padding: "10px 0px",
-                            border: "1px solid #fff !important",
+                            border: "1px solid #000 !important",
                           }}
                         />
                       </div>
@@ -224,6 +225,7 @@ function Withdrawal() {
                             height: 65,
                             border: "none",
                           }}
+                          disabled={WalletAmountcal1 <= 25}
                           label={"Withdraw "}
                           onClick={async () => {
                             setWallet12("Sir Income Wallate");
@@ -298,6 +300,7 @@ function Withdrawal() {
                             border: "none",
                           }}
                           label={"Withdraw "}
+                          disabled={(WalletAmountcal * SIRprice) / 90 <= 25}
                           onClick={async () => {
                             setWallet12("Sir Wallate");
                             const res = await dispatch(
@@ -349,7 +352,7 @@ function Withdrawal() {
                     <div className="row">
                       <div className="col-12 col-lg-6  py-2">
                         <Select
-                          style={{ width: "100%" }}
+                          style={{ width: "100%", color: "#000 !important" }}
                           name="Walletoname"
                           defaultValue={"Main Wallet"}
                           placeholder="Select Wallet To Transfer From"

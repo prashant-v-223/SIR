@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import InputField from "../../components/InputField";
-import Button from "../../components/ButtonField";
 import { useWeb3React } from "@web3-react/core";
 import { Modal } from "react-bootstrap";
 import { Injected, WalletConnect } from "../../Helpers/Injected";
@@ -304,47 +303,8 @@ function Login() {
     console.log(localStorage.getItem("data"));
     return (
       <>
-        <div
-          className="col-5 d-none d-xl-block col-md-5 p-5 zindex"
-          style={{
-            position: "relative",
-          }}
-        >
-          <div className="p-4">
-            <a href="/">
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
-                alt=""
-                width="75"
-              />
-            </a>
-          </div>
-          <div
-            className=""
-            style={{
-              position: "absolute",
-              bottom: "19%",
-              width: "100%",
-              left: "0",
-              padding: "5%",
-            }}
-          >
-            <div className="px-5">
-              <h1 className="text-light">
-                Start-up <br /> your account
-              </h1>
-              <p
-                className="text-light pe-5 me-5 py-2"
-                style={{ fontSize: "18px" }}
-              >
-                Register on SIR platform easily. World’s topmost platform to
-                generate revenue
-              </p>
-            </div>
-          </div>
-        </div>
         {!show ? (
-          <div className="col-12 col-xl-7 px-0 px-lg-5 zindex">
+          <div className="col-12 col-xl-6 px-0 px-lg-5 zindex m-auto">
             <div
               className="flex-column"
               style={{
@@ -355,39 +315,23 @@ function Login() {
                 padding: "15px 7px",
               }}
             >
-              <div className="Box">
+              <div className="">
+                <a href="/">
+                  {" "}
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+                    alt=""
+                    className="m-auto d-block"
+                    style={{ width: 70, height: 70 }}
+                  />
+                </a>
+                <p className="text-light text-center pt-3">
+                  SIR GLOBAL ACADEMY
+                </p>
+                <h1 className=" text-light text-center py-0">Sign up</h1>
                 <form onSubmit={handleSubmit}>
                   <div className="row px-2 px-sm-4">
-                    <h1 className="px-4  pb-2 main-text">Sign up</h1>
-                    {/* <div className="col-12 col-md-9 py-md-1">
-                        <InputField
-                          type="text"
-                          name="Walletaddress"
-                          placeholder="Wallet address"
-                          value={Walletaddress}
-                          error={WalletaddressVal}
-                          onChange={handleChange}
-                          icons={<WalletFilled />}
-                          disabled={true}
-                          style={{
-                            border: "1px solid #fff",
-                          }}
-                        />
-                      </div>
-                      <div className="col-12 col-md-3 py-md-1">
-                        <Button
-                          className={" w-100 text-light mb-1"}
-                          Stake={!false}
-                          style={{
-                            background: "#0b535d",
-                            height: 60,
-                            border: "none",
-                          }}
-                          label={"Connect"}
-                          onClick={connect}
-                        />
-                      </div> */}
-                    <div className="col-12  py-md-1">
+                    <div className="col-12   group">
                       <InputField
                         type="text"
                         name="Email"
@@ -402,7 +346,7 @@ function Login() {
                         }}
                       />
                     </div>
-                    <div className="col-12  py-md-1">
+                    <div className="col-12   group">
                       <InputField
                         type="text"
                         name="username"
@@ -413,12 +357,13 @@ function Login() {
                         onChange={handleChange}
                         onBlur={validateOne}
                         style={{
-                          border: "1px solid #fff",
+                          border: "1px solid rgb(255, 255, 255) !important",
+                          borderRedios: "4px",
                         }}
                       />
                     </div>{" "}
-                    <div className="col-12 py-md-1">
-                      <div className="form-group  ">
+                    <div className="col-12 ">
+                      <div className="form-group   group">
                         <PhoneInput
                           name="phone"
                           value={phone}
@@ -437,7 +382,7 @@ function Login() {
                         ) : null}
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 py-md-1">
+                    <div className="col-12 col-md-6  group">
                       <InputField
                         type="Password"
                         name="Password"
@@ -452,7 +397,7 @@ function Login() {
                         }}
                       />
                     </div>
-                    <div className="col-12 col-md-6 py-md-1">
+                    <div className="col-12 col-md-6  group">
                       <InputField
                         type="Password"
                         name="Reenterpassword"
@@ -467,7 +412,7 @@ function Login() {
                         }}
                       />
                     </div>
-                    <div className="col-12 py-md-1">
+                    <div className="col-12  group">
                       <InputField
                         type="text"
                         name="referralId"
@@ -503,12 +448,12 @@ function Login() {
                           setcheck(e.target.checked);
                         }}
                       />
-                      <p className="mt-1 mb-0 main-text ">
+                      <p className=" mb-0 text-light ">
                         I have read and agree to the
                         <a
                           href="/Termsandconditions"
                           target="_blank"
-                          className="px-1 text-dark"
+                          className="px-1 text-light"
                         >
                           Terms and Conditions
                         </a>
@@ -518,28 +463,32 @@ function Login() {
                     <p className="">
                       <b>{!check && "Terms and conditions is required"}</b>
                     </p>
-                    <div className="col-12 ">
+                    <div className="col-12 py-0 ">
                       <button
                         type="submit"
                         className={" w-100 text-dark"}
                         disabled={!check}
                         style={{ background: "#dcdc46", height: 55 }}
                       >
-                        Submit
+                        Sign Up
                       </button>
                     </div>
                   </div>
                 </form>
-                <div className=" px-2 px-sm-4 pt-3">
-                  <button
-                    className={"text-light "}
+                <div className="social-message">
+                  <div className="line" />
+                  <p className="message pt-3">Other Options</p>
+                  <div className="line" />
+                </div>
+                <div className=" px-2 px-sm-4">
+                  <a
+                    className={"text-light d-block m-auto text-center "}
                     onClick={() => {
                       settype(false);
                     }}
-                    style={{ background: "#73730e", height: 55, width: "100%" }}
                   >
                     Already Registered? Login
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -559,7 +508,7 @@ function Login() {
               <div className="Box">
                 <div className="row px-2 px-sm-4">
                   <h1 className="px-4  pb-2 main-text">verify your account</h1>
-                  <div className="col-12 py-md-1">
+                  <div className="col-12 ">
                     <InputField
                       type="text"
                       name="username"
@@ -573,7 +522,7 @@ function Login() {
                       }}
                     />
                   </div>
-                  <div className="col-12 py-md-1">
+                  <div className="col-12 ">
                     <InputField
                       type="OTP"
                       name="OTP"
@@ -830,46 +779,7 @@ function Login() {
 
     return (
       <>
-        <div
-          className="col-5 d-none d-xl-block col-md-5 p-5 zindex"
-          style={{
-            position: "relative",
-          }}
-        >
-          <div className="p-4">
-            <a href="/">
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
-                alt=""
-                width="75"
-              />
-            </a>
-          </div>
-          <div
-            className=""
-            style={{
-              position: "absolute",
-              bottom: "19%",
-              width: "100%",
-              left: "0",
-              padding: "5%",
-            }}
-          >
-            <div className="px-5">
-              <h1 className="text-light">
-                Start-up <br /> your account
-              </h1>
-              <p
-                className="text-light pe-5 me-5 py-2"
-                style={{ fontSize: "18px" }}
-              >
-                Register on SIR platform easily. World’s topmost platform to
-                generate revenue
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-xl-7 px-0 px-lg-5 zindex">
+        <div className="col-12 col-xl-6 px-0 px-lg-5 zindex m-auto">
           <div
             className="flex-column"
             style={{
@@ -880,11 +790,25 @@ function Login() {
               padding: "15px 7px",
             }}
           >
-            <div className="Box">
+            <div className="">
               <form onSubmit={handleSubmit}>
+                <div className="loginleft">
+                  <a href="/">
+                    {" "}
+                    <img
+                      src="https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+                      alt=""
+                      style={{ width: 70, height: 70 }}
+                    />
+                  </a>
+                  <p className="loghead" style={{ textTransform: "uppercase" }}>
+                    SIR Global Academy
+                  </p>
+                </div>
+
                 <div className="row px-2 px-sm-4">
-                  <h1 className="px-4  pb-2 main-text">Login</h1>
-                  <div className="col-12  py-md-1">
+                  <h1 className="px-4  pb-2 text-center text-light">Login</h1>
+                  <div className="col-12   group">
                     <InputField
                       type="text"
                       name="Email"
@@ -898,7 +822,7 @@ function Login() {
                       }}
                     />
                   </div>
-                  <div className="col-12  py-md-1">
+                  <div className="col-12   group">
                     <InputField
                       type="Password"
                       name="Password"
@@ -924,33 +848,32 @@ function Login() {
                       className={" w-100 text-dark"}
                       style={{ background: "#dcdc46", height: 55 }}
                     >
-                      Login
+                      Sign In
                     </button>
                   </div>
                 </div>
               </form>
-              <div className=" px-2 px-sm-4 pt-4">
-                <button
-                  className={"text-light "}
+              <div className="social-message">
+                <div className="line" />
+                <p className="message pt-3">Other Options</p>
+                <div className="line" />
+              </div>
+              <div className=" px-2 px-sm-4 py-2">
+                <a
+                  className={"text-light text-center d-block"}
                   onClick={() => {
                     settype(!false);
                   }}
-                  style={{
-                    background: "#73730e",
-                    height: 55,
-                    width: "100%",
-                    fontSize: "14px !important",
-                  }}
                 >
-                  Don’t have an account? Sign up
-                </button>
-              </div>
-              <button
-                className="main-text px-4 pt-3"
+                  Don’t have an account? <b>Sign up</b>
+                </a>
+              </div>{" "}
+              <a
+                className={"text-light text-center d-block"}
                 onClick={() => setModal2Open(true)}
               >
                 Forgot password?
-              </button>
+              </a>
               <Modal
                 show={modal2Open}
                 onHide={() => setModal2Open(false)}
@@ -965,19 +888,21 @@ function Login() {
                     Enter the email assocSIRed with your account and We will
                     send an email with instructions to reset your password.
                   </p>
-                  <InputField
-                    type="text"
-                    name="Emailforgot"
-                    placeholder="Enter Username"
-                    value={Emailforgot}
-                    error={EmailforgotVal}
-                    icons={<MailFilled />}
-                    onChange={handleChange}
-                    style={{
-                      border: "none !important",
-                    }}
-                    onBlur={validateOne}
-                  />
+                  <div className="group">
+                    <InputField
+                      type="text"
+                      name="Emailforgot"
+                      placeholder="Enter Username"
+                      value={Emailforgot}
+                      error={EmailforgotVal}
+                      icons={<MailFilled />}
+                      onChange={handleChange}
+                      style={{
+                        border: "none !important",
+                      }}
+                      onBlur={validateOne}
+                    />
+                  </div>
                 </Modal.Body>
 
                 <Modal.Footer>

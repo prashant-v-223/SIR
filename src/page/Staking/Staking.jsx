@@ -321,17 +321,57 @@ function Staking() {
         page === 1 ? index + 1 : (page - 1) * pageSize + (index + 1),
     },
     {
-      title: "Wallet Type",
+      title: "Wallet Type / UserId",
       dataIndex: "WalletType",
       key: "age",
       width: "250px",
       render: (address) => {
         return (
           <Tooltip placement="topLeft" title={address}>
-            {address}
+            {address.split("(")[1]?.split(")")
+              ? address.split("(")[1]?.split(")")
+              : address}
           </Tooltip>
         );
       },
+    },
+    {
+      title: "leval",
+      dataIndex: "leval",
+      key: "leval",
+      filters: [
+        { text: "1", value: 1 },
+        { text: "2", value: 2 },
+        { text: "3", value: 3 },
+        { text: "4", value: 4 },
+        { text: "5", value: 5 },
+        { text: "6", value: 6 },
+        { text: "7", value: 7 },
+        { text: "8", value: 8 },
+        { text: "9", value: 9 },
+        { text: "10", value: 10 },
+        { text: "11", value: 11 },
+        { text: "12", value: 12 },
+        { text: "13", value: 13 },
+        { text: "14", value: 14 },
+        { text: "15", value: 15 },
+        { text: "16", value: 16 },
+        { text: "17", value: 17 },
+        { text: "18", value: 18 },
+        { text: "19", value: 19 },
+        { text: "20", value: 20 },
+      ],
+      onFilter: (value, record) => record.leval === value,
+      ellipsis: {
+        showTitle: false,
+      },
+      sorter: (a, b) => a.leval - b.leval,
+      width: "150px",
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
     },
     {
       title: "Days",
@@ -348,10 +388,41 @@ function Staking() {
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         return (
           <Tooltip placement="topLeft" title={diffDays}>
-            {diffDays}
+            {record.Totalsend}
           </Tooltip>
         );
       },
+    },
+    {
+      title: "Staking Amount",
+      dataIndex: "Amount",
+      key: "Amount",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address.toFixed(3)}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "SCB Bonus Amount",
+      dataIndex: "bonusAmount",
+      key: "bonusAmount",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => (
+        <Tooltip
+          placement="topLeft"
+          title={Number((record.Amount * record.bonusAmount) / 100).toFixed(3)}
+        >
+          {Number((record.Amount * record.bonusAmount) / 100).toFixed(3)}
+        </Tooltip>
+      ),
     },
     {
       title: "Daily Reward",
@@ -368,36 +439,6 @@ function Staking() {
       ),
     },
     {
-      title: "Amount",
-      dataIndex: "Amount",
-      key: "Amount",
-      width: "200px",
-      ellipsis: {
-        showTitle: false,
-      },
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address.toFixed(3)}
-        </Tooltip>
-      ),
-    },
-    {
-      title: "Total Reward",
-      dataIndex: "TotalRewordRecived",
-      key: "TotalRewordRecived",
-      width: "200px",
-      ellipsis: {
-        showTitle: false,
-      },
-      render: (text, record, index) => {
-        return (
-          <Tooltip placement="topLeft" title={1000 * record.DailyReword}>
-            {Number(1000 * record.DailyReword).toFixed(2)}
-          </Tooltip>
-        );
-      },
-    },
-    {
       title: "upcoming Reward",
       dataIndex: "TotalRewordRecived",
       key: "TotalRewordRecived",
@@ -406,16 +447,38 @@ function Staking() {
         showTitle: false,
       },
       render: (text, record, index) => {
-        var date1 = new Date(record.createdAt);
-        var date2 = new Date();
-        const diffTime = Math.abs(date2 - date1);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         return (
-          <Tooltip placement="topLeft" title={diffDays * record.DailyReword}>
+          <Tooltip
+            placement="topLeft"
+            title={
+              (record.Amount * record.bonusAmount) / 100 -
+              record.Totalsend * record.DailyReword
+            }
+          >
             {Number(
               (record.Amount * record.bonusAmount) / 100 -
-                diffDays * record.DailyReword
+                record.Totalsend * record.DailyReword
             ).toFixed(2)}{" "}
+          </Tooltip>
+        );
+      },
+    },
+    {
+      title: "Released Reward",
+      dataIndex: "TotalRewordRecived",
+      key: "TotalRewordRecived",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => {
+        let a = (record.Amount * record.bonusAmount) / 100;
+        let b =
+          (record.Amount * record.bonusAmount) / 100 -
+          record.Totalsend * record.DailyReword;
+        return (
+          <Tooltip placement="topLeft" title={Number(a - b).toFixed(3)}>
+            {Number(a - b).toFixed(3)}
           </Tooltip>
         );
       },
@@ -434,22 +497,22 @@ function Staking() {
         </Tooltip>
       ),
     },
-    {
-      title: "Active",
-      dataIndex: "Active",
-      key: "Active",
-      width: "200px",
-      ellipsis: {
-        showTitle: false,
-      },
-      render: (text, record, index) => {
-        return (
-          <Tooltip placement="topLeft" title={record.Active.toString()}>
-            {record.Active.toString()}
-          </Tooltip>
-        );
-      },
-    },
+    // {
+    //   title: "Active",
+    //   dataIndex: "Active",
+    //   key: "Active",
+    //   width: "200px",
+    //   ellipsis: {
+    //     showTitle: false,
+    //   },
+    //   render: (text, record, index) => {
+    //     return (
+    //       <Tooltip placement="topLeft" title={record.Active.toString()}>
+    //         {record.Active.toString()}
+    //       </Tooltip>
+    //     );
+    //   },
+    // },
   ];
   let multiplesOf40 = [];
 

@@ -95,7 +95,7 @@ function App() {
               <Route path="/Withdrawal" element={<Withdrawal />} />
               <Route path="/daireactterm" element={<Totaltrempage />} />
               <Route path="/Totaltrem" element={<Daireacttermpage />} />
-              <Route path="/staking/income" element={<StackingRepors />} />
+              {/* <Route path="/staking/income" element={<StackingRepors />} /> */}
               <Route path="/admin/all_income" element={<Allicome />} />
               <Route path="/userallincome" element={<Allcome1 />} />
               <Route path="/mian/Withdrawal" element={<Mainwallate />} />

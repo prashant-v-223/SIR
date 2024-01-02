@@ -29,7 +29,7 @@ function Rewords() {
       for (const obj of res.payload.data?.ReffData1) {
         if (obj) {
           resultArray.push({
-            totalInvestment: obj.mystack + obj.teamtotalstack,
+            totalInvestment: obj.teamtotalstack,
             username: obj.username,
           });
         }
@@ -48,56 +48,78 @@ function Rewords() {
       name: "ACE",
       amount: 1000,
       amount1: 1000,
+      rewordshow: Profile1[0]?.Rank === "Trainee",
+      renk: 1,
     },
     {
       name: "WARRIOR",
       amount: 7000,
       amount1: 8000,
+      rewordshow: Profile1[0]?.Rank === "ACE",
+      renk: 2,
     },
     {
       name: "CADET",
       amount: 20000,
       amount1: 28000,
+      rewordshow: Profile1[0]?.Rank === "WARRIOR",
+      renk: 3,
     },
     {
       name: "CAPTAIN",
       amount: 50000,
       amount1: 78000,
+      rewordshow: Profile1[0]?.Rank === "CADET",
+      renk: 4,
     },
     {
       name: "COMMANDER",
       amount: 150000,
       amount1: 228000,
+      rewordshow: Profile1[0]?.Rank === "CAPTAIN",
+      renk: 5,
     },
     {
       name: "PIONEER",
       amount: 300000,
       amount1: 528000,
+      rewordshow: Profile1[0]?.Rank === "COMMANDER",
+      renk: 6,
     },
     {
       name: "MASTERMIND",
       amount: 700000,
       amount1: 12528000,
+      rewordshow: Profile1[0]?.Rank === "PIONEER",
+      renk: 7,
     },
     {
       name: "RULER",
       amount: 1500000,
       amount1: 14028000,
+      rewordshow: Profile1[0]?.Rank === "MASTERMIND",
+      renk: 8,
     },
     {
       name: "AMBASSADOR",
       amount: 3400000,
       amount1: 17428000,
+      rewordshow: Profile1[0]?.Rank === "RULER",
+      renk: 9,
     },
     {
       name: "CROWN",
       amount: 7000000,
       amount1: 24428000,
+      rewordshow: Profile1[0]?.Rank === "AMBASSADOR",
+      renk: 10,
     },
     {
       name: "CROWN AMBASSADOR",
       amount: 15000000,
       amount1: 39428000,
+      rewordshow: Profile1[0]?.Rank === "CROWN",
+      renk: 11,
     },
   ];
   const columns = [
@@ -155,22 +177,34 @@ function Rewords() {
         showTitle: false,
       },
       render: (text, record, index) => {
-        console.log(index >= 1 ? data[index - 1]?.amount : 0);
-        console.log(index >= 1 ? Profile[0]?.totalInvestment : 0);
-        console.log(data[index]);
+        let a = record.amount1 * 0.5;
+        let b = record.amount * 0.5;
+        console.log("data[index]", Profile);
         return (
           <Tooltip
             placement="topLeft"
-            title={Profile.length > 0 ? Profile[0]?.totalInvestment : 0}
+            title={
+              record.rewordshow
+                ? (Profile[0]?.totalInvestment / a) * 100 > 100
+                  ? 100 + "%"
+                  : (Profile[0]?.totalInvestment / a) * 100
+                  ? (Profile[0]?.totalInvestment / a) * 100
+                  : 0 + "%"
+                : 0 + "%"
+            }
           >
             <Progress
               type="circle"
               percent={
-                (Profile[0]?.totalInvestment * 12/ 90 / (record.amount1 * 0.5)) * 100
+                record.rewordshow
+                  ? (Profile[0]?.totalInvestment / (record.amount1 * 0.5)) *
+                    0.5 *
+                    100
+                  : 0
               }
               format={() => (
                 <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
-                  {record.amount * 0.5}
+                  {b}
                 </h6>
               )}
             />
@@ -187,19 +221,34 @@ function Rewords() {
         showTitle: false,
       },
       render: (text, record, index) => {
+        console.log("sec", Profile);
+        let a = record.amount1 * 0.25;
+        let b = record.amount * 0.25;
         return (
           <Tooltip
             placement="topLeft"
-            title={Profile.length > 0 ? Profile[1]?.totalInvestment : 0}
+            title={
+              record.rewordshow
+                ? Profile[1]?.totalInvestment
+                  ? (Profile[1]?.totalInvestment / a) * 100 >= 100
+                    ? 100 + "%"
+                    : (Profile[1]?.totalInvestment / a) * 100 + "%"
+                  : 0 + "%"
+                : 0 + "%"
+            }
           >
             <Progress
               type="circle"
               percent={
-                (Profile[1]?.totalInvestment * 12/ 90 / (record.amount1 * 0.25)) * 100
+                record.rewordshow
+                  ? (Profile[1]?.totalInvestment / a) * 100 >= 100
+                    ? 100
+                    : (Profile[1]?.totalInvestment / a) * 100
+                  : 0
               }
               format={() => (
                 <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
-                  {record.amount * 0.25}
+                  {b}
                 </h6>
               )}
             />
@@ -213,7 +262,7 @@ function Rewords() {
       },
     },
     {
-      title: "Remaining Power",
+      title: "Remaining Legs",
       dataIndex: "amount",
       key: "amount",
       width: "200px",
@@ -221,23 +270,39 @@ function Rewords() {
         showTitle: false,
       },
       render: (text, record, index) => {
+        let a = record.amount1 * 0.25;
+        let b = record.amount * 0.25;
         let lastteamtotalstack = 0;
         const lastThreeObjects = Profile?.slice(2, -1);
         for (let index = 0; index < lastThreeObjects.length; index++) {
           lastteamtotalstack += lastThreeObjects[index].totalInvestment;
         }
-        console.log(lastteamtotalstack);
+        console.log("lastteamtotalstack", lastteamtotalstack);
         return (
           <Tooltip
             placement="topLeft"
-            title={Profile.length > 0 ? lastteamtotalstack : 0}
+            title={
+              record.rewordshow
+                ? (lastteamtotalstack / a) * 100 >= 100
+                  ? 100 + "%"
+                  : (lastteamtotalstack / a) * 100
+                  ? (lastteamtotalstack / a) * 100
+                  : 0 + "%"
+                : 0 + "%"
+            }
           >
             <Progress
               type="circle"
-              percent={(lastteamtotalstack * 12/ 90  / (record.amount1 * 0.25)) * 100}
+              percent={
+                record.rewordshow
+                  ? !lastteamtotalstack
+                    ? 0
+                    : lastteamtotalstack
+                  : 0
+              }
               format={() => (
                 <h6 className="mx-auto d-block p-0 text-center w-100 mb-4">
-                  {record.amount * 0.25}
+                  {b}
                 </h6>
               )}
             />
@@ -256,6 +321,26 @@ function Rewords() {
         // </Tooltip>
       },
     },
+    {
+      title: "status",
+      dataIndex: "rewordshow",
+      key: "rewordshow",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => {
+        return (
+          <h5>
+            {record.renk === index + 1 && record.rewordshow
+              ? !record.rewordshow
+                ? "Completed"
+                : "In Progress"
+              : "Pending"}
+          </h5>
+        );
+      },
+    },
   ];
   return (
     <>
@@ -266,7 +351,7 @@ function Rewords() {
             <h1 className="text-crnter d-block m-auto text-dark">My Rewards</h1>
             <div className="d-flex justify-content-between py-4 px-3">
               <div className="">My Rank :{Profile1[0]?.Rank}</div>
-              <div className="">My leval :{Profile1[0]?.leval}</div>
+              <div className="">My level:{Profile1[0]?.leval}</div>
             </div>
             <Table
               columns={columns}

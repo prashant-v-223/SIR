@@ -295,7 +295,7 @@ function Navbar1() {
                       fill="#fcd21d"
                     />
                   </svg>
-                  SIR Direct Team
+                  Direct Team
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -715,7 +715,7 @@ function Navbar1() {
                   />
                   Withdraw Details
                 </Dropdown.Item> */}
-                <Dropdown.Item
+                {/* <Dropdown.Item
                   className="py-2"
                   onClick={() => {
                     navigation("/staking/income");
@@ -742,7 +742,7 @@ function Navbar1() {
                     />
                   </svg>
                   Staking Bonus
-                </Dropdown.Item>
+                </Dropdown.Item> */}
                 <Dropdown.Item
                   className="py-2"
                   onClick={() => {

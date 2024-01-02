@@ -413,6 +413,9 @@ span.call_icon {
   display: inline-block;
   position: relative;
 }
+:where(.css-dev-only-do-not-override-mxhywb).ant-dropdown .ant-table-filter-dropdown .ant-dropdown-menu{
+  background: #31a872 !important;
+}
 
 .footer_logo img {
   width: 80px;

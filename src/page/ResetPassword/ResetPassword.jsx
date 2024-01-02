@@ -109,8 +109,12 @@ function ResetPassword() {
         >
           <div className="p-4">
             <img
-              src={require("../../assets/img/Logo.png")}
+              src={
+                "https://firebasestorage.googleapis.com/v0/b/doubtq-student.appspot.com/o/icon2.png?alt=media&token=7e933aff-37ab-46ae-a0c1-8180c2eaf931&_gl=1*10gdqfi*_ga*OTgwMjYzMTIyLjE2ODM5NTgxMTM.*_ga_CW55HF8NVT*MTY5NzE3NjcxMi4xMC4xLjE2OTcxNzY3NTguMTQuMC4w"
+              }
               alt=""
+              width={100}
+              height={100}
               className="img-fluid"
             />
           </div>
@@ -132,8 +136,8 @@ function ResetPassword() {
                 className="text-light pe-5 me-5 py-2"
                 style={{ fontSize: "18px" }}
               >
-                Register on  SIR platform easily. World’s topmost
-                platform to generate revenue
+                Register on SIR platform easily. World’s topmost platform to
+                generate revenue
               </p>
             </div>
           </div>
@@ -152,7 +156,7 @@ function ResetPassword() {
             <div className="Box">
               <form onSubmit={handleSubmit}>
                 <div className="row px-2 px-sm-4">
-                  <h1 className="px-4  pb-4 text-light">Reset Password</h1>
+                  <h1 className="px-4  pb-4 text-dark">Reset Password</h1>
                   <div className="col-12  py-md-1">
                     <InputField
                       type="Password"

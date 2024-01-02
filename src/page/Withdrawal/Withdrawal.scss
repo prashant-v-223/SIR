@@ -1,10 +1,10 @@
 .Withdrawalbox {
-  background: #31A872;
+  background: #31a872;
   border-radius: 7px;
   color: #fff;
 }
 .Withdrawalboxp {
-  background: #31A872;
+  background: #31a872;
   border-radius: 7px;
   color: #fff;
 }
@@ -44,7 +44,9 @@
     width: 50%;
   }
 }
-
+.ant-select-selection-item {
+  color: #171515 !important;
+}
 input::placeholder {
   background: transparent;
   color: #171515 !important;

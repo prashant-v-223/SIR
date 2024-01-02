@@ -20,7 +20,7 @@ const index = (props) => {
   } = props;
 
   return type !== "date" ? (
-    <div className="form-group my-2">
+    <div className="form-group my-2 w-100">
       {type === "textarea" && (
         <textarea
           {...props}
@@ -75,7 +75,7 @@ const index = (props) => {
           />
         </>
       )}
-      {error ? <span className="error">{error}</span> : null}
+      {error ? <span className="error p-0">{error}</span> : null}
     </div>
   ) : (
     <div className="form-group w-100">
@@ -98,7 +98,7 @@ const index = (props) => {
         style={{ color: "#000", fontWeight: "500 !important" }}
         max={moment().format("YYYY-MM-DD")}
       />
-      {error ? <span className="error">{error}</span> : null}
+      {error ? <span className="error p-0">{error}</span> : null}
     </div>
   );
 };
